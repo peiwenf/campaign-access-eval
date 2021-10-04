@@ -1,0 +1,72 @@
+name: Generate Report
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "URL to generate a report for."
+        required: true
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v1
+      with:
+        python-version: 3.9
+
+    - name: Install Python Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install .
+    - name: Install geckodriver
+      run: |
+        wget https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-linux64.tar.gz
+        tar -xvzf geckodriver-v0.30.0-linux64.tar.gz
+        chmod +x geckodriver
+        sudo mv geckodriver /usr/local/bin/
+
+    - name: Generate Report -- Google
+      if: ${{ github.event_name == 'push' }}
+      run: |
+        access-eval-generate-report \
+          https://google.com \
+          --output_dir google.com--report 
+      
+    - name: Store Report -- Google
+      if: ${{ github.event_name == 'push' }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: google.com--report
+        path: google.com--report
+        # default 90 seems unnecessary for these test results
+        retention-days: 1
+
+    - name: Get Clean URL Name
+      id: get-clean-url-name
+      if: ${{ github.event_name == 'workflow_dispatch' }}
+      run: |
+        name=$(echo "${{ github.event.inputs.url }}" | sed 's/http:\/\///')
+        name=$(echo $name | sed 's/https:\/\///')
+        echo "::set-output name=name::$name"
+    
+    - name: Generate Report -- Parametrized
+      if: ${{ github.event_name == 'workflow_dispatch' }}
+      run: |
+        access-eval-generate-report \
+          ${{ github.event.inputs.url }} \
+          --output_dir ${{ steps.get-clean-url-name.outputs.name }}--report
+    
+    - name: Store Report -- Parametrized
+      if: ${{ github.event_name == 'workflow_dispatch' }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ steps.get-clean-url-name.outputs.name }}--report
+        path: ${{ steps.get-clean-url-name.outputs.name }}--report
+        # default 90 seems unnecessary for these test results
+        retention-days: 14
