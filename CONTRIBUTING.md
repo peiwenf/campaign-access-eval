@@ -21,7 +21,7 @@ Ready to contribute? Here's how to set up `access-eval` for local development.
     git clone git@github.com:{your_name_here}/access-2020-localelections.git
     ```
 
-3. Install [geckodriver](https://github.com/mozilla/geckodriver/releases)
+3. Install [geckodriver](https://github.com/mozilla/geckodriver/releases):
 
     1. Download:
 
@@ -33,19 +33,42 @@ Ready to contribute? Here's how to set up `access-eval` for local development.
 
     2. Unzip or un-tar the downloaded file.
 
-    3. **On Mac & Linux**: add the filepath to the executable to your PATH.
-       I.e. `export PATH=$PATH:/home/{user}/Downloads/geckodriver`
+    3. **On Mac & Linux**: add the path to the directory that contains
+       the executable to your PATH.
+       I.e. `export PATH=$PATH:/home/{user}/Downloads/`
 
         _(Fill in your username)_
 
-4. Install the project in editable mode. (It is also recommended to work in a virtualenv or anaconda environment):
+4. Create a Python 3.9 environment:
+
+    1. Install [miniconda](https://docs.conda.io/en/latest/miniconda.html#latest-miniconda-installer-links)
+    
+    2. Create environment:
+
+        ```bash
+        conda create --name {some-name} python=3.9
+        ```
+
+    3. Activate environment:
+
+        ```bash
+        conda activate {some-name}
+        ```
+
+    All Python packages will now be stored in this environment.
+    Each time you want to work on this project be sure to create or active your environment.
+
+    While the maintainers of this project use miniconda as our environment manager,
+    there are many other Python environment managers, use what works for you.
+
+5. Install the project in editable mode. (It is also recommended to work in a virtualenv or anaconda environment):
 
     ```bash
     cd access-2020-localelections/
     pip install -e .[dev]
     ```
 
-5. Create a branch for local development:
+6. Create a branch for local development:
 
     ```bash
     git checkout -b {your_development_type}/short-description
@@ -54,14 +77,14 @@ Ready to contribute? Here's how to set up `access-eval` for local development.
     Ex: feature/read-tiff-files or bugfix/handle-file-not-found<br>
     Now you can make your changes locally.
 
-6. When you're done making changes, check that your changes pass linting and
+7. When you're done making changes, check that your changes pass linting and
    tests, including testing other Python versions with make:
 
     ```bash
     make build
     ```
 
-7. Commit your changes and push your branch to GitHub:
+8. Commit your changes and push your branch to GitHub:
 
     ```bash
     git add .
@@ -69,7 +92,7 @@ Ready to contribute? Here's how to set up `access-eval` for local development.
     git push origin {your_development_type}/short-description
     ```
 
-8. Submit a pull request through the GitHub website.
+9. Submit a pull request through the GitHub website.
 
 ## Deploying
 
