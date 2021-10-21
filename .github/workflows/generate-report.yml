@@ -49,9 +49,8 @@ jobs:
       id: get-clean-url-name
       if: ${{ github.event_name == 'workflow_dispatch' }}
       run: |
-        name=$(echo "${{ github.event.inputs.url }}" | sed 's/http:\/\///')
-        name=$(echo $name | sed 's/https:\/\///')
-        echo "::set-output name=name::$name"
+        cleaned=$(python -c 'from access_eval.utils import clean_url; print(clean_url("${{ github.event.inputs.url }}"));')
+        echo "::set-output name=cleaned::$cleaned"
     
     - name: Generate Report -- Parametrized
       if: ${{ github.event_name == 'workflow_dispatch' }}
@@ -62,7 +61,7 @@ jobs:
       if: ${{ github.event_name == 'workflow_dispatch' }}
       uses: actions/upload-artifact@v2
       with:
-        name: ${{ steps.get-clean-url-name.outputs.name }}--archive
-        path: ${{ steps.get-clean-url-name.outputs.name }}
+        name: ${{ steps.get-clean-url-name.outputs.cleaned }}--archive
+        path: ${{ steps.get-clean-url-name.outputs.cleaned }}
         # default 90 seems unnecessary for these test results
         retention-days: 14

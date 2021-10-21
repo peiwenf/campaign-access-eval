@@ -7,6 +7,7 @@ import sys
 import traceback
 
 from access_eval.analysis.parse_axe_results import generate_high_level_statistics
+from access_eval.utils import clean_url
 
 ###############################################################################
 
@@ -49,7 +50,7 @@ def main() -> None:
     try:
         args = Args()
         generate_high_level_statistics(
-            head_dir=args.head_dir.replace("https://", "").replace("http://", ""),
+            head_dir=clean_url(args.head_dir),
         )
     except Exception as e:
         log.error("=============================================")

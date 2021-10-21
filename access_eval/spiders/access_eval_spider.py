@@ -14,6 +14,7 @@ from selenium import webdriver
 from selenium.webdriver import FirefoxOptions
 
 from .. import constants
+from ..utils import clean_url
 
 if TYPE_CHECKING:
     from typing import Any
@@ -60,7 +61,7 @@ class AccessEvalSpider(CrawlSpider):
         driver.close()
 
         # Construct storage path
-        url = response.request.url.replace("https://", "").replace("http://", "")
+        url = clean_url(response.request.url)
         storage_dir = Path(url)
         storage_dir.mkdir(exist_ok=True, parents=True)
         axe.write_results(
