@@ -197,6 +197,5 @@ def no_namedtuple_attrib_docstring(app, what, name, obj, options, lines):
 
 def setup(app):
     app.connect(
-        "autodoc-process-docstring",
-        no_namedtuple_attrib_docstring,
+        "autodoc-process-docstring", no_namedtuple_attrib_docstring,
     )

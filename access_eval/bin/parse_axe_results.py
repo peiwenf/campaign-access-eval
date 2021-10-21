@@ -49,9 +49,7 @@ class Args(argparse.Namespace):
 def main() -> None:
     try:
         args = Args()
-        generate_high_level_statistics(
-            head_dir=clean_url(args.head_dir),
-        )
+        generate_high_level_statistics(head_dir=clean_url(args.head_dir))
     except Exception as e:
         log.error("=============================================")
         log.error("\n\n" + traceback.format_exc())

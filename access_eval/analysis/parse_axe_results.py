@@ -57,9 +57,7 @@ class AggregateAxeViolation:
 ###############################################################################
 
 
-def generate_high_level_statistics(
-    head_dir: Union[str, Path],
-) -> None:
+def generate_high_level_statistics(head_dir: Union[str, Path]) -> None:
     """
     Recursive glob of all directories for axe results and generate high level
     statistics both for single page and whole website.
