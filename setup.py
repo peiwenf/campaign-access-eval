@@ -40,11 +40,15 @@ dev_requirements = [
 ]
 
 requirements = [
-    "axe_selenium_python>=2.1.6",
-    "dataclasses-json>=0.5.6",
-    "pandas>=1.3.3",
-    "requests>=2.26.0",
-    "selenium>=3.141.0",
+    "axe_selenium_python>=2.1.6,<3",
+    "dataclasses-json>=0.5.6,<1",
+    "pandas>=1.3.3,<2",
+    "requests>=2.26.0,<3",
+    "scrapy>=2.5.1,<3",
+    "scrapy-selenium==0.0.7",
+    "selenium>=3.141.0,<4",
+    "tldextract>=3.1.2,<4",
+    "w3lib",  # no pin, pulled in with scrapy
 ]
 
 extra_requirements = {
@@ -74,7 +78,7 @@ setup(
     ),
     entry_points={
         "console_scripts": [
-            ("access-eval-generate-report=access_eval.bin.generate_report:main"),
+            ("parse-axe-results=access_eval.bin.parse_axe_results:main"),
         ],
     },
     install_requires=requirements,

@@ -31,19 +31,17 @@ jobs:
         chmod +x geckodriver
         sudo mv geckodriver /usr/local/bin/
 
-    - name: Generate Report -- Google
+    - name: Generate Report -- Test
       if: ${{ github.event_name == 'push' }}
       run: |
-        access-eval-generate-report \
-          https://google.com \
-          --output_dir google.com--report 
+        make test-generate-report
       
-    - name: Store Report -- Google
+    - name: Store Report -- Test
       if: ${{ github.event_name == 'push' }}
       uses: actions/upload-artifact@v2
       with:
-        name: google.com--report
-        path: google.com--report
+        name: jacksonmaxfield.github.io--archive
+        path: jacksonmaxfield.github.io
         # default 90 seems unnecessary for these test results
         retention-days: 1
 
@@ -58,15 +56,13 @@ jobs:
     - name: Generate Report -- Parametrized
       if: ${{ github.event_name == 'workflow_dispatch' }}
       run: |
-        access-eval-generate-report \
-          ${{ github.event.inputs.url }} \
-          --output_dir ${{ steps.get-clean-url-name.outputs.name }}--report
+        make generate-report ${{ github.event.inputs.url }}
     
     - name: Store Report -- Parametrized
       if: ${{ github.event_name == 'workflow_dispatch' }}
       uses: actions/upload-artifact@v2
       with:
-        name: ${{ steps.get-clean-url-name.outputs.name }}--report
-        path: ${{ steps.get-clean-url-name.outputs.name }}--report
+        name: ${{ steps.get-clean-url-name.outputs.name }}--archive
+        path: ${{ steps.get-clean-url-name.outputs.name }}
         # default 90 seems unnecessary for these test results
         retention-days: 14

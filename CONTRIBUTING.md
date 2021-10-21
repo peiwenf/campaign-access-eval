@@ -21,20 +21,19 @@ Ready to contribute? Here's how to set up `access-eval` for local development.
     git clone git@github.com:{your_name_here}/access-2020-localelections.git
     ```
 
-3. Install [geckodriver](https://github.com/mozilla/geckodriver/releases):
+3. Install `geckodriver`:
 
-    1. Download:
+    **Using Mac:**
 
-        - For Linux, download: geckodriver-v{version}-linux{arch}.tar.gz
-        - For Max, download: geckodriver-v{version}-macos{arch}.tar.gz
-        - For Windows, download: geckodriver-v{version}-win{arch}.tar.gz
+    1. `brew install geckodriver`
 
-        _(Fill in your version and architecture)_
+    **Using Linux:**
+
+    1. Download from [geckodriver releases]((https://github.com/mozilla/geckodriver/releases))
 
     2. Unzip or un-tar the downloaded file.
 
-    3. **On Mac & Linux**: add the path to the directory that contains
-       the executable to your PATH.
+    3. Add the path to the directory that contains the executable to your PATH.
        I.e. `export PATH=$PATH:/home/{user}/Downloads/`
 
         _(Fill in your username)_
