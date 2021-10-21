@@ -56,7 +56,7 @@ jobs:
     - name: Generate Report -- Parametrized
       if: ${{ github.event_name == 'workflow_dispatch' }}
       run: |
-        make generate-report ${{ github.event.inputs.url }}
+        make generate-report url=${{ github.event.inputs.url }}
     
     - name: Store Report -- Parametrized
       if: ${{ github.event_name == 'workflow_dispatch' }}
