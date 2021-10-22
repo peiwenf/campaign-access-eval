@@ -7,7 +7,6 @@ Welcome to access-eval's documentation!
    :caption: Contents:
 
    Overview <self>
-   installation
    Package Modules <modules>
    contributing
 
