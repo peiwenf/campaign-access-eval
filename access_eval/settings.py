@@ -63,6 +63,8 @@ SELENIUM_DRIVER_ARGUMENTS = ["-headless"]
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
+    # Disable middlewares by passing None
+    "scrapy.downloadermiddlewares.retry.RetryMiddleware": None,
     "scrapy_selenium.SeleniumMiddleware": 800,
     "access_eval.middlewares.redirected_offsite.OffsiteDownloaderMiddleware": 900,
 }
