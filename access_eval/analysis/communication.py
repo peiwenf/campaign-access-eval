@@ -17,13 +17,16 @@ We are a team of researchers at the University of Washington – We are reaching
 
 The content published at: '{url}' currently contains accessibility violations for hearing and/ or visually impaired people that depend on screen reading software.
 
-The most common violation types we found from your website are described below with our full results attached as a ZIP file. Each violation comes with an explanation of the issue and a link that you can provide to your website developer with directions for how to potentially fix the problem.
+The most common violation types we found from your website are described below and our full accessibility evaluation results can be found in the attached Google Drive link. Each violation comes with an explanation of the issue and a link that you can provide to your website developer with directions for how to potentially fix the problem.
 
 Most Common Violations:
 
 {violations_tree}
 
-If you would like any further instruction or help, please see our documentation explaining the layout and the content of the attached ZIP file which contains the full accessibility violation results: https://bits-research.github.io/access-2020-localelections/results_explainer.html
+
+<GOOGLE DRIVE LINK>
+
+If you would like any further instruction or help, please see our documentation explaining the layout and the content of the Google Drive folder which contains the full accessibility violation results: https://bits-research.github.io/access-2020-localelections/results_explainer.html
 
 Additionally please feel free to respond to this email and we will be happy to talk with any of your staff. We are not trying to sell you any services or consultation, we simply want to help ensure that all voters are able to view and interact with each candidate's website for the upcoming election.
 
