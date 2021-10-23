@@ -23,7 +23,7 @@ Most Common Violations:
 
 {violations_tree}
 
-
+Full Results:
 <GOOGLE DRIVE LINK>
 
 If you would like any further instruction or help, please see our documentation explaining the layout and the content of the Google Drive folder which contains the full accessibility violation results: https://bits-research.github.io/access-2020-localelections/results_explainer.html
