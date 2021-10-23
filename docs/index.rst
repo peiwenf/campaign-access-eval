@@ -8,6 +8,7 @@ Welcome to access-eval's documentation!
 
    Overview <self>
    Package Modules <modules>
+   results_explainer
    contributing
 
 .. mdinclude:: ../README.md

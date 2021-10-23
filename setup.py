@@ -55,7 +55,10 @@ extra_requirements = {
     "setup": setup_requirements,
     "test": test_requirements,
     "dev": dev_requirements,
-    "all": [*requirements, *dev_requirements,],
+    "all": [
+        *requirements,
+        *dev_requirements,
+    ],
 }
 
 setup(
@@ -75,7 +78,10 @@ setup(
     ),
     entry_points={
         "console_scripts": [
-            ("parse-axe-results=access_eval.bin.parse_axe_results:main"),
+            (
+                "process-access-eval-results="
+                "access_eval.bin.post_process_access_eval:main"
+            ),
         ],
     },
     install_requires=requirements,

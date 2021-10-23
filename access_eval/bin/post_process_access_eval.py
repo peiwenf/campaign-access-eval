@@ -6,6 +6,7 @@ import logging
 import sys
 import traceback
 
+from access_eval.analysis.communication import generate_email_text
 from access_eval.analysis.parse_axe_results import generate_high_level_statistics
 from access_eval.utils import clean_url
 
@@ -26,9 +27,10 @@ class Args(argparse.Namespace):
 
     def __parse(self) -> None:
         p = argparse.ArgumentParser(
-            prog="parse-axe-results",
+            prog="post_process_access_eval",
             description=(
-                "Generate high level statistics from a directory of axe results."
+                "Process the access evaluation results and generate any extra metadata "
+                "and documentation."
             ),
         )
         p.add_argument(
@@ -49,7 +51,10 @@ class Args(argparse.Namespace):
 def main() -> None:
     try:
         args = Args()
-        generate_high_level_statistics(head_dir=clean_url(args.head_dir))
+        cleaned_url = clean_url(args.head_dir)
+        generate_high_level_statistics(head_dir=cleaned_url)
+        generate_email_text(head_dir=cleaned_url)
+
     except Exception as e:
         log.error("=============================================")
         log.error("\n\n" + traceback.format_exc())

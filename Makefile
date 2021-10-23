@@ -65,4 +65,4 @@ test-generate-report: ## Generate an accessibility report for jacksonmaxfield.gi
 
 generate-report: ## Generate an accessibility evaluation report for provided url
 	scrapy crawl AccessEvalSpider -a url=$(url) -L INFO
-	parse-axe-results $(url)
+	process-access-eval-results $(url)
