@@ -121,7 +121,15 @@ def generate_high_level_statistics(head_dir: Union[str, Path]) -> None:
         # Compile simplified violations to table and
         # sort by the number of elements and severity
         compiled_simplified_violations = pd.DataFrame(
-            [v.to_dict() for v in simplified_violations]  # type: ignore
+            [v.to_dict() for v in simplified_violations],  # type: ignore
+            columns=[
+                "id",
+                "impact",
+                "impact_score",
+                "reason",
+                "number_of_elements_in_violation",
+                "help_url",
+            ],
         )
         compiled_simplified_violations = compiled_simplified_violations.sort_values(
             by=["number_of_elements_in_violation", "impact_score"], ascending=False
