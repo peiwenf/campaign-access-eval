@@ -10,7 +10,7 @@ class DatasetFields:
     Use this class as a data dictionary.
     """
 
-    website = "campaign_website_url"
+    campaign_website_url = "campaign_website_url"
     """
     str: The public URL for the campaign website.
 
@@ -81,7 +81,7 @@ class DatasetFields:
     - "Runoff"
     """
 
-    voting_population = "eligible_voting_population"
+    eligible_voting_population = "eligible_voting_population"
     """
     int: The total number of people eligible to vote in the election.
 
@@ -95,7 +95,7 @@ class DatasetFields:
     Pulled from external data source.
     """
 
-    candidate_votes = "number_of_votes_for_candidate"
+    number_of_votes_for_candidate = "number_of_votes_for_candidate"
     """
     int: The number of votes the candidate ultimately received.
 
@@ -133,7 +133,7 @@ class DatasetFields:
     Pulled from external data source.
     """
 
-    election_funding = "election_funding"
+    candidate_funding = "candidate_funding"
     """
     float: The amount of money the candidate received in donations during the campaign.
 
@@ -144,7 +144,9 @@ class DatasetFields:
 
     Notes
     -----
-    Calculated as sum of all other candidates election funding in same race.
+    Calculated as sum of all other candidates funding in same race.
+
+    Pulled from external data. (Not all candidates had websites scraped scraped)
     """
 
     funding_share = "funding_share"
@@ -173,7 +175,7 @@ class DatasetFields:
     equal.
     """
 
-    total_words = "number_of_words"
+    number_of_words = "number_of_words"
     """
     int: The total number of words found in the whole campaign website.
     Calculated on the latest version of the website.
@@ -184,7 +186,7 @@ class DatasetFields:
     - 12345
     """
 
-    unique_words = "number_of_unique_words"
+    number_of_unique_words = "number_of_unique_words"
     """
     int: The total number of unique words found in the whole campaign website.
     Calculated on the latest version of the website.
@@ -209,7 +211,7 @@ class DatasetFields:
     - -12.34
     """
 
-    pre_pages = "number_of_pages_pre"
+    number_of_pages_pre = "number_of_pages_pre"
     """
     int: The total number of pages found in the whole campaign website before contact.
 
@@ -219,7 +221,7 @@ class DatasetFields:
     - 42
     """
 
-    pre_errors = "number_of_total_errors_pre"
+    number_of_total_errors_pre = "number_of_total_errors_pre"
     """
     int: The total number of errors for the entire website before contact.
 
@@ -229,7 +231,7 @@ class DatasetFields:
     - 450
     """
 
-    pre_critical_errors = "number_of_critical_errors_pre"
+    number_of_critical_errors_pre = "number_of_critical_errors_pre"
     """
     int: The number of errors categorized as "critical" by aXe for the
     entire website before contact.
@@ -240,7 +242,7 @@ class DatasetFields:
     - 42
     """
 
-    pre_serious_errors = "number_of_serious_errors_pre"
+    number_of_serious_errors_pre = "number_of_serious_errors_pre"
     """
     int: The number of errors categorized as "serious" by aXe for the
     entire website before contact.
@@ -251,7 +253,7 @@ class DatasetFields:
     - 42
     """
 
-    pre_moderate_errors = "number_of_moderate_errors_pre"
+    number_of_moderate_errors_pre = "number_of_moderate_errors_pre"
     """
     int: The number of errors categorized as "moderate" by aXe for the
     entire website before contact.
@@ -262,7 +264,7 @@ class DatasetFields:
     - 42
     """
 
-    pre_minor_errors = "number_of_minor_errors_pre"
+    number_of_minor_errors_pre = "number_of_minor_errors_pre"
     """
     int: The number of errors categorized as "minor" by aXe for the
     entire website before contact.
@@ -273,7 +275,7 @@ class DatasetFields:
     - 42
     """
 
-    post_pages = "number_of_pages_post"
+    number_of_pages_post = "number_of_pages_post"
     """
     int: The total number of pages found in the whole campaign website after contact.
 
@@ -283,7 +285,7 @@ class DatasetFields:
     - 42
     """
 
-    post_errors = "number_of_total_errors_post"
+    number_of_total_errors_post = "number_of_total_errors_post"
     """
     int: The total number of errors for the entire website after contact.
 
@@ -293,7 +295,7 @@ class DatasetFields:
     - 450
     """
 
-    post_critical_errors = "number_of_critical_errors_post"
+    number_of_critical_errors_post = "number_of_critical_errors_post"
     """
     int: The number of errors categorized as "critical" by aXe for the
     entire website after contact.
@@ -304,7 +306,7 @@ class DatasetFields:
     - 42
     """
 
-    post_serious_errors = "number_of_serious_errors_post"
+    number_of_serious_errors_post = "number_of_serious_errors_post"
     """
     int: The number of errors categorized as "serious" by aXe for the
     entire website after contact.
@@ -315,7 +317,7 @@ class DatasetFields:
     - 42
     """
 
-    post_moderate_errors = "number_of_moderate_errors_post"
+    number_of_moderate_errors_post = "number_of_moderate_errors_post"
     """
     int: The number of errors categorized as "moderate" by aXe for the
     entire website after contact.
@@ -326,7 +328,7 @@ class DatasetFields:
     - 42
     """
 
-    post_minor_errors = "number_of_minor_errors_post"
+    number_of_minor_errors_post = "number_of_minor_errors_post"
     """
     int: The number of errors categorized as "minor" by aXe for the
     entire website after contact.
