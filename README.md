@@ -1,4 +1,4 @@
-# Access 2020 Local Elections
+# Campaign Website Accessibility Evaluation
 
 A proof of concept to evaluate the accessibility of political campaign
 digital materials.
@@ -40,6 +40,6 @@ make generate-report url="https://jacksonmaxfield.github.io/"
 
 If you are a maintainer of this library (or of a fork of this library),
 you can generate accessibility reports for any URL by using the
-[Generate Report GitHub Action](https://github.com/BITS-Research/access-2020-localelections/actions/workflows/generate-report.yml).
+[Generate Report GitHub Action](https://github.com/BITS-Research/campaign-access-eval/actions/workflows/generate-report.yml).
 
-![Screenshot of using workflow dispatch with URL parameter](https://raw.githubusercontent.com/BITS-Research/access-2020-localelections/main/docs/_static/workflow-dispatch.png)
+![Screenshot of using workflow dispatch with URL parameter](https://raw.githubusercontent.com/BITS-Research/campaign-access-eval/main/docs/_static/workflow-dispatch.png)

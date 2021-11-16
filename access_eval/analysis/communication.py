@@ -26,7 +26,7 @@ Most Common Violations:
 Full Results:
 <GOOGLE DRIVE LINK>
 
-If you would like any further instruction or help, please see our documentation explaining the layout and the content of the Google Drive folder which contains the full accessibility violation results: https://bits-research.github.io/access-2020-localelections/results_explainer.html
+If you would like any further instruction or help, please see our documentation explaining the layout and the content of the Google Drive folder which contains the full accessibility violation results: https://bits-research.github.io/campaign-access-eval/results_explainer.html
 
 Additionally please feel free to respond to this email and we will be happy to talk with any of your staff. We are not trying to sell you any services or consultation, we simply want to help ensure that all voters are able to view and interact with each candidate's website for the upcoming election.
 

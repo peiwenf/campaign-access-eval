@@ -13,12 +13,12 @@ project as it will always be the most up-to-date.
 
 Ready to contribute? Here's how to set up `access-eval` for local development.
 
-1. Fork the `access-2020-localelections` repo on GitHub.
+1. Fork the `campaign-access-eval` repo on GitHub.
 
 2. Clone your fork locally:
 
     ```bash
-    git clone git@github.com:{your_name_here}/access-2020-localelections.git
+    git clone git@github.com:{your_name_here}/campaign-access-eval.git
     ```
 
 3. Install `geckodriver`:
@@ -63,7 +63,7 @@ Ready to contribute? Here's how to set up `access-eval` for local development.
 5. Install the project in editable mode. (It is also recommended to work in a virtualenv or anaconda environment):
 
     ```bash
-    cd access-2020-localelections/
+    cd campaign-access-eval/
     pip install -e .[dev]
     ```
 

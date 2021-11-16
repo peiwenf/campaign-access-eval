@@ -97,7 +97,7 @@ setup(
     test_suite="access_eval/tests",
     tests_require=test_requirements,
     extras_require=extra_requirements,
-    url="https://github.com/BITS-Research/access-2020-localelections",
+    url="https://github.com/BITS-Research/campaign-access-eval",
     # Do not edit this string manually, always use bump2version
     # Details in CONTRIBUTING.rst
     version="0.0.0",
