@@ -1,6 +1,28 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from pathlib import Path
+
+###############################################################################
+
+
+ACCESS_EVAL_2021_STUDY_DATA = Path(__file__).parent / "data"
+ACCESS_EVAL_2021_WEB_SCRAPING = (
+    ACCESS_EVAL_2021_STUDY_DATA / "web-scraping-candidates.csv"
+)
+ACCESS_EVAL_2021_ELECTION_RESULTS = ACCESS_EVAL_2021_STUDY_DATA / "election-results.csv"
+ACCESS_EVAL_2021_PRE_CONTACT_EVALS_ZIP = (
+    ACCESS_EVAL_2021_STUDY_DATA / "pre-access-eval-results.zip"
+)
+ACCESS_EVAL_2021_POST_CONTACT_EVALS_ZIP = (
+    ACCESS_EVAL_2021_STUDY_DATA / "post-access-eval-results.zip"
+)
+
+ACCESS_EVAL_2021_PRE_CONTACT_EVALS_UNPACKED = Path("unpacked-pre-access-eval-results")
+ACCESS_EVAL_2021_POST_CONTACT_EVALS_UNPACKED = Path("unpacked-post-access-eval-results")
+
+###############################################################################
+
 
 class DatasetFields:
     """

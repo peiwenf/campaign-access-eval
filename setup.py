@@ -80,7 +80,9 @@ setup(
         "console_scripts": [
             (
                 "process-access-eval-results="
-                "access_eval.bin.post_process_access_eval:main"
+                "access_eval.bin.post_process_access_eval:main",
+                "process-access-eval-2021-results="
+                "access_eval.bin.process_access_eval_2021_results:main",
             ),
         ],
     },

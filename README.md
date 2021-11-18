@@ -18,7 +18,20 @@ In many cases we can combine the data produced by our tools with census data
 regarding disability populations and language-spoken-at-home statistics.
 But we can also study correlations between web accessibility and campaign spending.
 
-## Usage
+## Recreating Analysis
+
+To recreate our analysis of our preliminary 2021 study:
+
+1. Clone the repo
+2. In a terminal navigate to the cloned repo
+3. In the repo directory run
+
+```bash
+pip install .
+process-access-eval-2021-results
+```
+
+## aXe Scraper Usage
 
 In general, follow the instructions described in [CONTRIBUTING.md](./CONTRIBUTING.md) to
 install required packages.
@@ -36,7 +49,7 @@ i.e.
 make generate-report url="https://jacksonmaxfield.github.io/"
 ```
 
-### Maintainer Usage
+### Maintainer GitHub Action
 
 If you are a maintainer of this library (or of a fork of this library),
 you can generate accessibility reports for any URL by using the
