@@ -21,6 +21,8 @@ ACCESS_EVAL_2021_POST_CONTACT_EVALS_ZIP = (
 ACCESS_EVAL_2021_PRE_CONTACT_EVALS_UNPACKED = Path("unpacked-pre-access-eval-results")
 ACCESS_EVAL_2021_POST_CONTACT_EVALS_UNPACKED = Path("unpacked-post-access-eval-results")
 
+ACCESS_EVAL_2021_DATASET = ACCESS_EVAL_2021_STUDY_DATA / "2021-study-data.csv"
+
 ###############################################################################
 
 

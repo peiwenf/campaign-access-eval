@@ -27,9 +27,9 @@ class Args(argparse.Namespace):
 
     def __parse(self) -> None:
         p = argparse.ArgumentParser(
-            prog="process-access-eval-2021-results",
+            prog="generate-access-eval-2021-dataset",
             description=(
-                "Process the access evaluation results for all races covered in the "
+                "Generate the access evaluation dataset for all races covered in the "
                 "2021 preliminary study."
             ),
         )
@@ -62,8 +62,8 @@ def main() -> None:
             post_eval_data,
         )
 
-        # Store local
-        expanded_data.to_csv("combined-study-data.csv", index=False)
+        # Store to data dir
+        expanded_data.to_csv(constants.ACCESS_EVAL_2021_DATASET, index=False)
 
     except Exception as e:
         log.error("=============================================")

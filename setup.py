@@ -40,14 +40,16 @@ dev_requirements = [
 ]
 
 requirements = [
-    "axe_selenium_python>=2.1.6,<3",
-    "dataclasses-json>=0.5.6,<1",
-    "pandas>=1.3.3,<2",
-    "requests>=2.26.0,<3",
-    "scrapy>=2.5.1,<3",
+    "axe_selenium_python==2.1.6",
+    "dataclasses-json==0.5.6",
+    "pandas==1.3.4",
+    "requests==2.26.0",
+    "scrapy==2.5.1",
     "scrapy-selenium==0.0.7",
-    "selenium>=3.141.0,<4",
-    "tldextract>=3.1.2,<4",
+    "selenium==3.141.0",
+    "textstat==0.7.2",
+    "tldextract==3.1.2",
+    "tqdm>=4.62,<5",
     "w3lib",  # no pin, pulled in with scrapy
 ]
 
@@ -81,8 +83,8 @@ setup(
             (
                 "process-access-eval-results="
                 "access_eval.bin.post_process_access_eval:main",
-                "process-access-eval-2021-results="
-                "access_eval.bin.process_access_eval_2021_results:main",
+                "generate-access-eval-2021-dataset="
+                "access_eval.bin.generate_access_eval_2021_dataset:main",
             ),
         ],
     },
