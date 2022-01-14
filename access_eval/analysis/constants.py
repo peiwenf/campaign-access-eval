@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from pathlib import Path
+from typing import Callable, NamedTuple
 
 ###############################################################################
 
@@ -26,12 +27,28 @@ ACCESS_EVAL_2021_DATASET = ACCESS_EVAL_2021_STUDY_DATA / "2021-study-data.csv"
 ###############################################################################
 
 
+class ComputedField(NamedTuple):
+    name: str
+    func: Callable
+
+
 class DatasetFields:
     """
     This class stores all of the headers for the analysis dataset.
 
     Each header will have a description and some examples.
     Use this class as a data dictionary.
+    """
+
+    location = "location"
+    """
+    str: The municipality or general location where the election
+    took place.
+
+    Examples
+    --------
+    - "Seattle, WA"
+    - "New Orleans, LA"
     """
 
     campaign_website_url = "campaign_website_url"
@@ -127,6 +144,20 @@ class DatasetFields:
     --------
     - 12345
     - 2468
+
+    Notes
+    -----
+    Pulled from external data source.
+    """
+
+    number_of_votes_for_race = "number_of_votes_for_race"
+    """
+    int: The total number of votes returned in the election.
+
+    Examples
+    --------
+    - 123456
+    - 24680
 
     Notes
     -----
@@ -363,66 +394,171 @@ class DatasetFields:
     - 42
     """
 
-    diff_pages = "diff_pages"
+    trial = "trial"
     """
-    int: The difference in the number of pages before and after contact.
+    str: The categorical variable added when the data has been flattened
+    from "pre" and "post" having independent columns to now sharing columns.
 
     Examples
     --------
-    - 1
-    - 2
+    - "Pre"
+    - "Post"
+
+    Notes
+    -----
+    This is only added with the flattened data.
     """
 
-    diff_errors = "diff_errors"
+    error_type_x = "error_type_x"
     """
-    int: The difference in the number of errors before and after contact.
-
-    Examples
-    --------
-    - 12
-    - 42
-    """
-
-    diff_critical_errors = "diff_critical_errors"
-    """
-    int: The difference in the number of errors categorized as "critical" by aXe
-    before and after contact.
+    int: There are many columns that begin with 'error-type_'.
+    Such columns are just the aggregate value of that error type X for that campaign.
 
     Examples
     --------
-    - 12
-    - 42
+    - "error-type_label_pre": 12
+    - "error-type_frame-title_post": 4
+
+    Notes
+    -----
+    These columns have a computed field as well which is the `avg_error-type_x` for both
+    pre and post.
     """
 
-    diff_serious_errors = "diff_serious_errors"
-    """
-    int: The difference in the number of errors categorized as "serious" by aXe
-    before and after contact.
 
-    Examples
-    --------
-    - 12
-    - 42
-    """
+class ComputedFields:
 
-    diff_moderate_errors = "diff_moderate_errors"
-    """
-    int: The difference in the number of errors categorized as "moderate" by aXe
-    before and after contact.
+    # Differences
+    diff_pages = ComputedField(
+        name="diff_pages",
+        func=lambda data: data[DatasetFields.number_of_pages_post]
+        - data[DatasetFields.number_of_pages_pre],
+    )
 
-    Examples
-    --------
-    - 12
-    - 42
-    """
+    diff_errors = ComputedField(
+        name="diff_errors",
+        func=lambda data: data[DatasetFields.number_of_total_errors_post]
+        - data[DatasetFields.number_of_total_errors_pre],
+    )
 
-    diff_minor_errors = "diff_minor_errors"
-    """
-    int: The difference in the number of errors categorized as "minor" by aXe
-    before and after contact.
+    diff_critical_errors = ComputedField(
+        name="diff_critical_errors",
+        func=lambda data: data[DatasetFields.number_of_critical_errors_post]
+        - data[DatasetFields.number_of_critical_errors_pre],
+    )
 
-    Examples
-    --------
-    - 12
-    - 42
-    """
+    diff_serious_errors = ComputedField(
+        name="diff_serious_errors",
+        func=lambda data: data[DatasetFields.number_of_serious_errors_post]
+        - data[DatasetFields.number_of_serious_errors_pre],
+    )
+
+    diff_moderate_errors = ComputedField(
+        name="diff_moderate_errors",
+        func=lambda data: data[DatasetFields.number_of_moderate_errors_post]
+        - data[DatasetFields.number_of_moderate_errors_pre],
+    )
+
+    diff_minor_errors = ComputedField(
+        name="diff_minor_errors",
+        func=lambda data: data[DatasetFields.number_of_minor_errors_post]
+        - data[DatasetFields.number_of_minor_errors_pre],
+    )
+
+    # Averages
+    avg_errors_per_page_pre = ComputedField(
+        name="avg_errors_per_page_pre",
+        func=lambda data: data[DatasetFields.number_of_total_errors_pre]
+        / data[DatasetFields.number_of_pages_pre],
+    )
+
+    avg_errors_per_page_post = ComputedField(
+        name="avg_errors_per_page_post",
+        func=lambda data: data[DatasetFields.number_of_total_errors_post]
+        / data[DatasetFields.number_of_pages_post],
+    )
+
+    avg_critical_errors_per_page_pre = ComputedField(
+        name="avg_critical_errors_per_page_pre",
+        func=lambda data: data[DatasetFields.number_of_critical_errors_pre]
+        / data[DatasetFields.number_of_pages_pre],
+    )
+
+    avg_critical_errors_per_page_post = ComputedField(
+        name="avg_critical_errors_per_page_post",
+        func=lambda data: data[DatasetFields.number_of_critical_errors_post]
+        / data[DatasetFields.number_of_pages_post],
+    )
+
+    avg_serious_errors_per_page_pre = ComputedField(
+        name="avg_serious_errors_per_page_pre",
+        func=lambda data: data[DatasetFields.number_of_serious_errors_pre]
+        / data[DatasetFields.number_of_pages_pre],
+    )
+
+    avg_serious_errors_per_page_post = ComputedField(
+        name="avg_serious_errors_per_page_post",
+        func=lambda data: data[DatasetFields.number_of_serious_errors_post]
+        / data[DatasetFields.number_of_pages_post],
+    )
+
+    avg_moderate_errors_per_page_pre = ComputedField(
+        name="avg_moderate_errors_per_page_pre",
+        func=lambda data: data[DatasetFields.number_of_moderate_errors_pre]
+        / data[DatasetFields.number_of_pages_pre],
+    )
+
+    avg_moderate_errors_per_page_post = ComputedField(
+        name="avg_moderate_errors_per_page_post",
+        func=lambda data: data[DatasetFields.number_of_moderate_errors_post]
+        / data[DatasetFields.number_of_pages_post],
+    )
+
+    avg_minor_errors_per_page_pre = ComputedField(
+        name="avg_minor_errors_per_page_pre",
+        func=lambda data: data[DatasetFields.number_of_minor_errors_pre]
+        / data[DatasetFields.number_of_pages_pre],
+    )
+
+    avg_minor_errors_per_page_post = ComputedField(
+        name="avg_minor_errors_per_page_post",
+        func=lambda data: data[DatasetFields.number_of_minor_errors_post]
+        / data[DatasetFields.number_of_pages_post],
+    )
+
+    avg_number_of_words_per_page = ComputedField(
+        name="avg_number_of_words_per_page",
+        func=lambda data: data[DatasetFields.number_of_words]
+        / data[DatasetFields.number_of_pages_post],
+    )
+
+    # Vote share
+    vote_share_per_error = ComputedField(
+        name="vote_share_per_error",
+        func=lambda data: data[DatasetFields.vote_share]
+        / data[DatasetFields.number_of_total_errors_post],
+    )
+
+    vote_share_per_critical_error = ComputedField(
+        name="vote_share_per_critical_error",
+        func=lambda data: data[DatasetFields.vote_share]
+        / data[DatasetFields.number_of_critical_errors_post],
+    )
+
+    vote_share_per_serious_error = ComputedField(
+        name="vote_share_per_serious_error",
+        func=lambda data: data[DatasetFields.vote_share]
+        / data[DatasetFields.number_of_serious_errors_post],
+    )
+
+    vote_share_per_moderate_error = ComputedField(
+        name="vote_share_per_moderate_error",
+        func=lambda data: data[DatasetFields.vote_share]
+        / data[DatasetFields.number_of_moderate_errors_post],
+    )
+
+    vote_share_per_minor_error = ComputedField(
+        name="vote_share_per_minor_error",
+        func=lambda data: data[DatasetFields.vote_share]
+        / data[DatasetFields.number_of_minor_errors_post],
+    )

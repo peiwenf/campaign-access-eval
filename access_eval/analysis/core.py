@@ -16,9 +16,14 @@ from selenium.webdriver import FirefoxOptions
 from textstat import flesch_reading_ease
 from tqdm import tqdm
 
-from ..constants import SINGLE_PAGE_AXE_RESULTS_FILENAME
+from ..constants import AGGREGATE_AXE_RESULTS_FILENAME, SINGLE_PAGE_AXE_RESULTS_FILENAME
 from ..utils import clean_url
-from .constants import DatasetFields
+from .constants import (
+    ACCESS_EVAL_2021_DATASET,
+    ComputedField,
+    ComputedFields,
+    DatasetFields,
+)
 
 ###############################################################################
 
@@ -57,6 +62,7 @@ class CompiledMetrics:
     number_of_words: int = 0
     number_of_unique_words: int = 0
     ease_of_reading: float = 0.0
+    error_types: Optional[Dict[str, int]] = None
 
 
 ###############################################################################
@@ -195,6 +201,14 @@ def process_axe_evaluations_and_extras(
     else:
         ease_of_reading = sum(reading_measures) / len(reading_measures)
 
+    # Compile error types
+    agg_error_results = pd.read_csv(axe_results_dir / AGGREGATE_AXE_RESULTS_FILENAME)
+    error_types = {}
+    for _, row in agg_error_results[
+        ["id", "number_of_elements_in_violation"]
+    ].iterrows():
+        error_types[row.id] = row.number_of_elements_in_violation
+
     return CompiledMetrics(
         pages=parsed_metrics.pages,
         minor_violations=parsed_metrics.minor_violations,
@@ -204,6 +218,7 @@ def process_axe_evaluations_and_extras(
         number_of_words=words,
         number_of_unique_words=len(unique_words),
         ease_of_reading=ease_of_reading,
+        error_types=error_types,
     )
 
 
@@ -211,7 +226,16 @@ def _convert_metrics_to_expanded_data(
     metrics: CompiledMetrics,
     phase: str,
 ) -> Dict[str, int]:
+    # Unpack error types
+    if metrics.error_types is not None:
+        error_types = {
+            f"error-type_{k}_{phase}": v for k, v in metrics.error_types.items()
+        }
+    else:
+        error_types = {}
+
     return {
+        **error_types,
         f"number_of_pages_{phase}": metrics.pages,
         f"number_of_total_errors_{phase}": (
             metrics.critical_violations
@@ -344,3 +368,119 @@ def combine_election_data_with_axe_results(
         f"because they were missing a pre or post aXe result directory."
     )
     return pd.DataFrame(expanded_data)
+
+
+def load_access_eval_2021_dataset(
+    path: Optional[Union[str, Path]] = None
+) -> pd.DataFrame:
+    """
+    Load the default access eval 2021 dataset or a provided custom dataset
+    and add all computed fields.
+
+    Parameters
+    ----------
+    path: Optional[Union[str, Path]]
+        An optional path for custom data to load.
+        Default: None (load official 2021 access eval dataset)
+
+    Returns
+    -------
+    data: pd.DataFrame
+        The loaded dataframe object with all extra computed fields added.
+    """
+
+    if path is None:
+        path = ACCESS_EVAL_2021_DATASET
+
+    # Load base data
+    data = pd.read_csv(ACCESS_EVAL_2021_DATASET)
+
+    # Add computed fields
+    for attr in ComputedFields.__dict__.values():
+        if isinstance(attr, ComputedField):
+            data[attr.name] = attr.func(data)
+
+    # Collect error type cols with a value above 0 at the 25th percentile
+    common_error_cols = []
+    for col in data.columns:
+        if "error-type_" in col and data[col].quantile(0.75) > 0:
+            common_error_cols.append(col)
+
+    # Create norm cols
+    for common_error_col in common_error_cols:
+        error_type = common_error_col.replace("_pre", "").replace("_post", "")
+        if "_pre" in common_error_col:
+            avg_error_type_col_name = f"avg_{error_type}_per_page_pre"
+            norm_col = DatasetFields.number_of_pages_pre
+        else:
+            avg_error_type_col_name = f"avg_{error_type}_per_page_post"
+            norm_col = DatasetFields.number_of_pages_post
+
+        # Norm
+        data[avg_error_type_col_name] = data[common_error_col] / data[norm_col]
+
+    return data
+
+
+def flatten_access_eval_2021_dataset(
+    data: Optional[pd.DataFrame] = None,
+) -> pd.DataFrame:
+    """
+    Flatten the access eval 2021 dataset by adding a new column called "Trial"
+    which stores a categorical value for "Pre" or "Post" which allows us
+    to simplify the columns into just "avg_errors_per_page" for example instead
+    of having both "avg_errors_per_page_pre" and "avg_errors_per_page_post".
+
+    Parameters
+    ----------
+    data: pd.DataFrame
+        Preloaded access eval data.
+        Default: None (load access eval 2021 data)
+
+    Returns
+    -------
+    flattened: pd.DataFrame
+        The flattened dataset.
+
+    Notes
+    -----
+    This only provides a subset of the full dataset back.
+    Notably dropping the "diff" computed fields.
+    """
+    # Load default data
+    if data is None:
+        data = load_access_eval_2021_dataset()
+
+    # Drop general columns
+    data = data.drop(
+        [
+            ComputedFields.diff_pages.name,
+            ComputedFields.diff_errors.name,
+            ComputedFields.diff_minor_errors.name,
+            ComputedFields.diff_moderate_errors.name,
+            ComputedFields.diff_serious_errors.name,
+            ComputedFields.diff_critical_errors.name,
+        ],
+        axis=1,
+    )
+
+    # Get a list of the column names with pre and post in them
+    # (just for pre, we will use string edit to swap to post)
+    cols_pre = [col for col in data.columns if "_pre" in col]
+    cols_post = [col.replace("_pre", "_post") for col in cols_pre]
+
+    # Get all data for pre and post
+    # For pre, this means, take all columns _except_ post columns
+    # For post, this means, take all columns _except_ pre columns
+    pre = data[[col for col in data.columns if col not in cols_post]]
+    post = data[[col for col in data.columns if col not in cols_pre]]
+
+    # Drop the pre and post from the column names for the error data
+    pre = pre.rename(columns={col: col.replace("_pre", "") for col in pre.columns})
+    post = post.rename(columns={col: col.replace("_post", "") for col in post.columns})
+
+    # Add the tag for pre and post
+    pre[DatasetFields.trial] = "A - Pre"
+    post[DatasetFields.trial] = "B - Post"
+
+    return pd.concat([pre, post], ignore_index=True)

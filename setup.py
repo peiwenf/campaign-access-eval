@@ -40,6 +40,8 @@ dev_requirements = [
 ]
 
 requirements = [
+    "altair==4.1.0",
+    "altair-saver==0.5.0",
     "axe_selenium_python==2.1.6",
     "dataclasses-json==0.5.6",
     "pandas==1.3.4",
@@ -85,6 +87,8 @@ setup(
                 "access_eval.bin.post_process_access_eval:main",
                 "generate-access-eval-2021-dataset="
                 "access_eval.bin.generate_access_eval_2021_dataset:main",
+                "analyze-access-eval-2021-dataset="
+                "access_eval.bin.analyze_access_eval_2021_dataset:main",
             ),
         ],
     },
