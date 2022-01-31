@@ -2,13 +2,17 @@
 # -*- coding: utf-8 -*-
 
 from pathlib import Path
-from typing import List, Optional, Union
+from typing import Any, Dict, List, Optional, Union
 
 import altair as alt
 import pandas as pd
 
 from .constants import ComputedFields, DatasetFields
 from .core import flatten_access_eval_2021_dataset, load_access_eval_2021_dataset
+
+###############################################################################
+
+PLOTTING_DIR = Path("plots/").resolve()
 
 ###############################################################################
 
@@ -23,10 +27,11 @@ def plot_computed_fields_over_vote_share(
 
     # Apply default save path
     if save_path is None:
-        save_path = Path("vote-share.png")
+        save_path = PLOTTING_DIR / "vote-share.png"
 
     # Ensure save path is Path object
-    save_path = Path(save_path)
+    save_path = Path(save_path).resolve()
+    save_path.parent.mkdir(parents=True, exist_ok=True)
 
     # Generate chart
     vote_share = (
@@ -73,10 +78,11 @@ def plot_pre_post_fields_compare(
 
     # Apply default save path
     if save_path is None:
-        save_path = Path("pre-post.png")
+        save_path = PLOTTING_DIR / "pre-post.png"
 
     # Ensure save path is Path object
-    save_path = Path(save_path)
+    save_path = Path(save_path).resolve()
+    save_path.parent.mkdir(parents=True, exist_ok=True)
 
     pre_post = alt.hconcat()
     for pre, post in [
@@ -126,13 +132,15 @@ def plot_categorical_against_errors_boxplots(
     if data is None:
         data = flatten_access_eval_2021_dataset()
 
+    # Only work against the post data for summary stats as there was no difference
+    # pre and post (trial / contact)
+    data = data[data[DatasetFields.trial] == "B - Post"]
+
     # Set of categorical variables to use for box plot generation
     categorical_variables = [
         DatasetFields.electoral_position,
         DatasetFields.candidate_position,
-        DatasetFields.candidate_history,
         DatasetFields.election_result,
-        DatasetFields.contacted,
     ]
 
     # For each categorical variable, create a row of the different error measures
@@ -156,12 +164,6 @@ def plot_categorical_against_errors_boxplots(
                 alt.Chart(data)
                 .mark_boxplot(ticks=True)
                 .encode(
-                    x=alt.X(
-                        f"{DatasetFields.trial}:O",
-                        title=None,
-                        axis=alt.Axis(labels=False, ticks=False),
-                        scale=alt.Scale(padding=1),
-                    ),
                     y=alt.Y(
                         f"{feature_name}:Q",
                         scale=alt.Scale(
@@ -172,14 +174,14 @@ def plot_categorical_against_errors_boxplots(
                             padding=1,
                         ),
                     ),
-                    color=f"{DatasetFields.trial}:N",
                     column=alt.Column(
                         f"{cat_var}:N", spacing=40, header=alt.Header(orient="bottom")
                     ),
                 )
             )
 
-        save_path = Path(f"{cat_var}-errors-split.png").resolve()
+        save_path = PLOTTING_DIR / f"{cat_var}-errors-split.png"
+        save_path.parent.mkdir(parents=True, exist_ok=True)
         error_types.save(str(save_path))
         save_paths.append(save_path)
 
@@ -195,6 +197,15 @@ def plot_locations_against_errors_boxplots(
     # Load default data
     if data is None:
         data = flatten_access_eval_2021_dataset()
+
+    # Only work against the post data for summary stats as there was no difference
+    # pre and post (trial / contact)
+    data = data[data[DatasetFields.trial] == "B - Post"]
+
+    # Drop any locations with less than two campaigns
+    location_counts = data[DatasetFields.location].value_counts()
+    viable_locations = location_counts[location_counts < 2]
+    data = data[~data[DatasetFields.location].isin(viable_locations)]
 
     location_plots = alt.vconcat()
     for location in data[DatasetFields.location].unique():
@@ -218,12 +229,6 @@ def plot_locations_against_errors_boxplots(
                     alt.Chart(location_subset)
                     .mark_boxplot(ticks=True)
                     .encode(
-                        x=alt.X(
-                            f"{DatasetFields.trial}:O",
-                            title=location,
-                            axis=alt.Axis(labels=False, ticks=False),
-                            scale=alt.Scale(padding=1),
-                        ),
                         y=alt.Y(
                             f"{feature_name}:Q",
                             scale=alt.Scale(
@@ -234,7 +239,6 @@ def plot_locations_against_errors_boxplots(
                                 padding=1,
                             ),
                         ),
-                        color=f"{DatasetFields.trial}:N",
                         column=alt.Column(
                             f"{DatasetFields.candidate_position}:N",
                             spacing=60,
@@ -245,7 +249,8 @@ def plot_locations_against_errors_boxplots(
 
             location_plots &= error_types
 
-    save_path = Path("location-errors-split.png").resolve()
+    save_path = PLOTTING_DIR / "location-errors-split.png"
+    save_path.parent.mkdir(parents=True, exist_ok=True)
     location_plots.save(str(save_path))
 
     return save_path
@@ -261,6 +266,10 @@ def plot_error_types_boxplots(
     if data is None:
         data = flatten_access_eval_2021_dataset()
 
+    # Only work against the post data for summary stats as there was no difference
+    # pre and post (trial / contact)
+    data = data[data[DatasetFields.trial] == "B - Post"]
+
     # Use all pre-computed avg error type features
     common_error_cols = [col for col in data.columns if "avg_error-type_" in col]
 
@@ -272,18 +281,11 @@ def plot_error_types_boxplots(
             DatasetFields.electoral_position,
             DatasetFields.candidate_position,
             DatasetFields.election_result,
-            DatasetFields.location,
         ]:
             cat_var_plot |= (
                 alt.Chart(data)
                 .mark_boxplot(ticks=True)
                 .encode(
-                    x=alt.X(
-                        f"{DatasetFields.trial}:O",
-                        title=None,
-                        axis=alt.Axis(labels=False, ticks=False),
-                        scale=alt.Scale(padding=1),
-                    ),
                     y=alt.Y(
                         f"{err_type}:Q",
                         scale=alt.Scale(
@@ -294,7 +296,6 @@ def plot_error_types_boxplots(
                             padding=1,
                         ),
                     ),
-                    color=f"{DatasetFields.trial}:N",
                     column=alt.Column(
                         f"{cat_var}:N", spacing=60, header=alt.Header(orient="bottom")
                     ),
@@ -303,7 +304,278 @@ def plot_error_types_boxplots(
 
         err_type_plots &= cat_var_plot
 
-    save_path = Path("error-types-by-category-splits.png").resolve()
+    save_path = PLOTTING_DIR / "error-types-by-category-splits.png"
+    save_path.parent.mkdir(parents=True, exist_ok=True)
     err_type_plots.save(str(save_path))
 
     return save_path
+
+
+def _plot_and_fig_text(
+    data: pd.DataFrame,
+    plot_cols: List[str],
+    fig_text_prefix: str,
+    subset_name: str,
+    column: Optional[alt.Column] = None,
+    consistent_scale: bool = False,
+) -> None:
+    if consistent_scale:
+        scale_min = min([data[col].min() for col in plot_cols])
+        scale_max = max([data[col].max() for col in plot_cols])
+        scale = alt.Scale(
+            domain=(scale_min, scale_max),
+            padding=1,
+        )
+    else:
+        scale = alt.Scale()
+
+    chart = alt.hconcat(spacing=40)
+    for col in plot_cols:
+        if column is None:
+            chart |= (
+                alt.Chart(data)
+                .mark_boxplot()
+                .encode(
+                    y=alt.Y(
+                        col,
+                        scale=scale,
+                    )
+                )
+            )
+        else:
+            chart |= (
+                alt.Chart(data)
+                .mark_boxplot()
+                .encode(
+                    y=alt.Y(
+                        col,
+                        scale=scale,
+                    ),
+                    column=column,
+                )
+            )
+        fig_text_prefix += (
+            f" {col} "
+            f"mean: {round(data[col].mean(), 2)}, "
+            f"std: {round(data[col].std(), 2)}, "
+            f"min: {round(data[col].min(), 2)}, "
+            f"max: {round(data[col].max(), 2)}."
+        )
+    chart.properties(title="Campaign Website Content")
+
+    # Save fig and text
+    fig_save_path = PLOTTING_DIR / f"{subset_name}.png"
+    fig_save_path.parent.mkdir(parents=True, exist_ok=True)
+    chart.save(str(fig_save_path))
+    with open(fig_save_path.with_suffix(".txt"), "w") as open_f:
+        open_f.write(fig_text_prefix)
+
+
+def plot_summary_stats(
+    data: Optional[pd.DataFrame] = None,
+    subset_name: str = "",
+    keep_cols: List[str] = [],
+    plot_kwargs: Dict[str, Any] = {},
+) -> None:
+    """
+    Input data should be the "flattened" dataset.
+    """
+    # Load default data
+    if data is None:
+        data = flatten_access_eval_2021_dataset()
+
+    # Only work against the post data for summary stats as there was no difference
+    # pre and post (trial / contact)
+    data = data[data[DatasetFields.trial] == "B - Post"]
+
+    # Split into different commonly grouped stats
+    # Content is the actual website content
+    content_cols = [
+        DatasetFields.number_of_pages_post.replace("_post", ""),
+        DatasetFields.ease_of_reading,
+        DatasetFields.number_of_words,
+        DatasetFields.number_of_unique_words,
+    ]
+
+    # Error count norm stats
+    error_counts_normed_cols = [
+        c.replace("_post", "")
+        for c in [
+            ComputedFields.avg_errors_per_page_post.name,
+            ComputedFields.avg_minor_errors_per_page_post.name,
+            ComputedFields.avg_moderate_errors_per_page_post.name,
+            ComputedFields.avg_serious_errors_per_page_post.name,
+            ComputedFields.avg_critical_errors_per_page_post.name,
+        ]
+    ]
+
+    # Error types are the actual error value (what was the error)
+    error_types_cols = [c for c in data.columns if "avg_error-type_" in c]
+
+    # Create content plots
+    _plot_and_fig_text(
+        data=data[[*content_cols, *keep_cols]],
+        plot_cols=content_cols,
+        fig_text_prefix=(
+            "Distributions for key content statistics "
+            "gathered while scraping campaign websites."
+        ),
+        subset_name=f"{subset_name}content-stats",
+        **plot_kwargs,
+    )
+
+    # Create norm stats plots
+    _plot_and_fig_text(
+        data=data[[*error_counts_normed_cols, *keep_cols]],
+        plot_cols=error_counts_normed_cols,
+        fig_text_prefix=(
+            "Distributions for normalized error severity counts "
+            "(counts for each error severity / number of pages) "
+            "statistics gathered from scraping campaign websites."
+        ),
+        subset_name=f"{subset_name}error-severity",
+        consistent_scale=True,
+        **plot_kwargs,
+    )
+
+    # Create error types plots
+    _plot_and_fig_text(
+        data=data[[*error_types_cols, *keep_cols]],
+        plot_cols=error_types_cols,
+        fig_text_prefix=(
+            "Distributions for normalized error types counts "
+            "(counts for each error type / number of pages) "
+            "statistics gathered from scraping campaign websites."
+        ),
+        subset_name=f"{subset_name}error-types",
+        consistent_scale=True,
+        **plot_kwargs,
+    )
+
+
+def plot_location_based_summary_stats(
+    data: Optional[pd.DataFrame] = None,
+) -> None:
+    """
+    Input data should be the "flattened" dataset.
+    """
+    # Load default data
+    if data is None:
+        data = flatten_access_eval_2021_dataset()
+
+    # Only work against the post data for summary stats as there was no difference
+    # pre and post (trial / contact)
+    data = data[data[DatasetFields.trial] == "B - Post"]
+
+    # Drop any locations with less than two campaigns
+    location_counts = data[DatasetFields.location].value_counts()
+    viable_locations = location_counts[location_counts <= 2].index
+    data = data[~data[DatasetFields.location].isin(viable_locations)]
+
+    # Plot basic stats
+    plot_summary_stats(
+        data,
+        subset_name="location-split-",
+        keep_cols=[DatasetFields.location],
+        plot_kwargs={"column": alt.Column(DatasetFields.location, spacing=60)},
+    )
+
+
+def plot_election_result_based_summary_stats(
+    data: Optional[pd.DataFrame] = None,
+) -> None:
+    """
+    Input data should be the "flattened" dataset.
+    """
+    # Load default data
+    if data is None:
+        data = flatten_access_eval_2021_dataset()
+
+    # Only work against the post data for summary stats as there was no difference
+    # pre and post (trial / contact)
+    data = data[data[DatasetFields.trial] == "B - Post"]
+
+    # Plot basic stats
+    plot_summary_stats(
+        data,
+        subset_name="election-result-split-",
+        keep_cols=[DatasetFields.election_result],
+        plot_kwargs={"column": alt.Column(DatasetFields.election_result, spacing=40)},
+    )
+
+
+def plot_electoral_position_based_summary_stats(
+    data: Optional[pd.DataFrame] = None,
+) -> None:
+    """
+    Input data should be the "flattened" dataset.
+    """
+    # Load default data
+    if data is None:
+        data = flatten_access_eval_2021_dataset()
+
+    # Only work against the post data for summary stats as there was no difference
+    # pre and post (trial / contact)
+    data = data[data[DatasetFields.trial] == "B - Post"]
+
+    # Plot basic stats
+    plot_summary_stats(
+        data,
+        subset_name="election-position-split-",
+        keep_cols=[DatasetFields.electoral_position],
+        plot_kwargs={
+            "column": alt.Column(DatasetFields.electoral_position, spacing=40)
+        },
+    )
+
+
+def plot_candidate_position_based_summary_stats(
+    data: Optional[pd.DataFrame] = None,
+) -> None:
+    """
+    Input data should be the "flattened" dataset.
+    """
+    # Load default data
+    if data is None:
+        data = flatten_access_eval_2021_dataset()
+
+    # Only work against the post data for summary stats as there was no difference
+    # pre and post (trial / contact)
+    data = data[data[DatasetFields.trial] == "B - Post"]
+
+    # Plot basic stats
+    plot_summary_stats(
+        data,
+        subset_name="candidate-position-split-",
+        keep_cols=[DatasetFields.candidate_position],
+        plot_kwargs={
+            "column": alt.Column(DatasetFields.candidate_position, spacing=40)
+        },
+    )
+
+
+def plot_pre_post_errors(
+    data: Optional[pd.DataFrame] = None,
+) -> None:
+    """
+    Input data should be the "flattened" dataset.
+    """
+    # Load default data
+    if data is None:
+        data = flatten_access_eval_2021_dataset()
+
+    # Make pre post chart with split by contacted
+    chart = (
+        alt.Chart(data)
+        .mark_boxplot()
+        .encode(
+            x=DatasetFields.contacted,
+            y=f"{ComputedFields.avg_errors_per_page_post.name.replace('_post', ''):}:Q",
+            column=alt.Column(DatasetFields.trial, spacing=30),
+            color=DatasetFields.contacted,
+        )
+    )
+
+    # Save
+    PLOTTING_DIR.mkdir(parents=True, exist_ok=True)
+    chart.save(str(PLOTTING_DIR / "pre-post-errors.png"))

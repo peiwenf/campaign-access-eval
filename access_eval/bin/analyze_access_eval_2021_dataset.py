@@ -5,6 +5,7 @@ import argparse
 import logging
 import sys
 import traceback
+from shutil import rmtree
 
 from access_eval.analysis import plotting
 from access_eval.analysis.core import (
@@ -49,12 +50,22 @@ def main() -> None:
         data = load_access_eval_2021_dataset()
         flat_data = flatten_access_eval_2021_dataset(data)
 
+        # Clear prior plots
+        if plotting.PLOTTING_DIR.exists():
+            rmtree(plotting.PLOTTING_DIR)
+
         # Generate full plots
-        plotting.plot_computed_fields_over_vote_share(data)
-        plotting.plot_pre_post_fields_compare(data)
-        plotting.plot_categorical_against_errors_boxplots(flat_data)
-        plotting.plot_locations_against_errors_boxplots(flat_data)
-        plotting.plot_error_types_boxplots(flat_data)
+        # plotting.plot_computed_fields_over_vote_share(data)
+        # plotting.plot_pre_post_fields_compare(data)
+        # plotting.plot_categorical_against_errors_boxplots(flat_data)
+        # plotting.plot_locations_against_errors_boxplots(flat_data)
+        # plotting.plot_error_types_boxplots(flat_data)
+        plotting.plot_summary_stats(flat_data)
+        plotting.plot_location_based_summary_stats(flat_data)
+        plotting.plot_election_result_based_summary_stats(flat_data)
+        plotting.plot_electoral_position_based_summary_stats(flat_data)
+        plotting.plot_candidate_position_based_summary_stats(flat_data)
+        plotting.plot_pre_post_errors(flat_data)
 
     except Exception as e:
         log.error("=============================================")

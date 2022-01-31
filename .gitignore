@@ -127,7 +127,4 @@ jacksonmaxfield.github.io/
 unpacked-pre-access-eval-results/
 unpacked-post-access-eval-results/
 combined-study-data.csv
-pre-post*.png
-vote-share*.png
-*-errors-split.png
-error-types-by-category-splits.png
+plots/

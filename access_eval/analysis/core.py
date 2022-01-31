@@ -6,10 +6,11 @@ import logging
 import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, Optional, Set, Union
+from typing import Any, Dict, Optional, Set, Union
 
 import pandas as pd
 from dataclasses_json import dataclass_json
+from scipy import stats as sci_stats
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
 from selenium.webdriver import FirefoxOptions
@@ -484,3 +485,126 @@ def flatten_access_eval_2021_dataset(
     post[DatasetFields.trial] = "B - Post"
 
     return pd.concat([pre, post], ignore_index=True)
+
+
+def get_statistical_difference_crucial_stats(
+    data: Optional[pd.DataFrame] = None,
+) -> Dict[str, Union[sci_stats.stats.Ttest_indResult, Any]]:
+    """
+    aasdasd
+    """
+    # Load default data
+    if data is None:
+        data = flatten_access_eval_2021_dataset()
+
+    # Store all stats in dict to be returned
+    stats: Dict[str, sci_stats.stats.Ttest_indResult] = {}
+
+    # Get trends in mayoral vs council races
+    # Have to use Welch t-test here because we don't know / can't be certain
+    # of variance between samples
+    mayoral_races = data[data[DatasetFields.electoral_position] == "Mayor"]
+    council_races = data[data[DatasetFields.electoral_position] == "Council"]
+    stats["mayoral vs council | df"] = len(mayoral_races) + len(council_races) - 2
+
+    # Shorten number of pages col title
+    number_of_pages = DatasetFields.number_of_pages_post.replace("_post", "")
+
+    # Compute stats and save
+    stats["mayoral vs council | number of pages"] = sci_stats.ttest_ind(
+        mayoral_races[number_of_pages],
+        council_races[number_of_pages],
+        equal_var=False,
+    )
+    stats["mayoral vs council | number of words"] = sci_stats.ttest_ind(
+        mayoral_races[DatasetFields.number_of_words],
+        council_races[DatasetFields.number_of_words],
+        equal_var=False,
+    )
+    stats["mayoral vs council | number of unique words"] = sci_stats.ttest_ind(
+        mayoral_races[DatasetFields.number_of_unique_words],
+        council_races[DatasetFields.number_of_unique_words],
+        equal_var=False,
+    )
+
+    # Get avg percent of errors severities
+    avg_errors = data[
+        ComputedFields.avg_errors_per_page_post.name.replace("_post", "")
+    ].mean()
+    avg_minor_errors = data[
+        ComputedFields.avg_minor_errors_per_page_post.name.replace("_post", "")
+    ].mean()
+    avg_moderate_errors = data[
+        ComputedFields.avg_moderate_errors_per_page_post.name.replace("_post", "")
+    ].mean()
+    avg_serious_errors = data[
+        ComputedFields.avg_serious_errors_per_page_post.name.replace("_post", "")
+    ].mean()
+    avg_critical_errors = data[
+        ComputedFields.avg_critical_errors_per_page_post.name.replace("_post", "")
+    ].mean()
+    stats["percent minor errors of total"] = avg_minor_errors / avg_errors
+    stats["percent moderate errors of total"] = avg_moderate_errors / avg_errors
+    stats["percent serious errors of total"] = avg_serious_errors / avg_errors
+    stats["percent critical errors of total"] = avg_critical_errors / avg_errors
+
+    # Get majority of ease of reading
+    stats["majority ease of reading"] = data[DatasetFields.ease_of_reading].quantile(
+        [0.25, 0.75]
+    )
+
+    # Rank error types
+    avg_error_type_cols = [col for col in data.columns if "avg_error-type" in col]
+    err_type_averages: Dict[str, float] = {}
+    for col in avg_error_type_cols:
+        err_type_averages[col] = data[col].mean()
+    stats["ordered most common error types"] = dict(
+        sorted(
+            err_type_averages.items(),
+            key=lambda item: item[1],
+            reverse=True,
+        )
+    )
+
+    # Get trends for election outcome
+    winning_races = data[data[DatasetFields.election_result] == "Won"]
+    losing_races = data[data[DatasetFields.election_result] == "Lost"]
+    stats["win vs lose | number of pages"] = sci_stats.ttest_ind(
+        winning_races[number_of_pages],
+        losing_races[number_of_pages],
+        equal_var=False,
+    )
+    stats["win vs lose | ease of reading"] = sci_stats.ttest_ind(
+        winning_races[DatasetFields.ease_of_reading],
+        losing_races[DatasetFields.ease_of_reading],
+        equal_var=False,
+    )
+    stats["win vs lose | number of words"] = sci_stats.ttest_ind(
+        winning_races[DatasetFields.number_of_words],
+        losing_races[DatasetFields.number_of_words],
+        equal_var=False,
+    )
+    stats["win vs lose | number of unique words"] = sci_stats.ttest_ind(
+        winning_races[DatasetFields.number_of_unique_words],
+        losing_races[DatasetFields.number_of_unique_words],
+        equal_var=False,
+    )
+    stats[
+        "win vs lose | number of avg errors per page -- t-test"
+    ] = sci_stats.ttest_ind(
+        winning_races[
+            ComputedFields.avg_errors_per_page_post.name.replace("_post", "")
+        ],
+        losing_races[ComputedFields.avg_errors_per_page_post.name.replace("_post", "")],
+        equal_var=False,
+    )
+    stats["win vs lose | number of avg errors per page -- anova"] = sci_stats.f_oneway(
+        winning_races[
+            ComputedFields.avg_errors_per_page_post.name.replace("_post", "")
+        ],
+        losing_races[ComputedFields.avg_errors_per_page_post.name.replace("_post", "")],
+    )
+    stats["winning vs losing | df"] = len(winning_races) + len(losing_races) - 2
+    stats["n winning campaigns"] = len(winning_races)
+
+    return stats

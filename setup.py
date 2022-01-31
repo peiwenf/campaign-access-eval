@@ -46,6 +46,7 @@ requirements = [
     "dataclasses-json==0.5.6",
     "pandas==1.3.4",
     "requests==2.26.0",
+    "scipy==1.7.3",
     "scrapy==2.5.1",
     "scrapy-selenium==0.0.7",
     "selenium==3.141.0",
