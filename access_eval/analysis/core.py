@@ -489,9 +489,17 @@ def flatten_access_eval_2021_dataset(
 
 def get_statistical_difference_crucial_stats(
     data: Optional[pd.DataFrame] = None,
-) -> Dict[str, Union[sci_stats.stats.Ttest_indResult, Any]]:
+) -> Dict[str, Any]:
     """
-    aasdasd
+    Generate statistics we found useful in the 2021 paper.
+
+    This includes:
+    * mayoral vs council campaigns by content features.
+    * percent of total errors per each error severity level
+    * majority of ease of reading range
+    * ordered most common error types
+    * winning vs losing campaigns by content features
+    * winning vs losing campaigns by average errors by page
     """
     # Load default data
     if data is None:
@@ -606,5 +614,18 @@ def get_statistical_difference_crucial_stats(
     )
     stats["winning vs losing | df"] = len(winning_races) + len(losing_races) - 2
     stats["n winning campaigns"] = len(winning_races)
+
+    # Clean stats
+    for k, v in stats.items():
+        if isinstance(
+            v,
+            (
+                sci_stats.stats.Ttest_indResult,
+                sci_stats.stats.F_onewayResult,
+            ),
+        ):
+            stats[k] = {"statistic": v.statistic, "pvalue": v.pvalue}
+        elif isinstance(v, pd.Series):
+            stats[k] = v.tolist()
 
     return stats

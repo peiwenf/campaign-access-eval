@@ -28,8 +28,12 @@ To recreate our analysis of our preliminary 2021 study:
 
 ```bash
 pip install .
-process-access-eval-2021-results
+analyze-access-eval-2021-dataset
 ```
+
+This will generate all of the plots used in our paper and place them
+in a directory called `plots/`. It will also create a file called `stats.json`
+which contains the statistics used in our paper (generated from t-tests, ANOVA, etc.)
 
 ## aXe Scraper Usage
 
