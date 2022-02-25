@@ -44,6 +44,7 @@ requirements = [
     "altair-saver==0.5.0",
     "axe_selenium_python==2.1.6",
     "dataclasses-json==0.5.6",
+    "numpy==1.22.1",
     "pandas==1.3.4",
     "requests==2.26.0",
     "scipy==1.7.3",

@@ -11,7 +11,7 @@ from shutil import rmtree
 from access_eval.analysis import plotting
 from access_eval.analysis.core import (
     flatten_access_eval_2021_dataset,
-    get_statistical_difference_crucial_stats,
+    get_crucial_stats,
     load_access_eval_2021_dataset,
 )
 
@@ -74,7 +74,7 @@ def main() -> None:
         plotting.plot_pre_post_errors(flat_data)
 
         # Generate stats and print
-        stats = get_statistical_difference_crucial_stats(flat_data)
+        stats = get_crucial_stats(flat_data)
         log.info(f"Statistics examined in paper:\n{stats}")
         with open("stats.json", "w") as open_f:
             json.dump(stats, open_f)

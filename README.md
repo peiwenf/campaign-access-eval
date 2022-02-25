@@ -24,7 +24,8 @@ To recreate our analysis of our preliminary 2021 study:
 
 1. Clone the repo
 2. In a terminal navigate to the cloned repo
-3. In the repo directory run
+3. See [CONTRIBUTING.md](./CONTRIBUTING.md) for `geckodriver` installation instructions
+4. In the repo directory run:
 
 ```bash
 pip install .
