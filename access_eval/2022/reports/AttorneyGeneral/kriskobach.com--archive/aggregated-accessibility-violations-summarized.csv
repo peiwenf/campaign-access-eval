@@ -1,0 +1,10 @@
+id,impact,impact_score,reason,number_of_pages_affected,number_of_elements_in_violation,help_url
+color-contrast,serious,3,Elements must have sufficient color contrast,4,21,https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
+link-name,serious,3,Links must have discernible text,4,17,https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
+label,critical,4,Form elements must have labels,4,13,https://dequeuniversity.com/rules/axe/3.1/label?application=axeAPI
+label-title-only,serious,3,Form elements should have a visible label,4,13,https://dequeuniversity.com/rules/axe/3.1/label-title-only?application=axeAPI
+landmark-one-main,moderate,2,Page must have one main landmark,4,4,https://dequeuniversity.com/rules/axe/3.1/landmark-one-main?application=axeAPI
+page-has-heading-one,moderate,2,Page must contain a level-one heading,3,3,https://dequeuniversity.com/rules/axe/3.1/page-has-heading-one?application=axeAPI
+region,moderate,2,All page content must be contained by landmarks,3,3,https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI
+heading-order,moderate,2,Heading levels should only increase by one,1,3,https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
+bypass,serious,3,Page must have means to bypass repeated blocks,1,1,https://dequeuniversity.com/rules/axe/3.1/bypass?application=axeAPI

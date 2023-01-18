@@ -1,0 +1,5 @@
+id,impact,impact_score,reason,number_of_pages_affected,number_of_elements_in_violation,help_url
+document-title,serious,3,Documents must have <title> element to aid in navigation,1,1,https://dequeuniversity.com/rules/axe/3.1/document-title?application=axeAPI
+html-has-lang,serious,3,<html> element must have a lang attribute,1,1,https://dequeuniversity.com/rules/axe/3.1/html-has-lang?application=axeAPI
+landmark-one-main,moderate,2,Page must have one main landmark,1,1,https://dequeuniversity.com/rules/axe/3.1/landmark-one-main?application=axeAPI
+page-has-heading-one,moderate,2,Page must contain a level-one heading,1,1,https://dequeuniversity.com/rules/axe/3.1/page-has-heading-one?application=axeAPI

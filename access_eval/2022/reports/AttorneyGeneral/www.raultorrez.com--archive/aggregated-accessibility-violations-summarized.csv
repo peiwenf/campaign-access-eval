@@ -1,0 +1,9 @@
+id,impact,impact_score,reason,number_of_pages_affected,number_of_elements_in_violation,help_url
+link-name,serious,3,Links must have discernible text,17,51,https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
+color-contrast,serious,3,Elements must have sufficient color contrast,17,17,https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
+aria-roles,critical,4,ARIA roles used must conform to valid values,1,12,https://dequeuniversity.com/rules/axe/3.1/aria-roles?application=axeAPI
+heading-order,moderate,2,Heading levels should only increase by one,4,6,https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
+button-name,critical,4,Buttons must have discernible text,5,5,https://dequeuniversity.com/rules/axe/3.1/button-name?application=axeAPI
+empty-heading,minor,1,Headings must not be empty,4,5,https://dequeuniversity.com/rules/axe/3.1/empty-heading?application=axeAPI
+page-has-heading-one,moderate,2,Page must contain a level-one heading,3,3,https://dequeuniversity.com/rules/axe/3.1/page-has-heading-one?application=axeAPI
+aria-valid-attr,critical,4,ARIA attributes must conform to valid names,1,1,https://dequeuniversity.com/rules/axe/3.1/aria-valid-attr?application=axeAPI

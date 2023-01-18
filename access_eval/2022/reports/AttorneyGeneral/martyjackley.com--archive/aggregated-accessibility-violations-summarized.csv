@@ -1,0 +1,11 @@
+id,impact,impact_score,reason,number_of_pages_affected,number_of_elements_in_violation,help_url
+link-name,serious,3,Links must have discernible text,8,30,https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
+color-contrast,serious,3,Elements must have sufficient color contrast,8,19,https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
+duplicate-id,minor,1,id attribute value must be unique,8,17,https://dequeuniversity.com/rules/axe/3.1/duplicate-id?application=axeAPI
+image-alt,critical,4,Images must have alternate text,1,10,https://dequeuniversity.com/rules/axe/3.1/image-alt?application=axeAPI
+meta-viewport,critical,4,Zooming and scaling must not be disabled,8,8,https://dequeuniversity.com/rules/axe/3.1/meta-viewport?application=axeAPI
+landmark-one-main,moderate,2,Page must have one main landmark,8,8,https://dequeuniversity.com/rules/axe/3.1/landmark-one-main?application=axeAPI
+page-has-heading-one,moderate,2,Page must contain a level-one heading,8,8,https://dequeuniversity.com/rules/axe/3.1/page-has-heading-one?application=axeAPI
+region,moderate,2,All page content must be contained by landmarks,8,8,https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI
+label,critical,4,Form elements must have labels,1,6,https://dequeuniversity.com/rules/axe/3.1/label?application=axeAPI
+frame-title,serious,3,Frames must have title attribute,2,2,https://dequeuniversity.com/rules/axe/3.1/frame-title?application=axeAPI
