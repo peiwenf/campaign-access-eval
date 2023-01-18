@@ -50,7 +50,7 @@ jobs:
       if: ${{ github.event_name == 'workflow_dispatch' }}
       run: |
         cleaned=$(python -c 'from access_eval.utils import clean_url; print(clean_url("${{ github.event.inputs.url }}"));')
-        echo "::set-output name=cleaned::$cleaned"
+        echo "cleaned=$cleaned" >> $GITHUB_OUTPUT
     
     - name: Generate Report -- Parametrized
       if: ${{ github.event_name == 'workflow_dispatch' }}
