@@ -1,0 +1,21 @@
+access\_eval.middlewares package
+================================
+
+Submodules
+----------
+
+access\_eval.middlewares.redirected\_offsite module
+---------------------------------------------------
+
+.. automodule:: access_eval.middlewares.redirected_offsite
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: access_eval.middlewares
+   :members:
+   :undoc-members:
+   :show-inheritance:

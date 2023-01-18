@@ -1,0 +1,823 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>access_eval.analysis.constants &mdash; access-eval 0.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> access-eval
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Package Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../access_eval.html">access_eval package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../access_eval.analysis.html">access_eval.analysis package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../access_eval.bin.html">access_eval.bin package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../access_eval.middlewares.html">access_eval.middlewares package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../access_eval.spiders.html">access_eval.spiders package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#module-access_eval.constants">access_eval.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#module-access_eval.settings">access_eval.settings module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#module-access_eval.utils">access_eval.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../access_eval.html#access_eval.utils.clean_url"><code class="docutils literal notranslate"><span class="pre">clean_url()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#module-access_eval.version">access_eval.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#module-access_eval">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../results_explainer.html">Understanding the Produced Results</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../results_explainer.html#report">Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../results_explainer.html#basic-contents">Basic Contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../results_explainer.html#accessibility-violations-summarized">Accessibility Violations Summarized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../results_explainer.html#full-axe-results">Full Axe Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../results_explainer.html#aggregated-accessibility-violations-summarized">Aggregated Accessibility Violations Summarized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../results_explainer.html#pages-not-included">Pages Not Included</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#developer-installation">Developer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#get-started">Get Started!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#deploying">Deploying</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">access-eval</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>access_eval.analysis.constants</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for access_eval.analysis.constants</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">NamedTuple</span>
+
+<span class="c1">###############################################################################</span>
+
+
+<span class="n">ACCESS_EVAL_2021_STUDY_DATA</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span>
+<span class="n">ACCESS_EVAL_2021_WEB_SCRAPING</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">ACCESS_EVAL_2021_STUDY_DATA</span> <span class="o">/</span> <span class="s2">&quot;web-scraping-candidates.csv&quot;</span>
+<span class="p">)</span>
+<span class="n">ACCESS_EVAL_2021_ELECTION_RESULTS</span> <span class="o">=</span> <span class="n">ACCESS_EVAL_2021_STUDY_DATA</span> <span class="o">/</span> <span class="s2">&quot;election-results.csv&quot;</span>
+<span class="n">ACCESS_EVAL_2021_PRE_CONTACT_EVALS_ZIP</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">ACCESS_EVAL_2021_STUDY_DATA</span> <span class="o">/</span> <span class="s2">&quot;pre-access-eval-results.zip&quot;</span>
+<span class="p">)</span>
+<span class="n">ACCESS_EVAL_2021_POST_CONTACT_EVALS_ZIP</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">ACCESS_EVAL_2021_STUDY_DATA</span> <span class="o">/</span> <span class="s2">&quot;post-access-eval-results.zip&quot;</span>
+<span class="p">)</span>
+
+<span class="n">ACCESS_EVAL_2021_PRE_CONTACT_EVALS_UNPACKED</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;unpacked-pre-access-eval-results&quot;</span><span class="p">)</span>
+<span class="n">ACCESS_EVAL_2021_POST_CONTACT_EVALS_UNPACKED</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;unpacked-post-access-eval-results&quot;</span><span class="p">)</span>
+
+<span class="n">ACCESS_EVAL_2021_DATASET</span> <span class="o">=</span> <span class="n">ACCESS_EVAL_2021_STUDY_DATA</span> <span class="o">/</span> <span class="s2">&quot;2021-study-data.csv&quot;</span>
+
+<span class="c1">###############################################################################</span>
+
+
+<div class="viewcode-block" id="ComputedField"><a class="viewcode-back" href="../../../access_eval.analysis.html#access_eval.analysis.constants.ComputedField">[docs]</a><span class="k">class</span> <span class="nc">ComputedField</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span></div>
+
+
+<div class="viewcode-block" id="DatasetFields"><a class="viewcode-back" href="../../../access_eval.analysis.html#access_eval.analysis.constants.DatasetFields">[docs]</a><span class="k">class</span> <span class="nc">DatasetFields</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This class stores all of the headers for the analysis dataset.</span>
+
+<span class="sd">    Each header will have a description and some examples.</span>
+<span class="sd">    Use this class as a data dictionary.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">location</span> <span class="o">=</span> <span class="s2">&quot;location&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    str: The municipality or general location where the election</span>
+<span class="sd">    took place.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - &quot;Seattle, WA&quot;</span>
+<span class="sd">    - &quot;New Orleans, LA&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">campaign_website_url</span> <span class="o">=</span> <span class="s2">&quot;campaign_website_url&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    str: The public URL for the campaign website.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - &quot;https://www.google.com&quot;</span>
+<span class="sd">    - &quot;https://jacksonmaxfield.github.io&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">electoral_position</span> <span class="o">=</span> <span class="s2">&quot;electoral_position&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    str: The position the candidate was running for.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - &quot;Mayor&quot;</span>
+<span class="sd">    - &quot;Council&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">candidate_position</span> <span class="o">=</span> <span class="s2">&quot;candidate_position&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    str: Categorical value for if the candidate is the incumbent, a challenger, or open.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - &quot;Incumbent&quot;</span>
+<span class="sd">    - &quot;Challenger&quot;</span>
+<span class="sd">    - &quot;Open&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">candidate_history</span> <span class="o">=</span> <span class="s2">&quot;candidate_history&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    str: Categorical value for the electoral history of the candidate.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - &quot;In-Office&quot;</span>
+<span class="sd">    - &quot;Previously-Elected&quot;</span>
+<span class="sd">    - &quot;Never-Held-Office&quot;</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Pulled from external data source.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">election_result</span> <span class="o">=</span> <span class="s2">&quot;election_result&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    str: Categorical value for is the candidate won (or progressed) or not.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - &quot;Won&quot;</span>
+<span class="sd">    - &quot;Lost&quot;</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Pulled from external data source.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">election_type</span> <span class="o">=</span> <span class="s2">&quot;election_type&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    str: Categorical value for the type of election.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - &quot;Primary&quot;</span>
+<span class="sd">    - &quot;General&quot;</span>
+<span class="sd">    - &quot;Runoff&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">eligible_voting_population</span> <span class="o">=</span> <span class="s2">&quot;eligible_voting_population&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The total number of people eligible to vote in the election.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 123456</span>
+<span class="sd">    - 24680</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Pulled from external data source.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">number_of_votes_for_candidate</span> <span class="o">=</span> <span class="s2">&quot;number_of_votes_for_candidate&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The number of votes the candidate ultimately received.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 12345</span>
+<span class="sd">    - 2468</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Pulled from external data source.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">number_of_votes_for_race</span> <span class="o">=</span> <span class="s2">&quot;number_of_votes_for_race&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The total number of votes returned in the election.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 123456</span>
+<span class="sd">    - 24680</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Pulled from external data source.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">vote_share</span> <span class="o">=</span> <span class="s2">&quot;vote_share&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    float: The number of votes the candidate received over the number of votes possible.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 0.21</span>
+<span class="sd">    - 0.47</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">race_funding</span> <span class="o">=</span> <span class="s2">&quot;race_funding&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    float: The amount of money all candidates in the race received during the campaign.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 10000000.00</span>
+<span class="sd">    - 24500000.00</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Pulled from external data source.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">candidate_funding</span> <span class="o">=</span> <span class="s2">&quot;candidate_funding&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    float: The amount of money the candidate received in donations during the campaign.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 100000.00</span>
+<span class="sd">    - 350000.00</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    Calculated as sum of all other candidates funding in same race.</span>
+
+<span class="sd">    Pulled from external data. (Not all candidates had websites scraped scraped)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">funding_share</span> <span class="o">=</span> <span class="s2">&quot;funding_share&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    float: The amount of money the candidate received in donations over the amount of</span>
+<span class="sd">    money all candidates received during the campaign.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 0.21</span>
+<span class="sd">    - 0.47</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">contacted</span> <span class="o">=</span> <span class="s2">&quot;contacted&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    str: Was the campaign contacted with the aXe evaluation summarization.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - &quot;Contacted&quot;</span>
+<span class="sd">    - &quot;Not-Contacted&quot;</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    If the campaign was not contacted, the values for pre and post features are set to</span>
+<span class="sd">    equal.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">number_of_words</span> <span class="o">=</span> <span class="s2">&quot;number_of_words&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The total number of words found in the whole campaign website.</span>
+<span class="sd">    Calculated on the latest version of the website.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 9999</span>
+<span class="sd">    - 12345</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">number_of_unique_words</span> <span class="o">=</span> <span class="s2">&quot;number_of_unique_words&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The total number of unique words found in the whole campaign website.</span>
+<span class="sd">    Calculated on the latest version of the website.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 999</span>
+<span class="sd">    - 1234</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">ease_of_reading</span> <span class="o">=</span> <span class="s2">&quot;ease_of_reading&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    float: The lexical complexity of the entire website.</span>
+<span class="sd">    Calculated on the latest version of the website.</span>
+
+<span class="sd">    See: https://github.com/shivam5992/textstat#the-flesch-reading-ease-formula</span>
+<span class="sd">    for more information.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 123.45</span>
+<span class="sd">    - -12.34</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">number_of_pages_pre</span> <span class="o">=</span> <span class="s2">&quot;number_of_pages_pre&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The total number of pages found in the whole campaign website before contact.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 12</span>
+<span class="sd">    - 42</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">number_of_total_errors_pre</span> <span class="o">=</span> <span class="s2">&quot;number_of_total_errors_pre&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The total number of errors for the entire website before contact.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 234</span>
+<span class="sd">    - 450</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">number_of_critical_errors_pre</span> <span class="o">=</span> <span class="s2">&quot;number_of_critical_errors_pre&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The number of errors categorized as &quot;critical&quot; by aXe for the</span>
+<span class="sd">    entire website before contact.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 123</span>
+<span class="sd">    - 42</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">number_of_serious_errors_pre</span> <span class="o">=</span> <span class="s2">&quot;number_of_serious_errors_pre&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The number of errors categorized as &quot;serious&quot; by aXe for the</span>
+<span class="sd">    entire website before contact.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 123</span>
+<span class="sd">    - 42</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">number_of_moderate_errors_pre</span> <span class="o">=</span> <span class="s2">&quot;number_of_moderate_errors_pre&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The number of errors categorized as &quot;moderate&quot; by aXe for the</span>
+<span class="sd">    entire website before contact.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 123</span>
+<span class="sd">    - 42</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">number_of_minor_errors_pre</span> <span class="o">=</span> <span class="s2">&quot;number_of_minor_errors_pre&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The number of errors categorized as &quot;minor&quot; by aXe for the</span>
+<span class="sd">    entire website before contact.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 123</span>
+<span class="sd">    - 42</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">number_of_pages_post</span> <span class="o">=</span> <span class="s2">&quot;number_of_pages_post&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The total number of pages found in the whole campaign website after contact.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 12</span>
+<span class="sd">    - 42</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">number_of_total_errors_post</span> <span class="o">=</span> <span class="s2">&quot;number_of_total_errors_post&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The total number of errors for the entire website after contact.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 234</span>
+<span class="sd">    - 450</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">number_of_critical_errors_post</span> <span class="o">=</span> <span class="s2">&quot;number_of_critical_errors_post&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The number of errors categorized as &quot;critical&quot; by aXe for the</span>
+<span class="sd">    entire website after contact.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 123</span>
+<span class="sd">    - 42</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">number_of_serious_errors_post</span> <span class="o">=</span> <span class="s2">&quot;number_of_serious_errors_post&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The number of errors categorized as &quot;serious&quot; by aXe for the</span>
+<span class="sd">    entire website after contact.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 123</span>
+<span class="sd">    - 42</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">number_of_moderate_errors_post</span> <span class="o">=</span> <span class="s2">&quot;number_of_moderate_errors_post&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The number of errors categorized as &quot;moderate&quot; by aXe for the</span>
+<span class="sd">    entire website after contact.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 123</span>
+<span class="sd">    - 42</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">number_of_minor_errors_post</span> <span class="o">=</span> <span class="s2">&quot;number_of_minor_errors_post&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: The number of errors categorized as &quot;minor&quot; by aXe for the</span>
+<span class="sd">    entire website after contact.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - 123</span>
+<span class="sd">    - 42</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">trial</span> <span class="o">=</span> <span class="s2">&quot;trial&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    str: The categorical variable added when the data has been flattened</span>
+<span class="sd">    from &quot;pre&quot; and &quot;post&quot; having independent columns to now sharing columns.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - &quot;Pre&quot;</span>
+<span class="sd">    - &quot;Post&quot;</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This is only added with the flattened data.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">error_type_x</span> <span class="o">=</span> <span class="s2">&quot;error_type_x&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    int: There are many columns that begin with &#39;error-type_&#39;.</span>
+<span class="sd">    Such columns are just the aggregate value of that error type X for that campaign.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    - &quot;error-type_label_pre&quot;: 12</span>
+<span class="sd">    - &quot;error-type_frame-title_post&quot;: 4</span>
+
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    These columns have a computed field as well which is the `avg_error-type_x` for both</span>
+<span class="sd">    pre and post.</span>
+<span class="sd">    &quot;&quot;&quot;</span></div>
+
+
+<div class="viewcode-block" id="ComputedFields"><a class="viewcode-back" href="../../../access_eval.analysis.html#access_eval.analysis.constants.ComputedFields">[docs]</a><span class="k">class</span> <span class="nc">ComputedFields</span><span class="p">:</span>
+
+    <span class="c1"># Differences</span>
+    <span class="n">diff_pages</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;diff_pages&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_pages_post</span><span class="p">]</span>
+        <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_pages_pre</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">diff_errors</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;diff_errors&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_total_errors_post</span><span class="p">]</span>
+        <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_total_errors_pre</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">diff_critical_errors</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;diff_critical_errors&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_critical_errors_post</span><span class="p">]</span>
+        <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_critical_errors_pre</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">diff_serious_errors</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;diff_serious_errors&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_serious_errors_post</span><span class="p">]</span>
+        <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_serious_errors_pre</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">diff_moderate_errors</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;diff_moderate_errors&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_moderate_errors_post</span><span class="p">]</span>
+        <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_moderate_errors_pre</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">diff_minor_errors</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;diff_minor_errors&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_minor_errors_post</span><span class="p">]</span>
+        <span class="o">-</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_minor_errors_pre</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Averages</span>
+    <span class="n">avg_errors_per_page_pre</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;avg_errors_per_page_pre&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_total_errors_pre</span><span class="p">]</span>
+        <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_pages_pre</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">avg_errors_per_page_post</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;avg_errors_per_page_post&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_total_errors_post</span><span class="p">]</span>
+        <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_pages_post</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">avg_critical_errors_per_page_pre</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;avg_critical_errors_per_page_pre&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_critical_errors_pre</span><span class="p">]</span>
+        <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_pages_pre</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">avg_critical_errors_per_page_post</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;avg_critical_errors_per_page_post&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_critical_errors_post</span><span class="p">]</span>
+        <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_pages_post</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">avg_serious_errors_per_page_pre</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;avg_serious_errors_per_page_pre&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_serious_errors_pre</span><span class="p">]</span>
+        <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_pages_pre</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">avg_serious_errors_per_page_post</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;avg_serious_errors_per_page_post&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_serious_errors_post</span><span class="p">]</span>
+        <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_pages_post</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">avg_moderate_errors_per_page_pre</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;avg_moderate_errors_per_page_pre&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_moderate_errors_pre</span><span class="p">]</span>
+        <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_pages_pre</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">avg_moderate_errors_per_page_post</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;avg_moderate_errors_per_page_post&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_moderate_errors_post</span><span class="p">]</span>
+        <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_pages_post</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">avg_minor_errors_per_page_pre</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;avg_minor_errors_per_page_pre&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_minor_errors_pre</span><span class="p">]</span>
+        <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_pages_pre</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">avg_minor_errors_per_page_post</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;avg_minor_errors_per_page_post&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_minor_errors_post</span><span class="p">]</span>
+        <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_pages_post</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">avg_number_of_words_per_page</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;avg_number_of_words_per_page&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_words</span><span class="p">]</span>
+        <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_pages_post</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Vote share</span>
+    <span class="n">vote_share_per_error</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;vote_share_per_error&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">vote_share</span><span class="p">]</span>
+        <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_total_errors_post</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">vote_share_per_critical_error</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;vote_share_per_critical_error&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">vote_share</span><span class="p">]</span>
+        <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_critical_errors_post</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">vote_share_per_serious_error</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;vote_share_per_serious_error&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">vote_share</span><span class="p">]</span>
+        <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_serious_errors_post</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">vote_share_per_moderate_error</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;vote_share_per_moderate_error&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">vote_share</span><span class="p">]</span>
+        <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_moderate_errors_post</span><span class="p">],</span>
+    <span class="p">)</span>
+
+    <span class="n">vote_share_per_minor_error</span> <span class="o">=</span> <span class="n">ComputedField</span><span class="p">(</span>
+        <span class="n">name</span><span class="o">=</span><span class="s2">&quot;vote_share_per_minor_error&quot;</span><span class="p">,</span>
+        <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">data</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">vote_share</span><span class="p">]</span>
+        <span class="o">/</span> <span class="n">data</span><span class="p">[</span><span class="n">DatasetFields</span><span class="o">.</span><span class="n">number_of_minor_errors_post</span><span class="p">],</span>
+    <span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, BITS-Research.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-H8TQGX35PM"
+></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-H8TQGX35PM");
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+access\_eval.analysis package
+=============================
+
+Submodules
+----------
+
+access\_eval.analysis.communication module
+------------------------------------------
+
+.. automodule:: access_eval.analysis.communication
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+access\_eval.analysis.constants module
+--------------------------------------
+
+.. automodule:: access_eval.analysis.constants
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+access\_eval.analysis.core module
+---------------------------------
+
+.. automodule:: access_eval.analysis.core
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+access\_eval.analysis.parse\_axe\_results module
+------------------------------------------------
+
+.. automodule:: access_eval.analysis.parse_axe_results
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+access\_eval.analysis.plotting module
+-------------------------------------
+
+.. automodule:: access_eval.analysis.plotting
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+access\_eval.analysis.utils module
+----------------------------------
+
+.. automodule:: access_eval.analysis.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: access_eval.analysis
+   :members:
+   :undoc-members:
+   :show-inheritance:

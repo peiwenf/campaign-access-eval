@@ -1,0 +1,56 @@
+access\_eval package
+====================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   access_eval.analysis
+   access_eval.bin
+   access_eval.middlewares
+   access_eval.spiders
+
+Submodules
+----------
+
+access\_eval.constants module
+-----------------------------
+
+.. automodule:: access_eval.constants
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+access\_eval.settings module
+----------------------------
+
+.. automodule:: access_eval.settings
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+access\_eval.utils module
+-------------------------
+
+.. automodule:: access_eval.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+access\_eval.version module
+---------------------------
+
+.. automodule:: access_eval.version
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: access_eval
+   :members:
+   :undoc-members:
+   :show-inheritance:

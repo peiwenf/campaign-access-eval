@@ -1,0 +1,357 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>access_eval.analysis.communication &mdash; access-eval 0.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> access-eval
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Package Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../access_eval.html">access_eval package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../access_eval.analysis.html">access_eval.analysis package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../access_eval.bin.html">access_eval.bin package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../access_eval.middlewares.html">access_eval.middlewares package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../access_eval.spiders.html">access_eval.spiders package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#module-access_eval.constants">access_eval.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#module-access_eval.settings">access_eval.settings module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#module-access_eval.utils">access_eval.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../access_eval.html#access_eval.utils.clean_url"><code class="docutils literal notranslate"><span class="pre">clean_url()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#module-access_eval.version">access_eval.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#module-access_eval">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../results_explainer.html">Understanding the Produced Results</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../results_explainer.html#report">Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../results_explainer.html#basic-contents">Basic Contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../results_explainer.html#accessibility-violations-summarized">Accessibility Violations Summarized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../results_explainer.html#full-axe-results">Full Axe Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../results_explainer.html#aggregated-accessibility-violations-summarized">Aggregated Accessibility Violations Summarized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../results_explainer.html#pages-not-included">Pages Not Included</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#developer-installation">Developer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#get-started">Get Started!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#deploying">Deploying</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">access-eval</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>access_eval.analysis.communication</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for access_eval.analysis.communication</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">constants</span>
+
+<span class="c1">###############################################################################</span>
+
+<span class="n">TEMPLATE_TEXT</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Hello,</span>
+
+<span class="s2">We are a team of researchers at the University of Washington – We are reaching out to candidates running for an elected position about the accessibility of their campaign website.</span>
+
+<span class="s2">The content published at: &#39;</span><span class="si">{url}</span><span class="s2">&#39; currently contains accessibility violations for hearing and/ or visually impaired people that depend on screen reading software.</span>
+
+<span class="s2">The most common violation types we found from your website are described below and our full accessibility evaluation results can be found in the attached Google Drive link. Each violation comes with an explanation of the issue and a link that you can provide to your website developer with directions for how to potentially fix the problem.</span>
+
+<span class="s2">Most Common Violations:</span>
+
+<span class="si">{violations_tree}</span>
+
+<span class="s2">Full Results:</span>
+<span class="s2">&lt;GOOGLE DRIVE LINK&gt;</span>
+
+<span class="s2">If you would like any further instruction or help, please see our documentation explaining the layout and the content of the Google Drive folder which contains the full accessibility violation results: https://bits-research.github.io/campaign-access-eval/results_explainer.html</span>
+
+<span class="s2">Additionally please feel free to respond to this email and we will be happy to talk with any of your staff. We are not trying to sell you any services or consultation, we simply want to help ensure that all voters are able to view and interact with each candidate&#39;s website for the upcoming election.</span>
+
+<span class="s2">Thank you for your time and attention – And best of luck with your campaign.</span>
+
+<span class="s2">Nic Weber</span>
+<span class="s2">University of Washington School of Information</span>
+<span class="s2">nmweber@uw.edu</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>  <span class="c1"># noqa: 501</span>
+
+
+<div class="viewcode-block" id="generate_email_text"><a class="viewcode-back" href="../../../access_eval.analysis.html#access_eval.analysis.communication.generate_email_text">[docs]</a><span class="k">def</span> <span class="nf">generate_email_text</span><span class="p">(</span><span class="n">head_dir</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate email text from data found in the provided directory.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    head_dir: Union[str, Path]</span>
+<span class="sd">        The directory with all results.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    email_text: Path</span>
+<span class="sd">        Path to text file containing suggested email message.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Validate provided dir</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">head_dir</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">head_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">head_dir</span><span class="p">)</span>
+
+    <span class="c1"># Resolve</span>
+    <span class="n">head_dir</span> <span class="o">=</span> <span class="n">head_dir</span><span class="o">.</span><span class="n">resolve</span><span class="p">(</span><span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">head_dir</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">NotADirectoryError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">head_dir</span><span class="p">))</span>
+
+    <span class="c1"># Get and read the aggregate results</span>
+    <span class="n">agg_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">head_dir</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">AGGREGATE_AXE_RESULTS_FILENAME</span><span class="p">)</span>
+
+    <span class="c1"># Get head for top results</span>
+    <span class="n">agg_head</span> <span class="o">=</span> <span class="n">agg_results</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+
+    <span class="c1"># Construct violations tree</span>
+    <span class="n">violations_tree</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">agg_head</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">this_section</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="sa">f</span><span class="s2">&quot;Impact: </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">impact</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;Description: </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">reason</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;Further Documentation: </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">help_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="sa">f</span><span class="s2">&quot;Number of Pages Affected: </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">number_of_pages_affected</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Number of Individual Elements Affected: &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">number_of_elements_in_violation</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">),</span>
+        <span class="p">]</span>
+        <span class="n">this_section_str</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n\t</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">this_section</span><span class="p">)</span>
+        <span class="n">violations_tree</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="se">\n\t</span><span class="si">{</span><span class="n">this_section_str</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Convert violations tree to text</span>
+    <span class="n">violations_tree_str</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">violations_tree</span><span class="p">)</span>
+
+    <span class="c1"># Format email and store</span>
+    <span class="n">email_txt</span> <span class="o">=</span> <span class="n">TEMPLATE_TEXT</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">url</span><span class="o">=</span><span class="n">head_dir</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+        <span class="n">violations_tree</span><span class="o">=</span><span class="n">violations_tree_str</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">email_text_filepath</span> <span class="o">=</span> <span class="n">head_dir</span> <span class="o">/</span> <span class="s2">&quot;email.txt&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">email_text_filepath</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">open_f</span><span class="p">:</span>
+        <span class="n">open_f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">email_txt</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">email_text_filepath</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, BITS-Research.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-H8TQGX35PM"
+></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-H8TQGX35PM");
+</script>
+
+
+</body>
+</html>

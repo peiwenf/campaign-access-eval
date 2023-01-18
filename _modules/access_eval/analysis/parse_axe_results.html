@@ -1,0 +1,417 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>access_eval.analysis.parse_axe_results &mdash; access-eval 0.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> access-eval
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Package Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../access_eval.html">access_eval package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../access_eval.analysis.html">access_eval.analysis package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../access_eval.bin.html">access_eval.bin package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../access_eval.middlewares.html">access_eval.middlewares package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../access_eval.spiders.html">access_eval.spiders package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#module-access_eval.constants">access_eval.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#module-access_eval.settings">access_eval.settings module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#module-access_eval.utils">access_eval.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../access_eval.html#access_eval.utils.clean_url"><code class="docutils literal notranslate"><span class="pre">clean_url()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#module-access_eval.version">access_eval.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../access_eval.html#module-access_eval">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../results_explainer.html">Understanding the Produced Results</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../results_explainer.html#report">Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../results_explainer.html#basic-contents">Basic Contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../results_explainer.html#accessibility-violations-summarized">Accessibility Violations Summarized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../results_explainer.html#full-axe-results">Full Axe Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../results_explainer.html#aggregated-accessibility-violations-summarized">Aggregated Accessibility Violations Summarized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../results_explainer.html#pages-not-included">Pages Not Included</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#developer-installation">Developer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#get-started">Get Started!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../contributing.html#deploying">Deploying</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">access-eval</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>access_eval.analysis.parse_axe_results</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for access_eval.analysis.parse_axe_results</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">dataclasses_json</span> <span class="kn">import</span> <span class="n">dataclass_json</span>
+
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">constants</span>
+
+<span class="c1">###############################################################################</span>
+<span class="c1"># Axe look up tables and constants</span>
+<span class="c1"># Pulled from: https://github.com/dequelabs/axe-core/blob/55fb7c00e866ab17486ff114932199f8f9661389/build/configure.js#L42  # noqa: E501</span>
+
+
+<div class="viewcode-block" id="AxeImpact"><a class="viewcode-back" href="../../../access_eval.analysis.html#access_eval.analysis.parse_axe_results.AxeImpact">[docs]</a><span class="k">class</span> <span class="nc">AxeImpact</span><span class="p">:</span>
+    <span class="n">minor</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;minor&quot;</span>
+    <span class="n">moderate</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;moderate&quot;</span>
+    <span class="n">serious</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;serious&quot;</span>
+    <span class="n">critical</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;critical&quot;</span></div>
+
+
+<span class="n">AXE_IMPACT_SCORE_LUT</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">AxeImpact</span><span class="o">.</span><span class="n">minor</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">AxeImpact</span><span class="o">.</span><span class="n">moderate</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="n">AxeImpact</span><span class="o">.</span><span class="n">serious</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="n">AxeImpact</span><span class="o">.</span><span class="n">critical</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+<span class="p">}</span>
+
+
+<div class="viewcode-block" id="SimplifiedAxeViolation"><a class="viewcode-back" href="../../../access_eval.analysis.html#access_eval.analysis.parse_axe_results.SimplifiedAxeViolation">[docs]</a><span class="nd">@dataclass_json</span>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">SimplifiedAxeViolation</span><span class="p">:</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">impact</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">impact_score</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">number_of_elements_in_violation</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">help_url</span><span class="p">:</span> <span class="nb">str</span></div>
+
+
+<div class="viewcode-block" id="AggregateAxeViolation"><a class="viewcode-back" href="../../../access_eval.analysis.html#access_eval.analysis.parse_axe_results.AggregateAxeViolation">[docs]</a><span class="nd">@dataclass_json</span>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">AggregateAxeViolation</span><span class="p">:</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">impact</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">impact_score</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">reason</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">number_of_pages_affected</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">number_of_elements_in_violation</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">help_url</span><span class="p">:</span> <span class="nb">str</span></div>
+
+
+<span class="c1">###############################################################################</span>
+
+
+<div class="viewcode-block" id="generate_high_level_statistics"><a class="viewcode-back" href="../../../access_eval.analysis.html#access_eval.analysis.parse_axe_results.generate_high_level_statistics">[docs]</a><span class="k">def</span> <span class="nf">generate_high_level_statistics</span><span class="p">(</span><span class="n">head_dir</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Recursive glob of all directories for axe results and generate high level</span>
+<span class="sd">    statistics both for single page and whole website.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    head_dir: Union[str, Path]</span>
+<span class="sd">        The directory to start the recursive glob for axe results in.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Get all individual page axe results to consolidate</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">head_dir</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">head_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">head_dir</span><span class="p">)</span>
+
+    <span class="c1"># Resolve</span>
+    <span class="n">head_dir</span> <span class="o">=</span> <span class="n">head_dir</span><span class="o">.</span><span class="n">resolve</span><span class="p">(</span><span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">head_dir</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="ne">NotADirectoryError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">head_dir</span><span class="p">))</span>
+
+    <span class="c1"># Iter results and combine</span>
+    <span class="n">overall_stats</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">axe_result_file</span> <span class="ow">in</span> <span class="n">head_dir</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;**/</span><span class="si">{</span><span class="n">constants</span><span class="o">.</span><span class="n">SINGLE_PAGE_AXE_RESULTS_FILENAME</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">):</span>
+        <span class="n">simplified_violations</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># Open result file</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">axe_result_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">open_f</span><span class="p">:</span>
+            <span class="n">single_page_axe_results</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">open_f</span><span class="p">)</span>
+
+        <span class="c1"># Parse and simplify</span>
+        <span class="k">for</span> <span class="n">violation</span> <span class="ow">in</span> <span class="n">single_page_axe_results</span><span class="p">[</span><span class="s2">&quot;violations&quot;</span><span class="p">]:</span>
+            <span class="c1"># Add to this pages violations</span>
+            <span class="n">simplified_violations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">SimplifiedAxeViolation</span><span class="p">(</span>
+                    <span class="nb">id</span><span class="o">=</span><span class="n">violation</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span>
+                    <span class="n">impact</span><span class="o">=</span><span class="n">violation</span><span class="p">[</span><span class="s2">&quot;impact&quot;</span><span class="p">],</span>
+                    <span class="n">impact_score</span><span class="o">=</span><span class="n">AXE_IMPACT_SCORE_LUT</span><span class="p">[</span><span class="n">violation</span><span class="p">[</span><span class="s2">&quot;impact&quot;</span><span class="p">]],</span>
+                    <span class="n">reason</span><span class="o">=</span><span class="n">violation</span><span class="p">[</span><span class="s2">&quot;help&quot;</span><span class="p">],</span>
+                    <span class="n">number_of_elements_in_violation</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">violation</span><span class="p">[</span><span class="s2">&quot;nodes&quot;</span><span class="p">]),</span>
+                    <span class="n">help_url</span><span class="o">=</span><span class="n">violation</span><span class="p">[</span><span class="s2">&quot;helpUrl&quot;</span><span class="p">],</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+
+            <span class="c1"># Set or update the overall stats</span>
+            <span class="k">if</span> <span class="n">violation</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">overall_stats</span><span class="p">:</span>
+                <span class="n">overall_stats</span><span class="p">[</span><span class="n">violation</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">AggregateAxeViolation</span><span class="p">(</span>
+                    <span class="nb">id</span><span class="o">=</span><span class="n">violation</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span>
+                    <span class="n">impact</span><span class="o">=</span><span class="n">violation</span><span class="p">[</span><span class="s2">&quot;impact&quot;</span><span class="p">],</span>
+                    <span class="n">impact_score</span><span class="o">=</span><span class="n">AXE_IMPACT_SCORE_LUT</span><span class="p">[</span><span class="n">violation</span><span class="p">[</span><span class="s2">&quot;impact&quot;</span><span class="p">]],</span>
+                    <span class="n">reason</span><span class="o">=</span><span class="n">violation</span><span class="p">[</span><span class="s2">&quot;help&quot;</span><span class="p">],</span>
+                    <span class="n">number_of_pages_affected</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                    <span class="n">number_of_elements_in_violation</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">violation</span><span class="p">[</span><span class="s2">&quot;nodes&quot;</span><span class="p">]),</span>
+                    <span class="n">help_url</span><span class="o">=</span><span class="n">violation</span><span class="p">[</span><span class="s2">&quot;helpUrl&quot;</span><span class="p">],</span>
+                <span class="p">)</span>
+
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">overall_stats</span><span class="p">[</span><span class="n">violation</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">number_of_pages_affected</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">overall_stats</span><span class="p">[</span><span class="n">violation</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">number_of_elements_in_violation</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span>
+                    <span class="n">violation</span><span class="p">[</span><span class="s2">&quot;nodes&quot;</span><span class="p">]</span>
+                <span class="p">)</span>
+
+        <span class="c1"># Compile simplified violations to table and</span>
+        <span class="c1"># sort by the number of elements and severity</span>
+        <span class="n">compiled_simplified_violations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">simplified_violations</span><span class="p">],</span>  <span class="c1"># type: ignore</span>
+            <span class="n">columns</span><span class="o">=</span><span class="p">[</span>
+                <span class="s2">&quot;id&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;impact&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;impact_score&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;reason&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;number_of_elements_in_violation&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;help_url&quot;</span><span class="p">,</span>
+            <span class="p">],</span>
+        <span class="p">)</span>
+        <span class="n">compiled_simplified_violations</span> <span class="o">=</span> <span class="n">compiled_simplified_violations</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+            <span class="n">by</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;number_of_elements_in_violation&quot;</span><span class="p">,</span> <span class="s2">&quot;impact_score&quot;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)</span>
+        <span class="n">compiled_simplified_violations</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span>
+            <span class="n">axe_result_file</span><span class="o">.</span><span class="n">parent</span>
+            <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">SINGLE_PAGE_SIMPLIFIED_AXE_RESULTS_FILENAME</span><span class="p">,</span>
+            <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="c1"># Compile overall stats</span>
+    <span class="n">overall_simplified_violations</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+        <span class="p">[</span><span class="n">v</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">overall_stats</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>  <span class="c1"># type: ignore</span>
+    <span class="p">)</span>
+    <span class="n">overall_simplified_violations</span> <span class="o">=</span> <span class="n">overall_simplified_violations</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
+        <span class="n">by</span><span class="o">=</span><span class="p">[</span>
+            <span class="s2">&quot;number_of_elements_in_violation&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;impact_score&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;number_of_pages_affected&quot;</span><span class="p">,</span>
+        <span class="p">],</span>
+        <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">overall_simplified_violations</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span>
+        <span class="n">head_dir</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">AGGREGATE_AXE_RESULTS_FILENAME</span><span class="p">,</span>
+        <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, BITS-Research.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-H8TQGX35PM"
+></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-H8TQGX35PM");
+</script>
+
+
+</body>
+</html>

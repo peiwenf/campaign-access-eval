@@ -1,0 +1,21 @@
+access\_eval.spiders package
+============================
+
+Submodules
+----------
+
+access\_eval.spiders.access\_eval\_spider module
+------------------------------------------------
+
+.. automodule:: access_eval.spiders.access_eval_spider
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: access_eval.spiders
+   :members:
+   :undoc-members:
+   :show-inheritance:

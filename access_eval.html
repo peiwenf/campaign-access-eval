@@ -1,0 +1,540 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>access_eval package &mdash; access-eval 0.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="access_eval.analysis package" href="access_eval.analysis.html" />
+    <link rel="prev" title="access_eval" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> access-eval
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Package Modules</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">access_eval package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html">access_eval.analysis package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.bin.html">access_eval.bin package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.middlewares.html">access_eval.middlewares package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.spiders.html">access_eval.spiders package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-access_eval.constants">access_eval.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-access_eval.settings">access_eval.settings module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-access_eval.utils">access_eval.utils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#access_eval.utils.clean_url"><code class="docutils literal notranslate"><span class="pre">clean_url()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-access_eval.version">access_eval.version module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-access_eval">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="results_explainer.html">Understanding the Produced Results</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="results_explainer.html#report">Report</a></li>
+<li class="toctree-l2"><a class="reference internal" href="results_explainer.html#basic-contents">Basic Contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="results_explainer.html#accessibility-violations-summarized">Accessibility Violations Summarized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="results_explainer.html#full-axe-results">Full Axe Results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="results_explainer.html#aggregated-accessibility-violations-summarized">Aggregated Accessibility Violations Summarized</a></li>
+<li class="toctree-l3"><a class="reference internal" href="results_explainer.html#pages-not-included">Pages Not Included</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#developer-installation">Developer Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#get-started">Get Started!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#deploying">Deploying</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">access-eval</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">access_eval</a> &raquo;</li>
+        
+      <li>access_eval package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/access_eval.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="access_eval.analysis.html" class="btn btn-neutral float-right" title="access_eval.analysis package" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="modules.html" class="btn btn-neutral float-left" title="access_eval" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="access-eval-package">
+<h1>access_eval package<a class="headerlink" href="#access-eval-package" title="Permalink to this heading">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="access_eval.analysis.html">access_eval.analysis package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.analysis.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.analysis.html#module-access_eval.analysis.communication">access_eval.analysis.communication module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.communication.generate_email_text"><code class="docutils literal notranslate"><span class="pre">generate_email_text()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.analysis.html#module-access_eval.analysis.constants">access_eval.analysis.constants module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedField"><code class="docutils literal notranslate"><span class="pre">ComputedField</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedField.func"><code class="docutils literal notranslate"><span class="pre">ComputedField.func</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedField.name"><code class="docutils literal notranslate"><span class="pre">ComputedField.name</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields"><code class="docutils literal notranslate"><span class="pre">ComputedFields</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.avg_critical_errors_per_page_post"><code class="docutils literal notranslate"><span class="pre">ComputedFields.avg_critical_errors_per_page_post</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.avg_critical_errors_per_page_pre"><code class="docutils literal notranslate"><span class="pre">ComputedFields.avg_critical_errors_per_page_pre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.avg_errors_per_page_post"><code class="docutils literal notranslate"><span class="pre">ComputedFields.avg_errors_per_page_post</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.avg_errors_per_page_pre"><code class="docutils literal notranslate"><span class="pre">ComputedFields.avg_errors_per_page_pre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.avg_minor_errors_per_page_post"><code class="docutils literal notranslate"><span class="pre">ComputedFields.avg_minor_errors_per_page_post</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.avg_minor_errors_per_page_pre"><code class="docutils literal notranslate"><span class="pre">ComputedFields.avg_minor_errors_per_page_pre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.avg_moderate_errors_per_page_post"><code class="docutils literal notranslate"><span class="pre">ComputedFields.avg_moderate_errors_per_page_post</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.avg_moderate_errors_per_page_pre"><code class="docutils literal notranslate"><span class="pre">ComputedFields.avg_moderate_errors_per_page_pre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.avg_number_of_words_per_page"><code class="docutils literal notranslate"><span class="pre">ComputedFields.avg_number_of_words_per_page</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.avg_serious_errors_per_page_post"><code class="docutils literal notranslate"><span class="pre">ComputedFields.avg_serious_errors_per_page_post</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.avg_serious_errors_per_page_pre"><code class="docutils literal notranslate"><span class="pre">ComputedFields.avg_serious_errors_per_page_pre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.diff_critical_errors"><code class="docutils literal notranslate"><span class="pre">ComputedFields.diff_critical_errors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.diff_errors"><code class="docutils literal notranslate"><span class="pre">ComputedFields.diff_errors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.diff_minor_errors"><code class="docutils literal notranslate"><span class="pre">ComputedFields.diff_minor_errors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.diff_moderate_errors"><code class="docutils literal notranslate"><span class="pre">ComputedFields.diff_moderate_errors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.diff_pages"><code class="docutils literal notranslate"><span class="pre">ComputedFields.diff_pages</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.diff_serious_errors"><code class="docutils literal notranslate"><span class="pre">ComputedFields.diff_serious_errors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.vote_share_per_critical_error"><code class="docutils literal notranslate"><span class="pre">ComputedFields.vote_share_per_critical_error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.vote_share_per_error"><code class="docutils literal notranslate"><span class="pre">ComputedFields.vote_share_per_error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.vote_share_per_minor_error"><code class="docutils literal notranslate"><span class="pre">ComputedFields.vote_share_per_minor_error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.vote_share_per_moderate_error"><code class="docutils literal notranslate"><span class="pre">ComputedFields.vote_share_per_moderate_error</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.ComputedFields.vote_share_per_serious_error"><code class="docutils literal notranslate"><span class="pre">ComputedFields.vote_share_per_serious_error</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields"><code class="docutils literal notranslate"><span class="pre">DatasetFields</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.campaign_website_url"><code class="docutils literal notranslate"><span class="pre">DatasetFields.campaign_website_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.candidate_funding"><code class="docutils literal notranslate"><span class="pre">DatasetFields.candidate_funding</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.candidate_history"><code class="docutils literal notranslate"><span class="pre">DatasetFields.candidate_history</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.candidate_position"><code class="docutils literal notranslate"><span class="pre">DatasetFields.candidate_position</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.contacted"><code class="docutils literal notranslate"><span class="pre">DatasetFields.contacted</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.ease_of_reading"><code class="docutils literal notranslate"><span class="pre">DatasetFields.ease_of_reading</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.election_result"><code class="docutils literal notranslate"><span class="pre">DatasetFields.election_result</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.election_type"><code class="docutils literal notranslate"><span class="pre">DatasetFields.election_type</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.electoral_position"><code class="docutils literal notranslate"><span class="pre">DatasetFields.electoral_position</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.eligible_voting_population"><code class="docutils literal notranslate"><span class="pre">DatasetFields.eligible_voting_population</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.error_type_x"><code class="docutils literal notranslate"><span class="pre">DatasetFields.error_type_x</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.funding_share"><code class="docutils literal notranslate"><span class="pre">DatasetFields.funding_share</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.location"><code class="docutils literal notranslate"><span class="pre">DatasetFields.location</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.number_of_critical_errors_post"><code class="docutils literal notranslate"><span class="pre">DatasetFields.number_of_critical_errors_post</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.number_of_critical_errors_pre"><code class="docutils literal notranslate"><span class="pre">DatasetFields.number_of_critical_errors_pre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.number_of_minor_errors_post"><code class="docutils literal notranslate"><span class="pre">DatasetFields.number_of_minor_errors_post</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.number_of_minor_errors_pre"><code class="docutils literal notranslate"><span class="pre">DatasetFields.number_of_minor_errors_pre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.number_of_moderate_errors_post"><code class="docutils literal notranslate"><span class="pre">DatasetFields.number_of_moderate_errors_post</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.number_of_moderate_errors_pre"><code class="docutils literal notranslate"><span class="pre">DatasetFields.number_of_moderate_errors_pre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.number_of_pages_post"><code class="docutils literal notranslate"><span class="pre">DatasetFields.number_of_pages_post</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.number_of_pages_pre"><code class="docutils literal notranslate"><span class="pre">DatasetFields.number_of_pages_pre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.number_of_serious_errors_post"><code class="docutils literal notranslate"><span class="pre">DatasetFields.number_of_serious_errors_post</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.number_of_serious_errors_pre"><code class="docutils literal notranslate"><span class="pre">DatasetFields.number_of_serious_errors_pre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.number_of_total_errors_post"><code class="docutils literal notranslate"><span class="pre">DatasetFields.number_of_total_errors_post</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.number_of_total_errors_pre"><code class="docutils literal notranslate"><span class="pre">DatasetFields.number_of_total_errors_pre</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.number_of_unique_words"><code class="docutils literal notranslate"><span class="pre">DatasetFields.number_of_unique_words</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.number_of_votes_for_candidate"><code class="docutils literal notranslate"><span class="pre">DatasetFields.number_of_votes_for_candidate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.number_of_votes_for_race"><code class="docutils literal notranslate"><span class="pre">DatasetFields.number_of_votes_for_race</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.number_of_words"><code class="docutils literal notranslate"><span class="pre">DatasetFields.number_of_words</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.race_funding"><code class="docutils literal notranslate"><span class="pre">DatasetFields.race_funding</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.trial"><code class="docutils literal notranslate"><span class="pre">DatasetFields.trial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.constants.DatasetFields.vote_share"><code class="docutils literal notranslate"><span class="pre">DatasetFields.vote_share</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.analysis.html#module-access_eval.analysis.core">access_eval.analysis.core module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.CompiledMetrics"><code class="docutils literal notranslate"><span class="pre">CompiledMetrics</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.CompiledMetrics.critical_violations"><code class="docutils literal notranslate"><span class="pre">CompiledMetrics.critical_violations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.CompiledMetrics.ease_of_reading"><code class="docutils literal notranslate"><span class="pre">CompiledMetrics.ease_of_reading</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.CompiledMetrics.error_types"><code class="docutils literal notranslate"><span class="pre">CompiledMetrics.error_types</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.CompiledMetrics.from_dict"><code class="docutils literal notranslate"><span class="pre">CompiledMetrics.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.CompiledMetrics.from_json"><code class="docutils literal notranslate"><span class="pre">CompiledMetrics.from_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.CompiledMetrics.minor_violations"><code class="docutils literal notranslate"><span class="pre">CompiledMetrics.minor_violations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.CompiledMetrics.moderate_violations"><code class="docutils literal notranslate"><span class="pre">CompiledMetrics.moderate_violations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.CompiledMetrics.number_of_unique_words"><code class="docutils literal notranslate"><span class="pre">CompiledMetrics.number_of_unique_words</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.CompiledMetrics.number_of_words"><code class="docutils literal notranslate"><span class="pre">CompiledMetrics.number_of_words</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.CompiledMetrics.pages"><code class="docutils literal notranslate"><span class="pre">CompiledMetrics.pages</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.CompiledMetrics.schema"><code class="docutils literal notranslate"><span class="pre">CompiledMetrics.schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.CompiledMetrics.serious_violations"><code class="docutils literal notranslate"><span class="pre">CompiledMetrics.serious_violations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.CompiledMetrics.to_dict"><code class="docutils literal notranslate"><span class="pre">CompiledMetrics.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.CompiledMetrics.to_json"><code class="docutils literal notranslate"><span class="pre">CompiledMetrics.to_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.RunningMetrics"><code class="docutils literal notranslate"><span class="pre">RunningMetrics</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.RunningMetrics.critical_violations"><code class="docutils literal notranslate"><span class="pre">RunningMetrics.critical_violations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.RunningMetrics.from_dict"><code class="docutils literal notranslate"><span class="pre">RunningMetrics.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.RunningMetrics.from_json"><code class="docutils literal notranslate"><span class="pre">RunningMetrics.from_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.RunningMetrics.minor_violations"><code class="docutils literal notranslate"><span class="pre">RunningMetrics.minor_violations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.RunningMetrics.moderate_violations"><code class="docutils literal notranslate"><span class="pre">RunningMetrics.moderate_violations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.RunningMetrics.pages"><code class="docutils literal notranslate"><span class="pre">RunningMetrics.pages</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.RunningMetrics.schema"><code class="docutils literal notranslate"><span class="pre">RunningMetrics.schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.RunningMetrics.serious_violations"><code class="docutils literal notranslate"><span class="pre">RunningMetrics.serious_violations</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.RunningMetrics.to_dict"><code class="docutils literal notranslate"><span class="pre">RunningMetrics.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.RunningMetrics.to_json"><code class="docutils literal notranslate"><span class="pre">RunningMetrics.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.RunningMetrics.word_metrics"><code class="docutils literal notranslate"><span class="pre">RunningMetrics.word_metrics</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.WordMetric"><code class="docutils literal notranslate"><span class="pre">WordMetric</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.WordMetric.ease_of_reading"><code class="docutils literal notranslate"><span class="pre">WordMetric.ease_of_reading</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.WordMetric.from_dict"><code class="docutils literal notranslate"><span class="pre">WordMetric.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.WordMetric.from_json"><code class="docutils literal notranslate"><span class="pre">WordMetric.from_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.WordMetric.schema"><code class="docutils literal notranslate"><span class="pre">WordMetric.schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.WordMetric.to_dict"><code class="docutils literal notranslate"><span class="pre">WordMetric.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.WordMetric.to_json"><code class="docutils literal notranslate"><span class="pre">WordMetric.to_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.WordMetric.unique_words"><code class="docutils literal notranslate"><span class="pre">WordMetric.unique_words</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.WordMetric.words"><code class="docutils literal notranslate"><span class="pre">WordMetric.words</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.combine_election_data_with_axe_results"><code class="docutils literal notranslate"><span class="pre">combine_election_data_with_axe_results()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.flatten_access_eval_2021_dataset"><code class="docutils literal notranslate"><span class="pre">flatten_access_eval_2021_dataset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.get_crucial_stats"><code class="docutils literal notranslate"><span class="pre">get_crucial_stats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.load_access_eval_2021_dataset"><code class="docutils literal notranslate"><span class="pre">load_access_eval_2021_dataset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.core.process_axe_evaluations_and_extras"><code class="docutils literal notranslate"><span class="pre">process_axe_evaluations_and_extras()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.analysis.html#module-access_eval.analysis.parse_axe_results">access_eval.analysis.parse_axe_results module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AggregateAxeViolation"><code class="docutils literal notranslate"><span class="pre">AggregateAxeViolation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AggregateAxeViolation.from_dict"><code class="docutils literal notranslate"><span class="pre">AggregateAxeViolation.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AggregateAxeViolation.from_json"><code class="docutils literal notranslate"><span class="pre">AggregateAxeViolation.from_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AggregateAxeViolation.help_url"><code class="docutils literal notranslate"><span class="pre">AggregateAxeViolation.help_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AggregateAxeViolation.id"><code class="docutils literal notranslate"><span class="pre">AggregateAxeViolation.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AggregateAxeViolation.impact"><code class="docutils literal notranslate"><span class="pre">AggregateAxeViolation.impact</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AggregateAxeViolation.impact_score"><code class="docutils literal notranslate"><span class="pre">AggregateAxeViolation.impact_score</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AggregateAxeViolation.number_of_elements_in_violation"><code class="docutils literal notranslate"><span class="pre">AggregateAxeViolation.number_of_elements_in_violation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AggregateAxeViolation.number_of_pages_affected"><code class="docutils literal notranslate"><span class="pre">AggregateAxeViolation.number_of_pages_affected</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AggregateAxeViolation.reason"><code class="docutils literal notranslate"><span class="pre">AggregateAxeViolation.reason</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AggregateAxeViolation.schema"><code class="docutils literal notranslate"><span class="pre">AggregateAxeViolation.schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AggregateAxeViolation.to_dict"><code class="docutils literal notranslate"><span class="pre">AggregateAxeViolation.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AggregateAxeViolation.to_json"><code class="docutils literal notranslate"><span class="pre">AggregateAxeViolation.to_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AxeImpact"><code class="docutils literal notranslate"><span class="pre">AxeImpact</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AxeImpact.critical"><code class="docutils literal notranslate"><span class="pre">AxeImpact.critical</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AxeImpact.minor"><code class="docutils literal notranslate"><span class="pre">AxeImpact.minor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AxeImpact.moderate"><code class="docutils literal notranslate"><span class="pre">AxeImpact.moderate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.AxeImpact.serious"><code class="docutils literal notranslate"><span class="pre">AxeImpact.serious</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.SimplifiedAxeViolation"><code class="docutils literal notranslate"><span class="pre">SimplifiedAxeViolation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.SimplifiedAxeViolation.from_dict"><code class="docutils literal notranslate"><span class="pre">SimplifiedAxeViolation.from_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.SimplifiedAxeViolation.from_json"><code class="docutils literal notranslate"><span class="pre">SimplifiedAxeViolation.from_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.SimplifiedAxeViolation.help_url"><code class="docutils literal notranslate"><span class="pre">SimplifiedAxeViolation.help_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.SimplifiedAxeViolation.id"><code class="docutils literal notranslate"><span class="pre">SimplifiedAxeViolation.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.SimplifiedAxeViolation.impact"><code class="docutils literal notranslate"><span class="pre">SimplifiedAxeViolation.impact</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.SimplifiedAxeViolation.impact_score"><code class="docutils literal notranslate"><span class="pre">SimplifiedAxeViolation.impact_score</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.SimplifiedAxeViolation.number_of_elements_in_violation"><code class="docutils literal notranslate"><span class="pre">SimplifiedAxeViolation.number_of_elements_in_violation</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.SimplifiedAxeViolation.reason"><code class="docutils literal notranslate"><span class="pre">SimplifiedAxeViolation.reason</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.SimplifiedAxeViolation.schema"><code class="docutils literal notranslate"><span class="pre">SimplifiedAxeViolation.schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.SimplifiedAxeViolation.to_dict"><code class="docutils literal notranslate"><span class="pre">SimplifiedAxeViolation.to_dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.SimplifiedAxeViolation.to_json"><code class="docutils literal notranslate"><span class="pre">SimplifiedAxeViolation.to_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.parse_axe_results.generate_high_level_statistics"><code class="docutils literal notranslate"><span class="pre">generate_high_level_statistics()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.analysis.html#module-access_eval.analysis.plotting">access_eval.analysis.plotting module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.plotting.plot_candidate_position_based_summary_stats"><code class="docutils literal notranslate"><span class="pre">plot_candidate_position_based_summary_stats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.plotting.plot_categorical_against_errors_boxplots"><code class="docutils literal notranslate"><span class="pre">plot_categorical_against_errors_boxplots()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.plotting.plot_computed_fields_over_vote_share"><code class="docutils literal notranslate"><span class="pre">plot_computed_fields_over_vote_share()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.plotting.plot_election_result_based_summary_stats"><code class="docutils literal notranslate"><span class="pre">plot_election_result_based_summary_stats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.plotting.plot_electoral_position_based_summary_stats"><code class="docutils literal notranslate"><span class="pre">plot_electoral_position_based_summary_stats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.plotting.plot_error_types_boxplots"><code class="docutils literal notranslate"><span class="pre">plot_error_types_boxplots()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.plotting.plot_location_based_summary_stats"><code class="docutils literal notranslate"><span class="pre">plot_location_based_summary_stats()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.plotting.plot_locations_against_errors_boxplots"><code class="docutils literal notranslate"><span class="pre">plot_locations_against_errors_boxplots()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.plotting.plot_pre_post_errors"><code class="docutils literal notranslate"><span class="pre">plot_pre_post_errors()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.plotting.plot_pre_post_fields_compare"><code class="docutils literal notranslate"><span class="pre">plot_pre_post_fields_compare()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.plotting.plot_summary_stats"><code class="docutils literal notranslate"><span class="pre">plot_summary_stats()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.analysis.html#module-access_eval.analysis.utils">access_eval.analysis.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.analysis.html#access_eval.analysis.utils.unpack_data"><code class="docutils literal notranslate"><span class="pre">unpack_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.analysis.html#module-access_eval.analysis">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="access_eval.bin.html">access_eval.bin package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.bin.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.bin.html#module-access_eval.bin.analyze_access_eval_2021_dataset">access_eval.bin.analyze_access_eval_2021_dataset module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.bin.html#access_eval.bin.analyze_access_eval_2021_dataset.Args"><code class="docutils literal notranslate"><span class="pre">Args</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.bin.html#access_eval.bin.analyze_access_eval_2021_dataset.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.bin.html#module-access_eval.bin.generate_access_eval_2021_dataset">access_eval.bin.generate_access_eval_2021_dataset module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.bin.html#access_eval.bin.generate_access_eval_2021_dataset.Args"><code class="docutils literal notranslate"><span class="pre">Args</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.bin.html#access_eval.bin.generate_access_eval_2021_dataset.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.bin.html#module-access_eval.bin.post_process_access_eval">access_eval.bin.post_process_access_eval module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.bin.html#access_eval.bin.post_process_access_eval.Args"><code class="docutils literal notranslate"><span class="pre">Args</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.bin.html#access_eval.bin.post_process_access_eval.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.bin.html#module-access_eval.bin">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="access_eval.middlewares.html">access_eval.middlewares package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.middlewares.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.middlewares.html#module-access_eval.middlewares.redirected_offsite">access_eval.middlewares.redirected_offsite module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.middlewares.html#access_eval.middlewares.redirected_offsite.OffsiteDownloaderMiddleware"><code class="docutils literal notranslate"><span class="pre">OffsiteDownloaderMiddleware</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.middlewares.html#access_eval.middlewares.redirected_offsite.OffsiteDownloaderMiddleware.process_request"><code class="docutils literal notranslate"><span class="pre">OffsiteDownloaderMiddleware.process_request()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.middlewares.html#module-access_eval.middlewares">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="access_eval.spiders.html">access_eval.spiders package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.spiders.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.spiders.html#module-access_eval.spiders.access_eval_spider">access_eval.spiders.access_eval_spider module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="access_eval.spiders.html#access_eval.spiders.access_eval_spider.AccessEvalSpider"><code class="docutils literal notranslate"><span class="pre">AccessEvalSpider</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.spiders.html#access_eval.spiders.access_eval_spider.AccessEvalSpider.name"><code class="docutils literal notranslate"><span class="pre">AccessEvalSpider.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.spiders.html#access_eval.spiders.access_eval_spider.AccessEvalSpider.parse"><code class="docutils literal notranslate"><span class="pre">AccessEvalSpider.parse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.spiders.html#access_eval.spiders.access_eval_spider.AccessEvalSpider.parse_result"><code class="docutils literal notranslate"><span class="pre">AccessEvalSpider.parse_result()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="access_eval.spiders.html#access_eval.spiders.access_eval_spider.AccessEvalSpider.start_requests"><code class="docutils literal notranslate"><span class="pre">AccessEvalSpider.start_requests()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="access_eval.spiders.html#module-access_eval.spiders">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-access_eval.constants">
+<span id="access-eval-constants-module"></span><h2>access_eval.constants module<a class="headerlink" href="#module-access_eval.constants" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-access_eval.settings">
+<span id="access-eval-settings-module"></span><h2>access_eval.settings module<a class="headerlink" href="#module-access_eval.settings" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-access_eval.utils">
+<span id="access-eval-utils-module"></span><h2>access_eval.utils module<a class="headerlink" href="#module-access_eval.utils" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="access_eval.utils.clean_url">
+<span class="sig-prename descclassname"><span class="pre">access_eval.utils.</span></span><span class="sig-name descname"><span class="pre">clean_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/access_eval/utils.html#clean_url"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#access_eval.utils.clean_url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-access_eval.version">
+<span id="access-eval-version-module"></span><h2>access_eval.version module<a class="headerlink" href="#module-access_eval.version" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-access_eval">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-access_eval" title="Permalink to this heading">¶</a></h2>
+<p>Top-level package for access-eval.</p>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, BITS-Research.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-H8TQGX35PM"
+></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-H8TQGX35PM");
+</script>
+
+
+</body>
+</html>
