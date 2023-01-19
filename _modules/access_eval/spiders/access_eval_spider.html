@@ -289,14 +289,14 @@
         <span class="k">if</span> <span class="n">response</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">parse_result</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
          
-        <span class="c1"># Recurse down links</span>
-        <span class="n">le</span> <span class="o">=</span> <span class="n">LinkExtractor</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">le</span><span class="o">.</span><span class="n">extract_links</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
-            <span class="k">yield</span> <span class="n">SeleniumRequest</span><span class="p">(</span>
-                <span class="n">url</span><span class="o">=</span><span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
-                <span class="n">wait_time</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-                <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">,</span>
-            <span class="p">)</span></div></div>
+            <span class="c1"># Recurse down links</span>
+            <span class="n">le</span> <span class="o">=</span> <span class="n">LinkExtractor</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">le</span><span class="o">.</span><span class="n">extract_links</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="n">SeleniumRequest</span><span class="p">(</span>
+                    <span class="n">url</span><span class="o">=</span><span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
+                    <span class="n">wait_time</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                    <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">,</span>
+                <span class="p">)</span></div></div>
 </pre></div>
 
            </div>
