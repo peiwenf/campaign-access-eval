@@ -88,7 +88,8 @@ class AccessEvalSpider(CrawlSpider):
     def parse(self, response: "HtmlResponse", **kwargs: "Any") -> SeleniumRequest:
         self.log(f"Parsing: {response.request.url}", level=logging.INFO)
         # Process with axe
-        self.parse_result(response)
+        if response is not None:
+            self.parse_result(response)
 
         # Recurse down links
         le = LinkExtractor()
