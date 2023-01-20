@@ -261,7 +261,9 @@
 
         <span class="c1"># Connect Axe to driver</span>
         <span class="n">axe</span> <span class="o">=</span> <span class="n">Axe</span><span class="p">(</span><span class="n">driver</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;get axe&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
         <span class="n">axe</span><span class="o">.</span><span class="n">inject</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;get inject&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
 
         <span class="c1"># Run checks and store results</span>
         <span class="n">results</span> <span class="o">=</span> <span class="n">axe</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
