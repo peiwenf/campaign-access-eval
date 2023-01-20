@@ -263,13 +263,15 @@
 
         <span class="c1"># Run checks and store results</span>
         <span class="n">results</span> <span class="o">=</span> <span class="n">axe</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;url: </span><span class="si">{</span><span class="n">results</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+        <span class="c1"># self.log(f&quot;result: {results}&quot;, level=logging.INFO)</span>
         <span class="n">driver</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
         <span class="c1"># Construct storage path</span>
         <span class="n">url</span> <span class="o">=</span> <span class="n">clean_url</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
         <span class="n">storage_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;url_dir: </span><span class="si">{</span><span class="n">storage_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
         <span class="n">storage_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;dir: </span><span class="si">{</span><span class="n">storage_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
         <span class="n">axe</span><span class="o">.</span><span class="n">write_results</span><span class="p">(</span>
             <span class="n">results</span><span class="p">,</span>
             <span class="nb">str</span><span class="p">(</span><span class="n">storage_dir</span> <span class="o">/</span> <span class="n">constants</span><span class="o">.</span><span class="n">SINGLE_PAGE_AXE_RESULTS_FILENAME</span><span class="p">),</span>
