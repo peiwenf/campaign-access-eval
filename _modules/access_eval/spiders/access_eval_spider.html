@@ -265,6 +265,7 @@
 
         <span class="c1"># Run checks and store results</span>
         <span class="n">results</span> <span class="o">=</span> <span class="n">axe</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;result: </span><span class="si">{</span><span class="n">results</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
         <span class="n">driver</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
         <span class="c1"># Construct storage path</span>
@@ -291,6 +292,7 @@
         <span class="c1"># Process with axe</span>
         <span class="k">if</span> <span class="n">response</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">parse_result</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;out of parse_result&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
 
         <span class="c1"># Recurse down links</span>
         <span class="n">le</span> <span class="o">=</span> <span class="n">LinkExtractor</span><span class="p">()</span>
