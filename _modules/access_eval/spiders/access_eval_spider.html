@@ -251,6 +251,7 @@
         <span class="c1"># the driver may have moved on to a new page</span>
         <span class="c1"># This gets around that by just forcing aXe to run on a new driver each time</span>
         <span class="c1"># Expensive but works :shrug:</span>
+        <span class="n">selenium</span><span class="o">.</span><span class="n">waitforPagetoLoad</span><span class="p">(</span><span class="mi">60000</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;in parse_result&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
         <span class="n">opts</span> <span class="o">=</span> <span class="n">FirefoxOptions</span><span class="p">()</span>
         <span class="n">opts</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--headless&quot;</span><span class="p">)</span>
