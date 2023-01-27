@@ -50,18 +50,23 @@ jobs:
       if: ${{ github.event_name == 'workflow_dispatch' }}
       run: |
         cleaned=$(python -c 'from access_eval.utils import clean_url; print(clean_url("${{ github.event.inputs.url }}"));')
-        echo "::set-output name=cleaned::$cleaned"
+        echo "cleaned=$cleaned" >> $GITHUB_OUTPUT
     
     - name: Generate Report -- Parametrized
       if: ${{ github.event_name == 'workflow_dispatch' }}
       run: |
         make generate-report url=${{ github.event.inputs.url }}
     
+    - name: Zip Report -- Parametrized
+      if: ${{ github.event_name == 'workflow_dispatch' }}
+      run: |
+        zip -qq -r ${{ steps.get-clean-url-name.outputs.cleaned }}.zip ${{ steps.get-clean-url-name.outputs.cleaned }}
+    
     - name: Store Report -- Parametrized
       if: ${{ github.event_name == 'workflow_dispatch' }}
       uses: actions/upload-artifact@v2
       with:
         name: ${{ steps.get-clean-url-name.outputs.cleaned }}--archive
-        path: ${{ steps.get-clean-url-name.outputs.cleaned }}
+        path: ${{ steps.get-clean-url-name.outputs.cleaned }}.zip
         # default 90 seems unnecessary for these test results
         retention-days: 14
