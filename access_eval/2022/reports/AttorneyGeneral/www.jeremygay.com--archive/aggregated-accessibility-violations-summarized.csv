@@ -1,3 +1,0 @@
-id,impact,impact_score,reason,number_of_pages_affected,number_of_elements_in_violation,help_url
-landmark-one-main,moderate,2,Page must have one main landmark,1,1,https://dequeuniversity.com/rules/axe/3.1/landmark-one-main?application=axeAPI
-region,moderate,2,All page content must be contained by landmarks,1,1,https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI

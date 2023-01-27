@@ -1,5 +1,0 @@
-id,impact,impact_score,reason,number_of_elements_in_violation,help_url
-aria-allowed-role,minor,1,ARIA role must be appropriate for the element,24,https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI
-duplicate-id,minor,1,id attribute value must be unique,2,https://dequeuniversity.com/rules/axe/3.1/duplicate-id?application=axeAPI
-image-alt,critical,4,Images must have alternate text,1,https://dequeuniversity.com/rules/axe/3.1/image-alt?application=axeAPI
-heading-order,moderate,2,Heading levels should only increase by one,1,https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI

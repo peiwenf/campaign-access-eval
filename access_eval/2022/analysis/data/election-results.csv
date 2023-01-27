@@ -1,0 +1,75 @@
+location,campaign_website_url,electoral_position,candidate_position,candidate_history,election_result,election_type,number_of_votes_for_race,number_of_votes_for_candidate,vote_share,race_funding,candidate_funding,funding_share,contacted
+"Atlanta, GA",https://www.feliciamooreformayor.com/,Mayor,Open,In-Office,Won,General,96158,39202,0.4076831881,,,#DIV/0!,Not-Contacted
+"Atlanta, GA",https://kasimreed.com/,Mayor,Open,Previously-Elected,Won,General,96158,21541,0.2240167225,,,#DIV/0!,Contacted
+"Boston, MA",https://www.annissaforboston.com/,Mayor,Challenger,In-Office,Lost,General,76953,29963,0.389367536,,,#DIV/0!,Contacted
+"Boston, MA",https://www.michelleforboston.com/,Mayor,Challenger,In-Office,Won,General,76953,46990,0.610632464,,,#DIV/0!,Contacted
+"Buffalo, NY",https://byronbrown.com/,Mayor,Incumbent,In-Office,Lost,General,23186,10669,0.4601483654,,,#DIV/0!,Contacted
+"Buffalo, NY",https://www.indiawalton.com/,Mayor,Challenger,Never-Held-Office,Won,General,23186,11718,0.5053911843,,,#DIV/0!,Contacted
+"Cincinnati, OH",https://mannforcincinnati.com/,Mayor,Open,In-Office,Lost,General,51402,17603,0.3424574919,,,#DIV/0!,Contacted
+"Cincinnati, OH",https://aftabformayor.com/,Mayor,Open,In-Office,Won,General,51402,33799,0.6575425081,,,#DIV/0!,Not-Contacted
+"Cleveland, OH",https://www.bibbforcle.com/,Mayor,Open,Never-Held-Office,Won,General,57490,36138,0.6285962776,,,#DIV/0!,Contacted
+"Cleveland, OH",https://www.kevinforcle.com/,Mayor,Open,In-Office,Lost,General,57490,21352,0.3714037224,,,#DIV/0!,Contacted
+"Detroit, MI",https://dugganfordetroit.com/,Mayor,Incumbent,In-Office,Won,General,91703,69329,0.7560167061,,,#DIV/0!,Contacted
+"Detroit, MI",https://anthonyadamsformayor.com/,Mayor,Challenger,Never-Held-Office,Lost,General,91703,22374,0.2439832939,,,#DIV/0!,Contacted
+"Seattle, WA",https://lorenaforseattle.com/,Mayor,Open,In-Office,Lost,General,198359,74893,0.3775629036,,,#DIV/0!,Contacted
+"Seattle, WA",https://www.bruceforseattle.com/,Mayor,Open,Previously-Elected,Won,General,198359,122836,0.6192610368,,,#DIV/0!,Contacted
+"St. Petersburg, FL",https://blackmon4stpete.com/,Mayor,Open,Previously-Elected,Lost,General,63749,25712,0.403331817,,,#DIV/0!,Not-Contacted
+"St. Petersburg, FL",https://www.kenwelch.com/,Mayor,Open,Previously-Elected,Won,General,63749,38037,0.596668183,,,#DIV/0!,Contacted
+"Minneapolis, MN",https://jacobfrey.org/,Mayor,Incumbent,In-Office,Won,General,143974,61620,0.4279939434,,,#DIV/0!,Contacted
+"Minneapolis, MN",https://awed4mayor.org/,Mayor,Challenger,Never-Held-Office,Lost,General,143974,6860,0.04764749191,,,#DIV/0!,Contacted
+"Minneapolis, MN",https://clintconner2021.com/,Mayor,Challenger,Never-Held-Office,Lost,General,143974,4309,0.02992901496,,,#DIV/0!,Contacted
+"Minneapolis, MN",https://www.globusformayor.com/,Mayor,Challenger,Never-Held-Office,Lost,General,143974,1158,0.008043118896,,,#DIV/0!,Contacted
+"Minneapolis, MN",https://mplsforkate.com/,Mayor,Challenger,Never-Held-Office,Lost,General,143974,26468,0.1838387487,,,#DIV/0!,Contacted
+"Minneapolis, MN",https://www.sheilaforthepeople.com/,Mayor,Challenger,Never-Held-Office,Lost,General,143974,30368,0.2109269729,,,#DIV/0!,Not-Contacted
+"Minneapolis, MN",https://www.votebobagain.com/,Mayor,Challenger,Never-Held-Office,Lost,General,143974,2788,0.0193646075,,,#DIV/0!,Contacted
+"Minneapolis, MN",https://turnerroundmpls.com/,Mayor,Challenger,Never-Held-Office,Lost,General,143974,4620,0.0320891272,,,#DIV/0!,Contacted
+"Seattle, WA",https://www.teamteresa.org/,Council,Incumbent,In-Office,Won,General,188789,105706,0.5599160968,,,#DIV/0!,Contacted
+"Seattle, WA",https://www.kenforcouncil8.com/,Council,Challenger,Never-Held-Office,Lost,General,188789,82202,0.4354173177,,,#DIV/0!,Contacted
+"Seattle, WA",https://www.saraforcitycouncil.com/,Council,Open,Never-Held-Office,Won,General,193867,111107,0.5731093997,,,#DIV/0!,Contacted
+"Seattle, WA",https://www.nikkitafornine.com/,Council,Open,Never-Held-Office,Lost,General,193867,82397,0.4250181826,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.helenamorenola.com/,Council,Incumbent,In-Office,Won,General,73395,62064,0.8456161864,,,#DIV/0!,Not-Contacted
+"New Orleans, LA",https://kennethcutno.com/,Council,Challenger,Never-Held-Office,Lost,General,73395,11331,0.1543838136,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.votebrossett.com/,Council,Open,In-Office,Lost,General,73395,8169,0.1113018598,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.jpmorrell.com/,Council,Open,In-Office,Won,General,73395,37161,0.5063151441,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.palmer4nola.com/,Council,Open,In-Office,Lost,General,73395,23252,0.316806322,,,#DIV/0!,Contacted
+"New Orleans, LA",https://barteverson.com/,Council,Open,Never-Held-Office,Lost,General,73395,4776,0.06507255263,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.joegiarrusso.com/,Council,Incumbent,In-Office,Won,General,16819,12848,0.7638979725,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.bob4districta.com/,Council,Challenger,Never-Held-Office,Lost,General,16819,2770,0.1646946905,,,#DIV/0!,Not-Contacted
+"New Orleans, LA",https://misko4citycouncil.org/,Council,Challenger,Never-Held-Office,Lost,General,16819,1201,0.07140733694,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.votejayhbanks.com/,Council,Incumbent,In-Office,Won,General,13228,5896,0.4457211975,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.lesliharris4nola.com/,Council,Challenger,Never-Held-Office,Won,General,13228,4850,0.3666465074,,,#DIV/0!,Contacted
+"New Orleans, LA",https://timothydavidray.com/,Council,Challenger,Never-Held-Office,Lost,General,13228,0,0.0,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.teamrellaz.com/,Council,Challenger,Never-Held-Office,Lost,General,13228,1884,0.1424251588,,,#DIV/0!,Contacted
+"New Orleans, LA",https://rizewithroz.com/,Council,Challenger,Never-Held-Office,Lost,General,13228,598,0.04520713638,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.stephanieforcouncil.com/,Council,Open,Never-Held-Office,Won,General,13185,2069,0.1569207433,,,#DIV/0!,Not-Contacted
+"New Orleans, LA",https://www.electfreddieking.com/,Council,Open,Never-Held-Office,Won,General,13185,5804,0.4401971938,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.vote4knox.com/,Council,Open,Never-Held-Office,Lost,General,13185,1477,0.1120212363,,,#DIV/0!,Contacted
+"New Orleans, LA",https://stephenmosgrove.com/,Council,Open,Never-Held-Office,Lost,General,13185,1199,0.09093667046,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.frankperezcitycouncil.com/,Council,Open,Never-Held-Office,Lost,General,13185,1532,0.1161926432,,,#DIV/0!,Contacted
+"New Orleans, LA",https://waitersfordistrictc.com/,Council,Open,Never-Held-Office,Lost,General,13185,688,0.05218050815,,,#DIV/0!,Contacted
+"New Orleans, LA",https://chantrissefordistrictd.com/,Council,Open,Never-Held-Office,Lost,General,16520,861,0.05211864407,,,#DIV/0!,Contacted
+"New Orleans, LA",https://morganclevenger.com/,Council,Open,Never-Held-Office,Lost,General,16520,439,0.02657384988,,,#DIV/0!,Not-Contacted
+"New Orleans, LA",https://votetroyglover.com/,Council,Open,Never-Held-Office,Won,General,16520,1979,0.1197941889,,,#DIV/0!,Contacted
+"New Orleans, LA",https://voteeugenegreen.com/,Council,Open,Never-Held-Office,Won,General,16520,5836,0.3532687651,,,#DIV/0!,Contacted
+"New Orleans, LA",https://kevingriffinclark.com/,Council,Open,Never-Held-Office,Lost,General,16520,1494,0.09043583535,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.lawesforneworleans.com/,Council,Open,Never-Held-Office,Lost,General,16520,495,0.02996368039,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.mariahmoorefornola.com/,Council,Open,Never-Held-Office,Lost,General,16520,1385,0.0838377724,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.runwithmurray.com/,Council,Open,Never-Held-Office,Lost,General,16520,377,0.02282082324,,,#DIV/0!,Contacted
+"New Orleans, LA",https://kp4districtd.godaddysites.com/,Council,Open,Never-Held-Office,Lost,General,16520,224,0.01355932203,,,#DIV/0!,Not-Contacted
+"New Orleans, LA",https://www.togetherwithtimolynn.com/,Council,Open,Never-Held-Office,Lost,General,16520,824,0.04987893462,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.kourtneyyoungblood.com/,Council,Open,Never-Held-Office,Lost,General,16520,1279,0.07742130751,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.chelseaardoin.com/,Council,Open,Never-Held-Office,Lost,General,16520,1153,0.06979418886,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.doby4districtd.com/,Council,Open,Never-Held-Office,Lost,General,16520,127,0.007687651332,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.votecopelin.com/,Council,Challenger,Never-Held-Office,Lost,General,14498,691,0.04766174645,,,#DIV/0!,Contacted
+"New Orleans, LA",https://www.vanessaforcommunity.com/,Council,Challenger,Never-Held-Office,Lost,General,14498,544,0.03752241689,,,#DIV/0!,Contacted
+"New Orleans, LA",https://electaaronmiller.org/,Council,Challenger,Never-Held-Office,Lost,General,14498,147,0.01013932956,,,#DIV/0!,Not-Contacted
+"New Orleans, LA",https://olivermthomas.com/,Council,Challenger,Never-Held-Office,Won,General,14498,6486,0.4473720513,,,#DIV/0!,Contacted
+"Columbia, SC",https://devineformayor.com/,Mayor,Open,In-Office,Lost,General,20316,9762,0.480507974,,,#DIV/0!,Not-Contacted
+"Columbia, SC",https://www.rickenmannformayor.com/,Mayor,Open,In-Office,Won,General,20316,10554,0.519492026,,,#DIV/0!,Not-Contacted
+"New Orleans, LA",https://www.latoyacantrell.com/,Mayor,Incumbent,In-Office,Won,General,75325,48750,0.6471954862,,,#DIV/0!,Not-Contacted
+"New Orleans, LA",https://lukefontanaformayor.com/,Mayor,Challenger,Never-Held-Office,Lost,General,75325,720,0.009558579489,,,#DIV/0!,Not-Contacted
+"New Orleans, LA",https://www.vinanguyen4mayor.com,Mayor,Challenger,Never-Held-Office,Lost,General,75325,10133,0.1345237305,,,#DIV/0!,Not-Contacted
+"New Orleans, LA",https://henolaforlife.com,Mayor,Challenger,Never-Held-Office,Lost,General,75325,6605,0.08768669101,,,#DIV/0!,Not-Contacted
+"New Orleans, LA",https://www.joeamatofornola.com/,Mayor,Challenger,Never-Held-Office,Lost,General,75325,1256,0.01667441089,,,#DIV/0!,Not-Contacted
+"New Orleans, LA",https://douglasbentleyformayor.com/,Mayor,Challenger,Never-Held-Office,Lost,General,75325,163,0.00216395619,,,#DIV/0!,Not-Contacted
+"New Orleans, LA",https://matthewhillformayor.com/,Mayor,Challenger,Never-Held-Office,Lost,General,75325,535,0.007102555592,,,#DIV/0!,Not-Contacted

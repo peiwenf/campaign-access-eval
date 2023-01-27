@@ -1,8 +1,0 @@
-id,impact,impact_score,reason,number_of_elements_in_violation,help_url
-image-alt,critical,4,Images must have alternate text,54,https://dequeuniversity.com/rules/axe/3.1/image-alt?application=axeAPI
-color-contrast,serious,3,Elements must have sufficient color contrast,11,https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
-link-name,serious,3,Links must have discernible text,6,https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
-aria-roles,critical,4,ARIA roles used must conform to valid values,3,https://dequeuniversity.com/rules/axe/3.1/aria-roles?application=axeAPI
-aria-valid-attr,critical,4,ARIA attributes must conform to valid names,1,https://dequeuniversity.com/rules/axe/3.1/aria-valid-attr?application=axeAPI
-heading-order,moderate,2,Heading levels should only increase by one,1,https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
-duplicate-id,minor,1,id attribute value must be unique,1,https://dequeuniversity.com/rules/axe/3.1/duplicate-id?application=axeAPI
