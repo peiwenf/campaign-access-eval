@@ -285,19 +285,19 @@
 
 <div class="viewcode-block" id="AccessEvalSpider.parse"><a class="viewcode-back" href="../../../access_eval.spiders.html#access_eval.spiders.access_eval_spider.AccessEvalSpider.parse">[docs]</a>    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="s2">&quot;HtmlResponse&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="s2">&quot;Any&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SeleniumRequest</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parsing: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">url</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;upcoming&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">url</span><span class="p">):</span>
         <span class="c1"># Process with axe</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">parse_result</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">parse_result</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
 
         <span class="c1"># Recurse down links</span>
         <span class="n">le</span> <span class="o">=</span> <span class="n">LinkExtractor</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">le</span><span class="o">.</span><span class="n">extract_links</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;current link: </span><span class="si">{</span><span class="n">link</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">link</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;upcoming&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">link</span><span class="p">):</span>
-                <span class="k">yield</span> <span class="n">SeleniumRequest</span><span class="p">(</span>
-                    <span class="n">url</span><span class="o">=</span><span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
-                    <span class="n">wait_time</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-                    <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">,</span>
-                <span class="p">)</span></div></div>
+            <span class="k">yield</span> <span class="n">SeleniumRequest</span><span class="p">(</span>
+                <span class="n">url</span><span class="o">=</span><span class="n">link</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
+                <span class="n">wait_time</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+                <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">,</span>
+            <span class="p">)</span></div></div>
        
 </pre></div>
 
