@@ -6,9 +6,9 @@ import logging
 import sys
 import traceback
 
-from access_eval.analysis import constants
-from access_eval.analysis.core import combine_election_data_with_axe_results
-from access_eval.analysis.utils import unpack_data
+from access_eval.analysis.communication import generate_email_text
+from access_eval.analysis.parse_axe_results import generate_high_level_statistics
+from access_eval.utils import clean_url
 
 ###############################################################################
 
@@ -27,10 +27,19 @@ class Args(argparse.Namespace):
 
     def __parse(self) -> None:
         p = argparse.ArgumentParser(
-            prog="generate-access-eval-2021-dataset",
+            prog="post_process_access_eval",
             description=(
-                "Generate the access evaluation dataset for all races covered in the "
-                "2021 preliminary study."
+                "Process the access evaluation results and generate any extra metadata "
+                "and documentation."
+            ),
+        )
+        p.add_argument(
+            "head_dir",
+            type=str,
+            help=(
+                "The directory containing all results for an already analyzed website. "
+                "Note: This bin script will clean the `https://` or `http://` prefix "
+                "from a provided string."
             ),
         )
         p.parse_args(namespace=self)
@@ -41,30 +50,10 @@ class Args(argparse.Namespace):
 
 def main() -> None:
     try:
-        _ = Args()
-
-        # Unpack and store
-        pre_eval_data = unpack_data(
-            constants.ACCESS_EVAL_2021_PRE_CONTACT_EVALS_ZIP,
-            constants.ACCESS_EVAL_2021_PRE_CONTACT_EVALS_UNPACKED,
-            clean=True,
-        )
-        post_eval_data = unpack_data(
-            constants.ACCESS_EVAL_2021_POST_CONTACT_EVALS_ZIP,
-            constants.ACCESS_EVAL_2021_POST_CONTACT_EVALS_UNPACKED,
-            clean=True,
-        )
-
-        # Combine
-        expanded_data = combine_election_data_with_axe_results(
-            constants.ACCESS_EVAL_2021_ELECTION_RESULTS,
-            pre_eval_data,
-            post_eval_data,
-        )
-
-        # Store to data dir
-        # expanded_data.to_csv(constants.ACCESS_EVAL_2021_DATASET, index=False)
-        expanded_data.to_csv('data.csv', index=False)
+        args = Args()
+        cleaned_url = clean_url(args.head_dir)
+        generate_high_level_statistics(head_dir=cleaned_url)
+        generate_email_text(head_dir=cleaned_url)
 
     except Exception as e:
         log.error("=============================================")

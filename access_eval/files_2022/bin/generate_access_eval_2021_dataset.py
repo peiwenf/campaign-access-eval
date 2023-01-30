@@ -6,9 +6,9 @@ import logging
 import sys
 import traceback
 
-from access_eval.analysis import constants
-from access_eval.analysis.core import combine_election_data_with_axe_results
-from access_eval.analysis.utils import unpack_data
+from access_eval.files_2022.analysis import constants
+from access_eval.files_2022.analysis.core import combine_election_data_with_axe_results
+from access_eval.files_2022.analysis.utils import unpack_data
 
 ###############################################################################
 
@@ -44,27 +44,28 @@ def main() -> None:
         _ = Args()
 
         # Unpack and store
-        pre_eval_data = unpack_data(
-            constants.ACCESS_EVAL_2021_PRE_CONTACT_EVALS_ZIP,
-            constants.ACCESS_EVAL_2021_PRE_CONTACT_EVALS_UNPACKED,
+        eval_data = unpack_data(
+            constants.ACCESS_EVAL_2022_EVALS_ZIP,
+            constants.ACCESS_EVAL_2022_EVALS_UNPACKED,
             clean=True,
         )
-        post_eval_data = unpack_data(
-            constants.ACCESS_EVAL_2021_POST_CONTACT_EVALS_ZIP,
-            constants.ACCESS_EVAL_2021_POST_CONTACT_EVALS_UNPACKED,
-            clean=True,
-        )
+        # post_eval_data = unpack_data(
+        #     constants.ACCESS_EVAL_2021_POST_CONTACT_EVALS_ZIP,
+        #     constants.ACCESS_EVAL_2021_POST_CONTACT_EVALS_UNPACKED,
+        #     clean=True,
+        # )
 
         # Combine
         expanded_data = combine_election_data_with_axe_results(
-            constants.ACCESS_EVAL_2021_ELECTION_RESULTS,
-            pre_eval_data,
-            post_eval_data,
+            constants.ACCESS_EVAL_2022_ELECTION_RESULTS,
+            eval_data,
+            # post_eval_data,
         )
 
         # Store to data dir
-        # expanded_data.to_csv(constants.ACCESS_EVAL_2021_DATASET, index=False)
-        expanded_data.to_csv('data.csv', index=False)
+        # expanded_data.to_csv(constants.ACCESS_EVAL_2022_DATASET, index=False)
+        # test local
+        expanded_data.to_csv('data_new.csv', index=False)
 
     except Exception as e:
         log.error("=============================================")

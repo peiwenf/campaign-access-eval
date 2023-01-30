@@ -15,10 +15,9 @@ ACCESS_EVAL_2022_EVALS_ZIP = (
     ACCESS_EVAL_2022_STUDY_REPORTS / "AttorneyGeneral.zip"
 )
 
-ACCESS_EVAL_2021_PRE_CONTACT_EVALS_UNPACKED = Path("unpacked-pre-access-eval-results")
-ACCESS_EVAL_2021_POST_CONTACT_EVALS_UNPACKED = Path("unpacked-post-access-eval-results")
+ACCESS_EVAL_2022_EVALS_UNPACKED = Path("unpacked-eval-results")
 
-ACCESS_EVAL_2021_DATASET = ACCESS_EVAL_2021_STUDY_DATA / "2021-study-data.csv"
+ACCESS_EVAL_2022_DATASET = ACCESS_EVAL_2022_STUDY_DATA / "2022-study-data.csv"
 
 ###############################################################################
 
@@ -67,7 +66,7 @@ class DatasetFields:
     - "Council"
     """
 
-    candidate_position = "candidate_position"
+    # candidate_position = "candidate_position"
     """
     str: Categorical value for if the candidate is the incumbent, a challenger, or open.
 
@@ -78,7 +77,7 @@ class DatasetFields:
     - "Open"
     """
 
-    candidate_history = "candidate_history"
+    # candidate_history = "candidate_history"
     """
     str: Categorical value for the electoral history of the candidate.
 
@@ -107,7 +106,7 @@ class DatasetFields:
     Pulled from external data source.
     """
 
-    election_type = "election_type"
+    # election_type = "election_type"
     """
     str: Categorical value for the type of election.
 
@@ -118,7 +117,7 @@ class DatasetFields:
     - "Runoff"
     """
 
-    eligible_voting_population = "eligible_voting_population"
+    # eligible_voting_population = "eligible_voting_population"
     """
     int: The total number of people eligible to vote in the election.
 
@@ -132,7 +131,7 @@ class DatasetFields:
     Pulled from external data source.
     """
 
-    number_of_votes_for_candidate = "number_of_votes_for_candidate"
+    # number_of_votes_for_candidate = "number_of_votes_for_candidate"
     """
     int: The number of votes the candidate ultimately received.
 
@@ -146,7 +145,7 @@ class DatasetFields:
     Pulled from external data source.
     """
 
-    number_of_votes_for_race = "number_of_votes_for_race"
+    # number_of_votes_for_race = "number_of_votes_for_race"
     """
     int: The total number of votes returned in the election.
 
@@ -160,7 +159,7 @@ class DatasetFields:
     Pulled from external data source.
     """
 
-    vote_share = "vote_share"
+    # vote_share = "vote_share"
     """
     float: The number of votes the candidate received over the number of votes possible.
 
@@ -170,7 +169,7 @@ class DatasetFields:
     - 0.47
     """
 
-    race_funding = "race_funding"
+    # race_funding = "race_funding"
     """
     float: The amount of money all candidates in the race received during the campaign.
 
@@ -184,7 +183,7 @@ class DatasetFields:
     Pulled from external data source.
     """
 
-    candidate_funding = "candidate_funding"
+    # candidate_funding = "candidate_funding"
     """
     float: The amount of money the candidate received in donations during the campaign.
 
@@ -200,7 +199,7 @@ class DatasetFields:
     Pulled from external data. (Not all candidates had websites scraped scraped)
     """
 
-    funding_share = "funding_share"
+    # funding_share = "funding_share"
     """
     float: The amount of money the candidate received in donations over the amount of
     money all candidates received during the campaign.
@@ -211,7 +210,7 @@ class DatasetFields:
     - 0.47
     """
 
-    contacted = "contacted"
+    # contacted = "contacted"
     """
     str: Was the campaign contacted with the aXe evaluation summarization.
 
@@ -262,7 +261,7 @@ class DatasetFields:
     - -12.34
     """
 
-    number_of_pages_pre = "number_of_pages_pre"
+    number_of_pages = "number_of_pages"
     """
     int: The total number of pages found in the whole campaign website before contact.
 
@@ -272,7 +271,7 @@ class DatasetFields:
     - 42
     """
 
-    number_of_total_errors_pre = "number_of_total_errors_pre"
+    number_of_total_errors = "number_of_total_errors"
     """
     int: The total number of errors for the entire website before contact.
 
@@ -282,7 +281,7 @@ class DatasetFields:
     - 450
     """
 
-    number_of_critical_errors_pre = "number_of_critical_errors_pre"
+    number_of_critical_errors = "number_of_critical_errors"
     """
     int: The number of errors categorized as "critical" by aXe for the
     entire website before contact.
@@ -293,7 +292,7 @@ class DatasetFields:
     - 42
     """
 
-    number_of_serious_errors_pre = "number_of_serious_errors_pre"
+    number_of_serious_errors = "number_of_serious_errors"
     """
     int: The number of errors categorized as "serious" by aXe for the
     entire website before contact.
@@ -304,7 +303,7 @@ class DatasetFields:
     - 42
     """
 
-    number_of_moderate_errors_pre = "number_of_moderate_errors_pre"
+    number_of_moderate_errors = "number_of_moderate_errors"
     """
     int: The number of errors categorized as "moderate" by aXe for the
     entire website before contact.
@@ -315,7 +314,7 @@ class DatasetFields:
     - 42
     """
 
-    number_of_minor_errors_pre = "number_of_minor_errors_pre"
+    number_of_minor_errors = "number_of_minor_errors"
     """
     int: The number of errors categorized as "minor" by aXe for the
     entire website before contact.
@@ -326,7 +325,7 @@ class DatasetFields:
     - 42
     """
 
-    number_of_pages_post = "number_of_pages_post"
+    # number_of_pages_post = "number_of_pages_post"
     """
     int: The total number of pages found in the whole campaign website after contact.
 
@@ -336,7 +335,7 @@ class DatasetFields:
     - 42
     """
 
-    number_of_total_errors_post = "number_of_total_errors_post"
+    # number_of_total_errors_post = "number_of_total_errors_post"
     """
     int: The total number of errors for the entire website after contact.
 
@@ -346,7 +345,7 @@ class DatasetFields:
     - 450
     """
 
-    number_of_critical_errors_post = "number_of_critical_errors_post"
+    # number_of_critical_errors_post = "number_of_critical_errors_post"
     """
     int: The number of errors categorized as "critical" by aXe for the
     entire website after contact.
@@ -357,7 +356,7 @@ class DatasetFields:
     - 42
     """
 
-    number_of_serious_errors_post = "number_of_serious_errors_post"
+    # number_of_serious_errors_post = "number_of_serious_errors_post"
     """
     int: The number of errors categorized as "serious" by aXe for the
     entire website after contact.
@@ -368,7 +367,7 @@ class DatasetFields:
     - 42
     """
 
-    number_of_moderate_errors_post = "number_of_moderate_errors_post"
+    # number_of_moderate_errors_post = "number_of_moderate_errors_post"
     """
     int: The number of errors categorized as "moderate" by aXe for the
     entire website after contact.
@@ -379,7 +378,7 @@ class DatasetFields:
     - 42
     """
 
-    number_of_minor_errors_post = "number_of_minor_errors_post"
+    # number_of_minor_errors_post = "number_of_minor_errors_post"
     """
     int: The number of errors categorized as "minor" by aXe for the
     entire website after contact.
@@ -390,7 +389,7 @@ class DatasetFields:
     - 42
     """
 
-    trial = "trial"
+    # trial = "trial"
     """
     str: The categorical variable added when the data has been flattened
     from "pre" and "post" having independent columns to now sharing columns.
@@ -425,136 +424,136 @@ class DatasetFields:
 class ComputedFields:
 
     # Differences
-    diff_pages = ComputedField(
-        name="diff_pages",
-        func=lambda data: data[DatasetFields.number_of_pages_post]
-        - data[DatasetFields.number_of_pages_pre],
-    )
+    # diff_pages = ComputedField(
+    #     name="diff_pages",
+    #     func=lambda data: data[DatasetFields.number_of_pages_post]
+    #     - data[DatasetFields.number_of_pages_pre],
+    # )
 
-    diff_errors = ComputedField(
-        name="diff_errors",
-        func=lambda data: data[DatasetFields.number_of_total_errors_post]
-        - data[DatasetFields.number_of_total_errors_pre],
-    )
+    # diff_errors = ComputedField(
+    #     name="diff_errors",
+    #     func=lambda data: data[DatasetFields.number_of_total_errors_post]
+    #     - data[DatasetFields.number_of_total_errors_pre],
+    # )
 
-    diff_critical_errors = ComputedField(
-        name="diff_critical_errors",
-        func=lambda data: data[DatasetFields.number_of_critical_errors_post]
-        - data[DatasetFields.number_of_critical_errors_pre],
-    )
+    # diff_critical_errors = ComputedField(
+    #     name="diff_critical_errors",
+    #     func=lambda data: data[DatasetFields.number_of_critical_errors_post]
+    #     - data[DatasetFields.number_of_critical_errors_pre],
+    # )
 
-    diff_serious_errors = ComputedField(
-        name="diff_serious_errors",
-        func=lambda data: data[DatasetFields.number_of_serious_errors_post]
-        - data[DatasetFields.number_of_serious_errors_pre],
-    )
+    # diff_serious_errors = ComputedField(
+    #     name="diff_serious_errors",
+    #     func=lambda data: data[DatasetFields.number_of_serious_errors_post]
+    #     - data[DatasetFields.number_of_serious_errors_pre],
+    # )
 
-    diff_moderate_errors = ComputedField(
-        name="diff_moderate_errors",
-        func=lambda data: data[DatasetFields.number_of_moderate_errors_post]
-        - data[DatasetFields.number_of_moderate_errors_pre],
-    )
+    # diff_moderate_errors = ComputedField(
+    #     name="diff_moderate_errors",
+    #     func=lambda data: data[DatasetFields.number_of_moderate_errors_post]
+    #     - data[DatasetFields.number_of_moderate_errors_pre],
+    # )
 
-    diff_minor_errors = ComputedField(
-        name="diff_minor_errors",
-        func=lambda data: data[DatasetFields.number_of_minor_errors_post]
-        - data[DatasetFields.number_of_minor_errors_pre],
-    )
+    # diff_minor_errors = ComputedField(
+    #     name="diff_minor_errors",
+    #     func=lambda data: data[DatasetFields.number_of_minor_errors_post]
+    #     - data[DatasetFields.number_of_minor_errors_pre],
+    # )
 
     # Averages
-    avg_errors_per_page_pre = ComputedField(
-        name="avg_errors_per_page_pre",
-        func=lambda data: data[DatasetFields.number_of_total_errors_pre]
-        / data[DatasetFields.number_of_pages_pre],
+    avg_errors_per_page = ComputedField(
+        name="avg_errors_per_page",
+        func=lambda data: data[DatasetFields.number_of_total_errors]
+        / data[DatasetFields.number_of_pages],
     )
 
-    avg_errors_per_page_post = ComputedField(
-        name="avg_errors_per_page_post",
-        func=lambda data: data[DatasetFields.number_of_total_errors_post]
-        / data[DatasetFields.number_of_pages_post],
+    # avg_errors_per_page_post = ComputedField(
+    #     name="avg_errors_per_page_post",
+    #     func=lambda data: data[DatasetFields.number_of_total_errors_post]
+    #     / data[DatasetFields.number_of_pages_post],
+    # )
+
+    avg_critical_errors_per_page = ComputedField(
+        name="avg_critical_errors_per_page",
+        func=lambda data: data[DatasetFields.number_of_critical_errors]
+        / data[DatasetFields.number_of_pages],
     )
 
-    avg_critical_errors_per_page_pre = ComputedField(
-        name="avg_critical_errors_per_page_pre",
-        func=lambda data: data[DatasetFields.number_of_critical_errors_pre]
-        / data[DatasetFields.number_of_pages_pre],
+    # avg_critical_errors_per_page_post = ComputedField(
+    #     name="avg_critical_errors_per_page_post",
+    #     func=lambda data: data[DatasetFields.number_of_critical_errors_post]
+    #     / data[DatasetFields.number_of_pages_post],
+    # )
+
+    avg_serious_errors_per_page = ComputedField(
+        name="avg_serious_errors_per_page",
+        func=lambda data: data[DatasetFields.number_of_serious_errors]
+        / data[DatasetFields.number_of_pages],
     )
 
-    avg_critical_errors_per_page_post = ComputedField(
-        name="avg_critical_errors_per_page_post",
-        func=lambda data: data[DatasetFields.number_of_critical_errors_post]
-        / data[DatasetFields.number_of_pages_post],
+    # avg_serious_errors_per_page_post = ComputedField(
+    #     name="avg_serious_errors_per_page_post",
+    #     func=lambda data: data[DatasetFields.number_of_serious_errors_post]
+    #     / data[DatasetFields.number_of_pages_post],
+    # )
+
+    avg_moderate_errors_per_page = ComputedField(
+        name="avg_moderate_errors_per_page",
+        func=lambda data: data[DatasetFields.number_of_moderate_errors]
+        / data[DatasetFields.number_of_pages],
     )
 
-    avg_serious_errors_per_page_pre = ComputedField(
-        name="avg_serious_errors_per_page_pre",
-        func=lambda data: data[DatasetFields.number_of_serious_errors_pre]
-        / data[DatasetFields.number_of_pages_pre],
+    # avg_moderate_errors_per_page_post = ComputedField(
+    #     name="avg_moderate_errors_per_page_post",
+    #     func=lambda data: data[DatasetFields.number_of_moderate_errors_post]
+    #     / data[DatasetFields.number_of_pages_post],
+    # )
+
+    avg_minor_errors_per_page = ComputedField(
+        name="avg_minor_errors_per_page",
+        func=lambda data: data[DatasetFields.number_of_minor_errors]
+        / data[DatasetFields.number_of_pages],
     )
 
-    avg_serious_errors_per_page_post = ComputedField(
-        name="avg_serious_errors_per_page_post",
-        func=lambda data: data[DatasetFields.number_of_serious_errors_post]
-        / data[DatasetFields.number_of_pages_post],
-    )
-
-    avg_moderate_errors_per_page_pre = ComputedField(
-        name="avg_moderate_errors_per_page_pre",
-        func=lambda data: data[DatasetFields.number_of_moderate_errors_pre]
-        / data[DatasetFields.number_of_pages_pre],
-    )
-
-    avg_moderate_errors_per_page_post = ComputedField(
-        name="avg_moderate_errors_per_page_post",
-        func=lambda data: data[DatasetFields.number_of_moderate_errors_post]
-        / data[DatasetFields.number_of_pages_post],
-    )
-
-    avg_minor_errors_per_page_pre = ComputedField(
-        name="avg_minor_errors_per_page_pre",
-        func=lambda data: data[DatasetFields.number_of_minor_errors_pre]
-        / data[DatasetFields.number_of_pages_pre],
-    )
-
-    avg_minor_errors_per_page_post = ComputedField(
-        name="avg_minor_errors_per_page_post",
-        func=lambda data: data[DatasetFields.number_of_minor_errors_post]
-        / data[DatasetFields.number_of_pages_post],
-    )
+    # avg_minor_errors_per_page_post = ComputedField(
+    #     name="avg_minor_errors_per_page_post",
+    #     func=lambda data: data[DatasetFields.number_of_minor_errors_post]
+    #     / data[DatasetFields.number_of_pages_post],
+    # )
 
     avg_number_of_words_per_page = ComputedField(
         name="avg_number_of_words_per_page",
         func=lambda data: data[DatasetFields.number_of_words]
-        / data[DatasetFields.number_of_pages_post],
+        / data[DatasetFields.number_of_pages],
     )
 
-    # Vote share
-    vote_share_per_error = ComputedField(
-        name="vote_share_per_error",
-        func=lambda data: data[DatasetFields.vote_share]
-        / data[DatasetFields.number_of_total_errors_post],
-    )
+    # # Vote share
+    # vote_share_per_error = ComputedField(
+    #     name="vote_share_per_error",
+    #     func=lambda data: data[DatasetFields.vote_share]
+    #     / data[DatasetFields.number_of_total_errors_post],
+    # )
 
-    vote_share_per_critical_error = ComputedField(
-        name="vote_share_per_critical_error",
-        func=lambda data: data[DatasetFields.vote_share]
-        / data[DatasetFields.number_of_critical_errors_post],
-    )
+    # vote_share_per_critical_error = ComputedField(
+    #     name="vote_share_per_critical_error",
+    #     func=lambda data: data[DatasetFields.vote_share]
+    #     / data[DatasetFields.number_of_critical_errors_post],
+    # )
 
-    vote_share_per_serious_error = ComputedField(
-        name="vote_share_per_serious_error",
-        func=lambda data: data[DatasetFields.vote_share]
-        / data[DatasetFields.number_of_serious_errors_post],
-    )
+    # vote_share_per_serious_error = ComputedField(
+    #     name="vote_share_per_serious_error",
+    #     func=lambda data: data[DatasetFields.vote_share]
+    #     / data[DatasetFields.number_of_serious_errors_post],
+    # )
 
-    vote_share_per_moderate_error = ComputedField(
-        name="vote_share_per_moderate_error",
-        func=lambda data: data[DatasetFields.vote_share]
-        / data[DatasetFields.number_of_moderate_errors_post],
-    )
+    # vote_share_per_moderate_error = ComputedField(
+    #     name="vote_share_per_moderate_error",
+    #     func=lambda data: data[DatasetFields.vote_share]
+    #     / data[DatasetFields.number_of_moderate_errors_post],
+    # )
 
-    vote_share_per_minor_error = ComputedField(
-        name="vote_share_per_minor_error",
-        func=lambda data: data[DatasetFields.vote_share]
-        / data[DatasetFields.number_of_minor_errors_post],
-    )
+    # vote_share_per_minor_error = ComputedField(
+    #     name="vote_share_per_minor_error",
+    #     func=lambda data: data[DatasetFields.vote_share]
+    #     / data[DatasetFields.number_of_minor_errors_post],
+    # )

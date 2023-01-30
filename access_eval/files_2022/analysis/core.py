@@ -18,10 +18,10 @@ from selenium.webdriver import FirefoxOptions
 from textstat import flesch_reading_ease
 from tqdm import tqdm
 
-from ..constants import AGGREGATE_AXE_RESULTS_FILENAME, SINGLE_PAGE_AXE_RESULTS_FILENAME
-from ..utils import clean_url
+from access_eval.constants import AGGREGATE_AXE_RESULTS_FILENAME, SINGLE_PAGE_AXE_RESULTS_FILENAME
+from access_eval.utils import clean_url
 from .constants import (
-    ACCESS_EVAL_2021_DATASET,
+    ACCESS_EVAL_2022_DATASET,
     ComputedField,
     ComputedFields,
     DatasetFields,
@@ -254,8 +254,8 @@ def _convert_metrics_to_expanded_data(
 
 def combine_election_data_with_axe_results(
     election_data: Union[str, Path, pd.DataFrame],
-    pre_contact_axe_scraping_results: Union[str, Path],
-    post_contact_axe_scraping_results: Union[str, Path],
+    axe_scraping_results: Union[str, Path],
+    # post_contact_axe_scraping_results: Union[str, Path],
 ) -> pd.DataFrame:
     """
     Combine election data CSV (or in memory DataFrame) with the axe results for each
@@ -308,40 +308,40 @@ def combine_election_data_with_axe_results(
     directory should be: `pre-data/website.org`
     """
     # Confirm paths
-    pre_contact_axe_scraping_results = Path(pre_contact_axe_scraping_results).resolve(
+    axe_scraping_results = Path(axe_scraping_results).resolve(
         strict=True
     )
-    post_contact_axe_scraping_results = Path(post_contact_axe_scraping_results).resolve(
-        strict=True
-    )
+    # post_contact_axe_scraping_results = Path(post_contact_axe_scraping_results).resolve(
+    #     strict=True
+    # )
     if isinstance(election_data, (str, Path)):
         election_data = Path(election_data).resolve(strict=True)
         election_data = pd.read_csv(election_data)
 
     # Confirm axe scraping results is dir
-    if not pre_contact_axe_scraping_results.is_dir():
-        raise NotADirectoryError(pre_contact_axe_scraping_results)
-    if not post_contact_axe_scraping_results.is_dir():
-        raise NotADirectoryError(post_contact_axe_scraping_results)
+    if not axe_scraping_results.is_dir():
+        raise NotADirectoryError(axe_scraping_results)
+    # if not post_contact_axe_scraping_results.is_dir():
+    #     raise NotADirectoryError(post_contact_axe_scraping_results)
 
     # Iter election data and create List of expanded dicts with added
     expanded_data = []
     for _, row in tqdm(election_data.iterrows()):
         cleaned_url = clean_url(row[DatasetFields.campaign_website_url])
-        pre_access_eval = pre_contact_axe_scraping_results / cleaned_url
-        post_access_eval = post_contact_axe_scraping_results / cleaned_url
+        access_eval = axe_scraping_results / cleaned_url
+        # post_access_eval = post_contact_axe_scraping_results / cleaned_url
 
         # Only continue with the addition if pre and post both exist
-        if pre_access_eval.exists() and post_access_eval.exists():
+        if access_eval.exists():
             # Run metric generation
-            pre_access_eval_metrics = process_axe_evaluations_and_extras(
-                pre_access_eval,
+            access_eval_metrics = process_axe_evaluations_and_extras(
+                access_eval,
                 generate_extras=False,
             )
-            post_access_eval_metrics = process_axe_evaluations_and_extras(
-                post_access_eval,
-                generate_extras=True,
-            )
+            # post_access_eval_metrics = process_axe_evaluations_and_extras(
+            #     post_access_eval,
+            #     generate_extras=True,
+            # )
 
             # Combine and merge to expanded data
             expanded_data.append(
@@ -350,18 +350,18 @@ def combine_election_data_with_axe_results(
                     **row,
                     # Pre-contact info
                     **_convert_metrics_to_expanded_data(
-                        pre_access_eval_metrics,
+                        access_eval_metrics,
                         "pre",
                     ),
-                    # Post-contact info
-                    **_convert_metrics_to_expanded_data(
-                        post_access_eval_metrics,
-                        "post",
-                    ),
+                    # # Post-contact info
+                    # **_convert_metrics_to_expanded_data(
+                    #     post_access_eval_metrics,
+                    #     "post",
+                    # ),
                     # Extra features only apply for post-contact
-                    DatasetFields.number_of_words: post_access_eval_metrics.number_of_words,  # noqa: E501
-                    DatasetFields.number_of_unique_words: post_access_eval_metrics.number_of_unique_words,  # noqa: E501
-                    DatasetFields.ease_of_reading: post_access_eval_metrics.ease_of_reading,  # noqa: E501
+                    DatasetFields.number_of_words: access_eval_metrics.number_of_words,  # noqa: E501
+                    DatasetFields.number_of_unique_words: access_eval_metrics.number_of_unique_words,  # noqa: E501
+                    DatasetFields.ease_of_reading: access_eval_metrics.ease_of_reading,  # noqa: E501
                 }
             )
 
@@ -392,10 +392,10 @@ def load_access_eval_2021_dataset(
     """
 
     if path is None:
-        path = ACCESS_EVAL_2021_DATASET
+        path = ACCESS_EVAL_2022_DATASET
 
     # Load base data
-    data = pd.read_csv(ACCESS_EVAL_2021_DATASET)
+    data = pd.read_csv(ACCESS_EVAL_2022_DATASET)
 
     # Add computed fields
     for attr in ComputedFields.__dict__.values():
@@ -408,84 +408,84 @@ def load_access_eval_2021_dataset(
         if "error-type_" in col and data[col].quantile(0.75) > 0:
             common_error_cols.append(col)
 
-    # Create norm cols
-    for common_error_col in common_error_cols:
-        error_type = common_error_col.replace("_pre", "").replace("_post", "")
-        if "_pre" in common_error_col:
-            avg_error_type_col_name = f"avg_{error_type}_per_page_pre"
-            norm_col = DatasetFields.number_of_pages_pre
-        else:
-            avg_error_type_col_name = f"avg_{error_type}_per_page_post"
-            norm_col = DatasetFields.number_of_pages_post
+    # # Create norm cols
+    # for common_error_col in common_error_cols:
+    #     error_type = common_error_col.replace("_pre", "").replace("_post", "")
+    #     if "_pre" in common_error_col:
+    #         avg_error_type_col_name = f"avg_{error_type}_per_page_pre"
+    #         norm_col = DatasetFields.number_of_pages_pre
+    #     else:
+    #         avg_error_type_col_name = f"avg_{error_type}_per_page_post"
+    #         norm_col = DatasetFields.number_of_pages_post
 
-        # Norm
-        data[avg_error_type_col_name] = data[common_error_col] / data[norm_col]
+    #     # Norm
+    #     data[avg_error_type_col_name] = data[common_error_col] / data[norm_col]
 
     return data
 
 
-def flatten_access_eval_2021_dataset(
-    data: Optional[pd.DataFrame] = None,
-) -> pd.DataFrame:
-    """
-    Flatten the access eval 2021 dataset by adding a new column called "Trial"
-    which stores a categorical value for "Pre" or "Post" which allows us
-    to simplify the columns into just "avg_errors_per_page" for example instead
-    of having both "avg_errors_per_page_pre" and "avg_errors_per_page_post".
+# def flatten_access_eval_2021_dataset(
+#     data: Optional[pd.DataFrame] = None,
+# ) -> pd.DataFrame:
+#     """
+#     Flatten the access eval 2021 dataset by adding a new column called "Trial"
+#     which stores a categorical value for "Pre" or "Post" which allows us
+#     to simplify the columns into just "avg_errors_per_page" for example instead
+#     of having both "avg_errors_per_page_pre" and "avg_errors_per_page_post".
 
-    Parameters
-    ----------
-    data: pd.DataFrame
-        Preloaded access eval data.
-        Default: None (load access eval 2021 data)
+#     Parameters
+#     ----------
+#     data: pd.DataFrame
+#         Preloaded access eval data.
+#         Default: None (load access eval 2021 data)
 
-    Returns
-    -------
-    flattened: pd.DataFrame
-        The flattened dataset.
+#     Returns
+#     -------
+#     flattened: pd.DataFrame
+#         The flattened dataset.
 
-    Notes
-    -----
-    This only provides a subset of the full dataset back.
-    Notably dropping the "diff" computed fields.
-    """
-    # Load default data
-    if data is None:
-        data = load_access_eval_2021_dataset()
+#     Notes
+#     -----
+#     This only provides a subset of the full dataset back.
+#     Notably dropping the "diff" computed fields.
+#     """
+#     # Load default data
+#     if data is None:
+#         data = load_access_eval_2021_dataset()
 
-    # Drop general columns
-    data = data.drop(
-        [
-            ComputedFields.diff_pages.name,
-            ComputedFields.diff_errors.name,
-            ComputedFields.diff_minor_errors.name,
-            ComputedFields.diff_moderate_errors.name,
-            ComputedFields.diff_serious_errors.name,
-            ComputedFields.diff_critical_errors.name,
-        ],
-        axis=1,
-    )
+#     # Drop general columns
+#     data = data.drop(
+#         [
+#             ComputedFields.diff_pages.name,
+#             ComputedFields.diff_errors.name,
+#             ComputedFields.diff_minor_errors.name,
+#             ComputedFields.diff_moderate_errors.name,
+#             ComputedFields.diff_serious_errors.name,
+#             ComputedFields.diff_critical_errors.name,
+#         ],
+#         axis=1,
+#     )
 
-    # Get a list of the column names with pre and post in them
-    # (just for pre, we will use string edit to swap to post)
-    cols_pre = [col for col in data.columns if "_pre" in col]
-    cols_post = [col.replace("_pre", "_post") for col in cols_pre]
+#     # Get a list of the column names with pre and post in them
+#     # (just for pre, we will use string edit to swap to post)
+#     cols_pre = [col for col in data.columns if "_pre" in col]
+#     cols_post = [col.replace("_pre", "_post") for col in cols_pre]
 
-    # Get all data for pre and post
-    # For pre, this means, take all columns _except_ post columns
-    # For post, this means, take all columns _except_ pre columns
-    pre = data[[col for col in data.columns if col not in cols_post]]
-    post = data[[col for col in data.columns if col not in cols_pre]]
+#     # Get all data for pre and post
+#     # For pre, this means, take all columns _except_ post columns
+#     # For post, this means, take all columns _except_ pre columns
+#     pre = data[[col for col in data.columns if col not in cols_post]]
+#     post = data[[col for col in data.columns if col not in cols_pre]]
 
-    # Drop the pre and post from the column names for the error data
-    pre = pre.rename(columns={col: col.replace("_pre", "") for col in pre.columns})
-    post = post.rename(columns={col: col.replace("_post", "") for col in post.columns})
+#     # Drop the pre and post from the column names for the error data
+#     pre = pre.rename(columns={col: col.replace("_pre", "") for col in pre.columns})
+#     post = post.rename(columns={col: col.replace("_post", "") for col in post.columns})
 
-    # Add the tag for pre and post
-    pre[DatasetFields.trial] = "A - Pre"
-    post[DatasetFields.trial] = "B - Post"
+#     # Add the tag for pre and post
+#     pre[DatasetFields.trial] = "A - Pre"
+#     post[DatasetFields.trial] = "B - Post"
 
-    return pd.concat([pre, post], ignore_index=True)
+#     return pd.concat([pre, post], ignore_index=True)
 
 
 def get_crucial_stats(
@@ -504,51 +504,48 @@ def get_crucial_stats(
     """
     # Load default data
     if data is None:
-        data = flatten_access_eval_2021_dataset()
+        data = load_access_eval_2021_dataset()
 
     # Create standard column name for long format table
-    avg_errs_per_page_col = ComputedFields.avg_errors_per_page_post.name.replace(
-        "_post", ""
-    )
+    avg_errs_per_page_col = ComputedFields.avg_errors_per_page.name
     avg_minor_errs_per_page_col = (
-        ComputedFields.avg_minor_errors_per_page_post.name.replace("_post", "")
+        ComputedFields.avg_minor_errors_per_page.name
     )
     avg_moderate_errs_per_page_col = (
-        ComputedFields.avg_moderate_errors_per_page_post.name.replace("_post", "")
+        ComputedFields.avg_moderate_errors_per_page.name
     )
     avg_serious_errs_per_page_col = (
-        ComputedFields.avg_serious_errors_per_page_post.name.replace("_post", "")
+        ComputedFields.avg_serious_errors_per_page.name
     )
     avg_critical_errs_per_page_col = (
-        ComputedFields.avg_critical_errors_per_page_post.name.replace("_post", "")
+        ComputedFields.avg_critical_errors_per_page.name
     )
-    num_pages_col = DatasetFields.number_of_pages_post.replace("_post", "")
+    num_pages_col = DatasetFields.number_of_pages
 
     # Run contacted comparison vs non-contacted comparison and store for later
-    contacted = data.loc[data[DatasetFields.contacted] == "Contacted"]
-    not_contacted = data[data[DatasetFields.contacted] == "Not-Contacted"]
-    contacted_t_test = sci_stats.ttest_rel(
-        contacted.loc[contacted[DatasetFields.trial] == "A - Pre"][
-            avg_errs_per_page_col
-        ],
-        contacted.loc[contacted[DatasetFields.trial] == "B - Post"][
-            avg_errs_per_page_col
-        ],
-    )
-    not_contacted_t_test = sci_stats.ttest_rel(
-        not_contacted[not_contacted[DatasetFields.trial] == "A - Pre"][
-            avg_errs_per_page_col
-        ],
-        not_contacted[not_contacted[DatasetFields.trial] == "B - Post"][
-            avg_errs_per_page_col
-        ],
-    )
+    # contacted = data.loc[data[DatasetFields.contacted] == "Contacted"]
+    # not_contacted = data[data[DatasetFields.contacted] == "Not-Contacted"]
+    # contacted_t_test = sci_stats.ttest_rel(
+    #     contacted.loc[
+    #         avg_errs_per_page_col
+    #     ],
+    #     # contacted.loc[contacted[DatasetFields.trial] == "B - Post"][
+    #     #     avg_errs_per_page_col
+    #     # ],
+    # )
+    # not_contacted_t_test = sci_stats.ttest_rel(
+    #     not_contacted[
+    #         avg_errs_per_page_col
+    #     ],
+    #     # not_contacted[not_contacted[DatasetFields.trial] == "B - Post"][
+    #     #     avg_errs_per_page_col
+    #     # ],
+    # )
 
     # Generate demographics and tables
-    with open("overall-stats-by-trial.txt", "w") as open_f:
+    with open("overall-stats.txt", "w") as open_f:
         open_f.write(
-            data[[DatasetFields.trial, num_pages_col, avg_errs_per_page_col]]
-            .groupby(DatasetFields.trial)
+            data[[ num_pages_col, avg_errs_per_page_col]]
             .agg([np.mean, np.std])
             .to_latex()
         )
@@ -599,10 +596,10 @@ def get_crucial_stats(
         )
 
     # Store all stats in dict to be returned
-    stats: Dict[str, sci_stats.stats.Ttest_indResult] = {
-        "contacted pre and post | avg errors per page": contacted_t_test,
-        "not contacted pre and post | avg errors per page": not_contacted_t_test,
-    }
+    # stats: Dict[str, sci_stats.stats.Ttest_indResult] = {
+    #     "contacted pre and post | avg errors per page": contacted_t_test,
+    #     "not contacted pre and post | avg errors per page": not_contacted_t_test,
+    # }
 
     # Get trends in mayoral vs council races
     # Have to use Welch t-test here because we don't know / can't be certain
@@ -611,14 +608,20 @@ def get_crucial_stats(
     council_races = data[data[DatasetFields.electoral_position] == "Council"]
 
     # Shorten number of pages col title
-    number_of_pages = DatasetFields.number_of_pages_post.replace("_post", "")
+    number_of_pages = DatasetFields.number_of_pages
 
     # Compute stats and save
-    stats["mayoral vs council | number of pages"] = sci_stats.ttest_ind(
+    stats: Dict[str, sci_stats.stats.Ttest_indResult] = {
+        "mayoral vs council | number of pages": sci_stats.ttest_ind(
         mayoral_races[number_of_pages],
         council_races[number_of_pages],
-        equal_var=False,
-    )
+        equal_var=False,)
+    }
+    # stats["mayoral vs council | number of pages"] = sci_stats.ttest_ind(
+    #     mayoral_races[number_of_pages],
+    #     council_races[number_of_pages],
+    #     equal_var=False,
+    # )
     stats["mayoral | number of pages | mean and std"] = {
         "mean": mayoral_races[number_of_pages].mean(),
         "std": mayoral_races[number_of_pages].std(),
@@ -669,29 +672,29 @@ def get_crucial_stats(
     }
 
     # number of pages, number of words, number of unique words by candidate position
-    candidate_position_grouped = data.groupby(DatasetFields.candidate_position)
-    candidate_position_split = [
-        candidate_position_grouped.get_group(g)
-        for g in candidate_position_grouped.groups.keys()
-    ]
-    candidate_position_split_n_pages = [
-        df[num_pages_col] for df in candidate_position_split
-    ]
-    stats["n pages | candidate position"] = sci_stats.f_oneway(
-        *candidate_position_split_n_pages
-    )
-    candidate_position_split_n_words = [
-        df[DatasetFields.number_of_words] for df in candidate_position_split
-    ]
-    stats["n words | candidate position"] = sci_stats.f_oneway(
-        *candidate_position_split_n_words
-    )
-    candidate_position_split_n_unique_words = [
-        df[DatasetFields.number_of_unique_words] for df in candidate_position_split
-    ]
-    stats["n unique words | candidate position"] = sci_stats.f_oneway(
-        *candidate_position_split_n_unique_words
-    )
+    # candidate_position_grouped = data.groupby(DatasetFields.candidate_position)
+    # candidate_position_split = [
+    #     candidate_position_grouped.get_group(g)
+    #     for g in candidate_position_grouped.groups.keys()
+    # ]
+    # candidate_position_split_n_pages = [
+    #     df[num_pages_col] for df in candidate_position_split
+    # ]
+    # stats["n pages | candidate position"] = sci_stats.f_oneway(
+    #     *candidate_position_split_n_pages
+    # )
+    # candidate_position_split_n_words = [
+    #     df[DatasetFields.number_of_words] for df in candidate_position_split
+    # ]
+    # stats["n words | candidate position"] = sci_stats.f_oneway(
+    #     *candidate_position_split_n_words
+    # )
+    # candidate_position_split_n_unique_words = [
+    #     df[DatasetFields.number_of_unique_words] for df in candidate_position_split
+    # ]
+    # stats["n unique words | candidate position"] = sci_stats.f_oneway(
+    #     *candidate_position_split_n_unique_words
+    # )
 
     def sig_str(p: float) -> str:
         if p >= 0.05:
@@ -716,13 +719,13 @@ def get_crucial_stats(
     ]:
         this_measure_stats: Dict[str, str] = {}
 
-        # Handle candidate position
-        cp_err_col = [df[err_col] for df in candidate_position_split]
-        anova = sci_stats.f_oneway(*cp_err_col)
+        # # Handle candidate position
+        # cp_err_col = [df[err_col] for df in candidate_position_split]
+        # anova = sci_stats.f_oneway(*cp_err_col)
 
-        this_measure_stats[
-            DatasetFields.candidate_position
-        ] = f"F(2, 57) = {round(anova.statistic, 2)}, {sig_str(anova.pvalue)}"
+        # this_measure_stats[
+        #     DatasetFields.candidate_position
+        # ] = f"F(2, 57) = {round(anova.statistic, 2)}, {sig_str(anova.pvalue)}"
 
         # Handle t-tests
         for group_col in [
