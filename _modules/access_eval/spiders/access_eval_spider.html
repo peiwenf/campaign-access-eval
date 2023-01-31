@@ -219,10 +219,6 @@
 
     <span class="kn">from</span> <span class="nn">scrapy.http.response.html</span> <span class="kn">import</span> <span class="n">HtmlResponse</span>
 
-<span class="n">DOWNLOADER_MIDDLEWARES</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;access_eval.middlewares.CustomDownloaderMiddleware&#39;</span><span class="p">:</span> <span class="mi">543</span><span class="p">,</span>
-<span class="p">}</span>
-
 <span class="c1">###############################################################################</span>
 
 
@@ -247,6 +243,10 @@
 
         <span class="c1"># Super</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        
+        <span class="n">custom_settings</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;DEPTH_LIMIT&#39;</span><span class="p">:</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
 
 <div class="viewcode-block" id="AccessEvalSpider.parse_result"><a class="viewcode-back" href="../../../access_eval.spiders.html#access_eval.spiders.access_eval_spider.AccessEvalSpider.parse_result">[docs]</a>    <span class="k">def</span> <span class="nf">parse_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">:</span> <span class="s2">&quot;HtmlResponse&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># We spawn a new webdriver process for each page because</span>
