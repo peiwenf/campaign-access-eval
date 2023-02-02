@@ -20,7 +20,7 @@ from tqdm import tqdm
 
 from access_eval.constants import AGGREGATE_AXE_RESULTS_FILENAME, SINGLE_PAGE_AXE_RESULTS_FILENAME
 from access_eval.utils import clean_url
-from .constants import (
+from constants_2022 import (
     ACCESS_EVAL_2022_DATASET,
     ComputedField,
     ComputedFields,
@@ -171,7 +171,8 @@ def process_axe_evaluations_and_extras(
     # Handle path and dir checking
     axe_results_dir = Path(axe_results_dir).resolve(strict=True)
     if not axe_results_dir.is_dir():
-        raise NotADirectoryError(axe_results_dir)
+        # raise NotADirectoryError(axe_results_dir)
+        return None
 
     # Prep for recursive processing
     word_metrics: Optional[Dict]
@@ -226,29 +227,28 @@ def process_axe_evaluations_and_extras(
 
 def _convert_metrics_to_expanded_data(
     metrics: CompiledMetrics,
-    phase: str,
 ) -> Dict[str, int]:
     # Unpack error types
     if metrics.error_types is not None:
         error_types = {
-            f"error-type_{k}_{phase}": v for k, v in metrics.error_types.items()
+            f"error-type_{k}": v for k, v in metrics.error_types.items()
         }
     else:
         error_types = {}
 
     return {
         **error_types,
-        f"number_of_pages_{phase}": metrics.pages,
-        f"number_of_total_errors_{phase}": (
+        f"number_of_pages": metrics.pages,
+        f"number_of_total_errors": (
             metrics.critical_violations
             + metrics.serious_violations
             + metrics.moderate_violations
             + metrics.minor_violations
         ),
-        f"number_of_critical_errors_{phase}": metrics.critical_violations,
-        f"number_of_serious_errors_{phase}": metrics.serious_violations,
-        f"number_of_moderate_errors_{phase}": metrics.moderate_violations,
-        f"number_of_minor_errors_{phase}": metrics.minor_violations,
+        f"number_of_critical_errors": metrics.critical_violations,
+        f"number_of_serious_errors": metrics.serious_violations,
+        f"number_of_moderate_errors": metrics.moderate_violations,
+        f"number_of_minor_errors": metrics.minor_violations,
     }
 
 
@@ -327,16 +327,21 @@ def combine_election_data_with_axe_results(
     # Iter election data and create List of expanded dicts with added
     expanded_data = []
     for _, row in tqdm(election_data.iterrows()):
-        cleaned_url = clean_url(row[DatasetFields.campaign_website_url])
-        access_eval = axe_scraping_results / cleaned_url
+        if isinstance(row[DatasetFields.campaign_website_url], str):
+            cleaned_url = clean_url(row[DatasetFields.campaign_website_url])
+            access_eval = axe_scraping_results / cleaned_url
+        else:
+            access_eval = None
+
         # post_access_eval = post_contact_axe_scraping_results / cleaned_url
 
         # Only continue with the addition if pre and post both exist
-        if access_eval.exists():
+        # if not access_eval == None:
+        if access_eval != None and access_eval.exists():
             # Run metric generation
             access_eval_metrics = process_axe_evaluations_and_extras(
                 access_eval,
-                generate_extras=False,
+                generate_extras=True,
             )
             # post_access_eval_metrics = process_axe_evaluations_and_extras(
             #     post_access_eval,
@@ -351,7 +356,6 @@ def combine_election_data_with_axe_results(
                     # Pre-contact info
                     **_convert_metrics_to_expanded_data(
                         access_eval_metrics,
-                        "pre",
                     ),
                     # # Post-contact info
                     # **_convert_metrics_to_expanded_data(
@@ -364,19 +368,26 @@ def combine_election_data_with_axe_results(
                     DatasetFields.ease_of_reading: access_eval_metrics.ease_of_reading,  # noqa: E501
                 }
             )
+        else:
+            expanded_data.append(
+                {
+                    # Original row details
+                    **row,
+                }
+            )
 
     log.info(
         f"Dropped {len(election_data) - len(expanded_data)} rows from dataset "
-        f"because they were missing a pre or post aXe result directory."
+        f"because they were missing a result directory."
     )
     return pd.DataFrame(expanded_data)
 
 
-def load_access_eval_2021_dataset(
+def load_access_eval_2022_dataset(
     path: Optional[Union[str, Path]] = None
 ) -> pd.DataFrame:
     """
-    Load the default access eval 2021 dataset or a provided custom dataset
+    Load the default access eval 2022 dataset or a provided custom dataset
     and add all computed fields.
 
     Parameters
@@ -504,7 +515,7 @@ def get_crucial_stats(
     """
     # Load default data
     if data is None:
-        data = load_access_eval_2021_dataset()
+        data = load_access_eval_2022_dataset()
 
     # Create standard column name for long format table
     avg_errs_per_page_col = ComputedFields.avg_errors_per_page.name

@@ -7,8 +7,8 @@ from typing import Callable, NamedTuple
 ###############################################################################
 
 
-ACCESS_EVAL_2022_STUDY_REPORTS = Path(__file__).parent / "reports"
-ACCESS_EVAL_2022_STUDY_DATA = Path(__file__).parent / "data"
+ACCESS_EVAL_2022_STUDY_REPORTS = Path(__file__).parent / "reports_2022"
+ACCESS_EVAL_2022_STUDY_DATA = Path(__file__).parent / "data_2022"
 
 ACCESS_EVAL_2022_ELECTION_RESULTS = ACCESS_EVAL_2022_STUDY_DATA / "AttorneyGeneral_cleaned.csv"
 ACCESS_EVAL_2022_EVALS_ZIP = (
@@ -131,7 +131,7 @@ class DatasetFields:
     Pulled from external data source.
     """
 
-    # number_of_votes_for_candidate = "number_of_votes_for_candidate"
+    number_of_votes_for_candidate = "number_of_votes_for_candidate"
     """
     int: The number of votes the candidate ultimately received.
 
@@ -145,7 +145,7 @@ class DatasetFields:
     Pulled from external data source.
     """
 
-    # number_of_votes_for_race = "number_of_votes_for_race"
+    number_of_votes_for_race = "number_of_votes_for_race"
     """
     int: The total number of votes returned in the election.
 
@@ -159,7 +159,7 @@ class DatasetFields:
     Pulled from external data source.
     """
 
-    # vote_share = "vote_share"
+    vote_share = "vote_share"
     """
     float: The number of votes the candidate received over the number of votes possible.
 

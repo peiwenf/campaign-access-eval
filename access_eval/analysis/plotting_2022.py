@@ -7,8 +7,8 @@ from typing import Any, Dict, List, Optional, Union
 import altair as alt
 import pandas as pd
 
-from .constants import ComputedFields, DatasetFields
-from .core import flatten_access_eval_2021_dataset, load_access_eval_2021_dataset
+from .constants_2022 import ComputedFields, DatasetFields
+from .core_2022 import load_access_eval_2022_dataset
 
 ###############################################################################
 
@@ -23,7 +23,7 @@ def plot_computed_fields_over_vote_share(
 ) -> Path:
     # Load default data
     if data is None:
-        data = load_access_eval_2021_dataset()
+        data = load_access_eval_2022_dataset()
 
     # Apply default save path
     if save_path is None:
@@ -68,58 +68,58 @@ def plot_computed_fields_over_vote_share(
     return save_path
 
 
-def plot_pre_post_fields_compare(
-    data: Optional[pd.DataFrame] = None,
-    save_path: Optional[Union[str, Path]] = None,
-) -> Path:
-    # Load default data
-    if data is None:
-        data = load_access_eval_2021_dataset()
+# def plot_pre_post_fields_compare(
+#     data: Optional[pd.DataFrame] = None,
+#     save_path: Optional[Union[str, Path]] = None,
+# ) -> Path:
+#     # Load default data
+#     if data is None:
+#         data = load_access_eval_2022_dataset()
 
-    # Apply default save path
-    if save_path is None:
-        save_path = PLOTTING_DIR / "pre-post.png"
+#     # Apply default save path
+#     if save_path is None:
+#         save_path = PLOTTING_DIR / "pre-post.png"
 
-    # Ensure save path is Path object
-    save_path = Path(save_path).resolve()
-    save_path.parent.mkdir(parents=True, exist_ok=True)
+#     # Ensure save path is Path object
+#     save_path = Path(save_path).resolve()
+#     save_path.parent.mkdir(parents=True, exist_ok=True)
 
-    pre_post = alt.hconcat()
-    for pre, post in [
-        (
-            ComputedFields.avg_errors_per_page_pre.name,
-            ComputedFields.avg_errors_per_page_post.name,
-        ),
-        (
-            ComputedFields.avg_critical_errors_per_page_pre.name,
-            ComputedFields.avg_critical_errors_per_page_post.name,
-        ),
-        (
-            ComputedFields.avg_serious_errors_per_page_pre.name,
-            ComputedFields.avg_serious_errors_per_page_post.name,
-        ),
-        (
-            ComputedFields.avg_moderate_errors_per_page_pre.name,
-            ComputedFields.avg_moderate_errors_per_page_post.name,
-        ),
-        (
-            ComputedFields.avg_minor_errors_per_page_pre.name,
-            ComputedFields.avg_minor_errors_per_page_post.name,
-        ),
-    ]:
-        pre_post |= (
-            alt.Chart(data)
-            .mark_point()
-            .encode(
-                x=f"{post}:Q",
-                y=f"{pre}:Q",
-                color=f"{DatasetFields.contacted}:N",
-                shape=f"{DatasetFields.contacted}:N",
-            )
-        )
+#     pre_post = alt.hconcat()
+#     for pre, post in [
+#         (
+#             ComputedFields.avg_errors_per_page_pre.name,
+#             ComputedFields.avg_errors_per_page_post.name,
+#         ),
+#         (
+#             ComputedFields.avg_critical_errors_per_page_pre.name,
+#             ComputedFields.avg_critical_errors_per_page_post.name,
+#         ),
+#         (
+#             ComputedFields.avg_serious_errors_per_page_pre.name,
+#             ComputedFields.avg_serious_errors_per_page_post.name,
+#         ),
+#         (
+#             ComputedFields.avg_moderate_errors_per_page_pre.name,
+#             ComputedFields.avg_moderate_errors_per_page_post.name,
+#         ),
+#         (
+#             ComputedFields.avg_minor_errors_per_page_pre.name,
+#             ComputedFields.avg_minor_errors_per_page_post.name,
+#         ),
+#     ]:
+#         pre_post |= (
+#             alt.Chart(data)
+#             .mark_point()
+#             .encode(
+#                 x=f"{post}:Q",
+#                 y=f"{pre}:Q",
+#                 color=f"{DatasetFields.contacted}:N",
+#                 shape=f"{DatasetFields.contacted}:N",
+#             )
+#         )
 
-    pre_post.save(str(save_path.resolve()))
-    return save_path
+#     pre_post.save(str(save_path.resolve()))
+#     return save_path
 
 
 def plot_categorical_against_errors_boxplots(
@@ -130,16 +130,16 @@ def plot_categorical_against_errors_boxplots(
     """
     # Load default data
     if data is None:
-        data = flatten_access_eval_2021_dataset()
+        data = load_access_eval_2022_dataset()
 
     # Only work against the post data for summary stats as there was no difference
     # pre and post (trial / contact)
-    data = data[data[DatasetFields.trial] == "B - Post"]
+    # data = data[data[DatasetFields.trial] == "B - Post"]
 
     # Set of categorical variables to use for box plot generation
     categorical_variables = [
         DatasetFields.electoral_position,
-        DatasetFields.candidate_position,
+        # DatasetFields.candidate_position,
         DatasetFields.election_result,
     ]
 
@@ -149,16 +149,14 @@ def plot_categorical_against_errors_boxplots(
         # Break down the categorical variable into all errors and subsets of error type
         error_types = alt.hconcat()
         for err in [
-            ComputedFields.avg_errors_per_page_post.name,
-            ComputedFields.avg_minor_errors_per_page_post.name,
-            ComputedFields.avg_moderate_errors_per_page_post.name,
-            ComputedFields.avg_serious_errors_per_page_post.name,
-            ComputedFields.avg_critical_errors_per_page_post.name,
+            ComputedFields.avg_errors_per_page.name,
+            ComputedFields.avg_minor_errors_per_page.name,
+            ComputedFields.avg_moderate_errors_per_page.name,
+            ComputedFields.avg_serious_errors_per_page.name,
+            ComputedFields.avg_critical_errors_per_page.name,
         ]:
-            feature_name = err.replace("_post", "")
-            scale_name = ComputedFields.avg_errors_per_page_post.name.replace(
-                "_post", ""
-            )
+            feature_name = err
+            scale_name = ComputedFields.avg_errors_per_page.name
 
             error_types |= (
                 alt.Chart(data)
@@ -196,11 +194,11 @@ def plot_locations_against_errors_boxplots(
     """
     # Load default data
     if data is None:
-        data = flatten_access_eval_2021_dataset()
+        data = load_access_eval_2022_dataset()
 
     # Only work against the post data for summary stats as there was no difference
     # pre and post (trial / contact)
-    data = data[data[DatasetFields.trial] == "B - Post"]
+    # data = data[data[DatasetFields.trial] == "B - Post"]
 
     # Drop any locations with less than two campaigns
     location_counts = data[DatasetFields.location].value_counts()
@@ -214,16 +212,14 @@ def plot_locations_against_errors_boxplots(
         if len(location_subset) > 4:
             error_types = alt.hconcat()
             for err in [
-                ComputedFields.avg_errors_per_page_post.name,
-                ComputedFields.avg_minor_errors_per_page_post.name,
-                ComputedFields.avg_moderate_errors_per_page_post.name,
-                ComputedFields.avg_serious_errors_per_page_post.name,
-                ComputedFields.avg_critical_errors_per_page_post.name,
+                ComputedFields.avg_errors_per_page.name,
+                ComputedFields.avg_minor_errors_per_page.name,
+                ComputedFields.avg_moderate_errors_per_page.name,
+                ComputedFields.avg_serious_errors_per_page.name,
+                ComputedFields.avg_critical_errors_per_page.name,
             ]:
-                feature_name = err.replace("_post", "")
-                scale_name = ComputedFields.avg_errors_per_page_post.name.replace(
-                    "_post", ""
-                )
+                feature_name = err
+                scale_name = ComputedFields.avg_errors_per_page.name
 
                 error_types |= (
                     alt.Chart(location_subset)
@@ -264,11 +260,11 @@ def plot_error_types_boxplots(
     """
     # Load default data
     if data is None:
-        data = flatten_access_eval_2021_dataset()
+        data = load_access_eval_2022_dataset()
 
     # Only work against the post data for summary stats as there was no difference
     # pre and post (trial / contact)
-    data = data[data[DatasetFields.trial] == "B - Post"]
+    # data = data[data[DatasetFields.trial] == "B - Post"]
 
     # Use all pre-computed avg error type features
     common_error_cols = [col for col in data.columns if "avg_error-type_" in col]
@@ -279,7 +275,6 @@ def plot_error_types_boxplots(
         cat_var_plot = alt.hconcat()
         for cat_var in [
             DatasetFields.electoral_position,
-            DatasetFields.candidate_position,
             DatasetFields.election_result,
         ]:
             cat_var_plot |= (
@@ -382,16 +377,16 @@ def plot_summary_stats(
     """
     # Load default data
     if data is None:
-        data = flatten_access_eval_2021_dataset()
+        data = load_access_eval_2022_dataset()
 
     # Only work against the post data for summary stats as there was no difference
     # pre and post (trial / contact)
-    data = data[data[DatasetFields.trial] == "B - Post"]
+    # data = data[data[DatasetFields.trial] == "B - Post"]
 
     # Split into different commonly grouped stats
     # Content is the actual website content
     content_cols = [
-        DatasetFields.number_of_pages_post.replace("_post", ""),
+        DatasetFields.number_of_pages,
         DatasetFields.ease_of_reading,
         DatasetFields.number_of_words,
         DatasetFields.number_of_unique_words,
@@ -399,13 +394,13 @@ def plot_summary_stats(
 
     # Error count norm stats
     error_counts_normed_cols = [
-        c.replace("_post", "")
+        c
         for c in [
-            ComputedFields.avg_errors_per_page_post.name,
-            ComputedFields.avg_minor_errors_per_page_post.name,
-            ComputedFields.avg_moderate_errors_per_page_post.name,
-            ComputedFields.avg_serious_errors_per_page_post.name,
-            ComputedFields.avg_critical_errors_per_page_post.name,
+            ComputedFields.avg_errors_per_page.name,
+            ComputedFields.avg_minor_errors_per_page.name,
+            ComputedFields.avg_moderate_errors_per_page.name,
+            ComputedFields.avg_serious_errors_per_page.name,
+            ComputedFields.avg_critical_errors_per_page.name,
         ]
     ]
 
@@ -461,11 +456,11 @@ def plot_location_based_summary_stats(
     """
     # Load default data
     if data is None:
-        data = flatten_access_eval_2021_dataset()
+        data = load_access_eval_2022_dataset()
 
     # Only work against the post data for summary stats as there was no difference
     # pre and post (trial / contact)
-    data = data[data[DatasetFields.trial] == "B - Post"]
+    # data = data[data[DatasetFields.trial] == "B - Post"]
 
     # Drop any locations with less than two campaigns
     location_counts = data[DatasetFields.location].value_counts()
@@ -489,11 +484,11 @@ def plot_election_result_based_summary_stats(
     """
     # Load default data
     if data is None:
-        data = flatten_access_eval_2021_dataset()
+        data = load_access_eval_2022_dataset()
 
     # Only work against the post data for summary stats as there was no difference
     # pre and post (trial / contact)
-    data = data[data[DatasetFields.trial] == "B - Post"]
+    # data = data[data[DatasetFields.trial] == "B - Post"]
 
     # Plot basic stats
     plot_summary_stats(
@@ -512,11 +507,11 @@ def plot_electoral_position_based_summary_stats(
     """
     # Load default data
     if data is None:
-        data = flatten_access_eval_2021_dataset()
+        data = load_access_eval_2022_dataset()
 
     # Only work against the post data for summary stats as there was no difference
     # pre and post (trial / contact)
-    data = data[data[DatasetFields.trial] == "B - Post"]
+    # data = data[data[DatasetFields.trial] == "B - Post"]
 
     # Plot basic stats
     plot_summary_stats(
@@ -537,11 +532,11 @@ def plot_candidate_position_based_summary_stats(
     """
     # Load default data
     if data is None:
-        data = flatten_access_eval_2021_dataset()
+        data = load_access_eval_2022_dataset()
 
     # Only work against the post data for summary stats as there was no difference
     # pre and post (trial / contact)
-    data = data[data[DatasetFields.trial] == "B - Post"]
+    # data = data[data[DatasetFields.trial] == "B - Post"]
 
     # Plot basic stats
     plot_summary_stats(
@@ -554,28 +549,28 @@ def plot_candidate_position_based_summary_stats(
     )
 
 
-def plot_pre_post_errors(
-    data: Optional[pd.DataFrame] = None,
-) -> None:
-    """
-    Input data should be the "flattened" dataset.
-    """
-    # Load default data
-    if data is None:
-        data = flatten_access_eval_2021_dataset()
+# def plot_pre_post_errors(
+#     data: Optional[pd.DataFrame] = None,
+# ) -> None:
+#     """
+#     Input data should be the "flattened" dataset.
+#     """
+#     # Load default data
+#     if data is None:
+#         data = load_access_eval_2022_dataset()
 
-    # Make pre post chart with split by contacted
-    chart = (
-        alt.Chart(data)
-        .mark_boxplot()
-        .encode(
-            x=DatasetFields.contacted,
-            y=f"{ComputedFields.avg_errors_per_page_post.name.replace('_post', ''):}:Q",
-            column=alt.Column(DatasetFields.trial, spacing=30),
-            color=DatasetFields.contacted,
-        )
-    )
+#     # Make pre post chart with split by contacted
+#     chart = (
+#         alt.Chart(data)
+#         .mark_boxplot()
+#         .encode(
+#             x=DatasetFields.contacted,
+#             y=f"{ComputedFields.avg_errors_per_page_post.name.replace('_post', ''):}:Q",
+#             column=alt.Column(DatasetFields.trial, spacing=30),
+#             color=DatasetFields.contacted,
+#         )
+#     )
 
-    # Save
-    PLOTTING_DIR.mkdir(parents=True, exist_ok=True)
-    chart.save(str(PLOTTING_DIR / "pre-post-errors.png"))
+#     # Save
+#     PLOTTING_DIR.mkdir(parents=True, exist_ok=True)
+#     chart.save(str(PLOTTING_DIR / "pre-post-errors.png"))

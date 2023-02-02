@@ -5,14 +5,14 @@ import shutil
 from pathlib import Path
 from typing import Union
 
-from . import constants
+import constants_2022
 
 ###############################################################################
 
 
 def unpack_data(
-    zipfile: Union[str, Path] = constants.ACCESS_EVAL_2021_PRE_CONTACT_EVALS_ZIP,
-    dest: Union[str, Path] = constants.ACCESS_EVAL_2021_PRE_CONTACT_EVALS_UNPACKED,
+    zipfile: Union[str, Path] = constants_2022.ACCESS_EVAL_2022_EVALS_ZIP,
+    dest: Union[str, Path] = constants_2022.ACCESS_EVAL_2022_EVALS_UNPACKED,
     clean: bool = False,
 ) -> Path:
     """

@@ -5,6 +5,10 @@ import logging
 import sys
 import traceback
 
+# import constants_2022
+# from core_2022 import combine_election_data_with_axe_results
+# from utils_2022 import unpack_data
+
 from access_eval.analysis import constants_2022
 from access_eval.analysis.core_2022 import combine_election_data_with_axe_results
 from access_eval.analysis.utils_2022 import unpack_data
@@ -62,9 +66,9 @@ def main() -> None:
         )
 
         # Store to data dir
-        # expanded_data.to_csv(constants.ACCESS_EVAL_2022_DATASET, index=False)
+        expanded_data.to_csv(constants_2022.ACCESS_EVAL_2022_DATASET, index=False)
         # test local
-        expanded_data.to_csv('data_new.csv', index=False)
+        # expanded_data.to_csv('data_test.csv', index=False)
 
     except Exception as e:
         log.error("=============================================")
