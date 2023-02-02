@@ -1,0 +1,5 @@
+id,impact,impact_score,reason,number_of_elements_in_violation,help_url
+image-alt,critical,4,Images must have alternate text,1,https://dequeuniversity.com/rules/axe/3.1/image-alt?application=axeAPI
+link-name,serious,3,Links must have discernible text,1,https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
+landmark-one-main,moderate,2,Page must have one main landmark,1,https://dequeuniversity.com/rules/axe/3.1/landmark-one-main?application=axeAPI
+region,moderate,2,All page content must be contained by landmarks,1,https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI

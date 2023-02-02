@@ -1,0 +1,6 @@
+id,impact,impact_score,reason,number_of_elements_in_violation,help_url
+color-contrast,serious,3,Elements must have sufficient color contrast,12,https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
+aria-allowed-role,minor,1,ARIA role must be appropriate for the element,8,https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI
+frame-title-unique,serious,3,Frames must have a unique title attribute,3,https://dequeuniversity.com/rules/axe/3.1/frame-title-unique?application=axeAPI
+label,critical,4,Form elements must have labels,1,https://dequeuniversity.com/rules/axe/3.1/label?application=axeAPI
+region,moderate,2,All page content must be contained by landmarks,1,https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI

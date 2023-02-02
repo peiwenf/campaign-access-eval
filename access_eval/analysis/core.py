@@ -152,7 +152,6 @@ def process_axe_evaluations_and_extras(
     Process all aXe evaluations and generate extra features
     (words, ease of reading, etc.) for the provided aXe result tree.
     Extras are optional to generate.
-
     Parameters
     ----------
     axe_results_dir: Union[str, Path]
@@ -161,7 +160,6 @@ def process_axe_evaluations_and_extras(
     generate_extras: bool
         Should the extra features be generated?
         Default: False (do not generate extra features)
-
     Returns
     -------
     metrics: CompiledMetrics
@@ -260,7 +258,6 @@ def combine_election_data_with_axe_results(
     """
     Combine election data CSV (or in memory DataFrame) with the axe results for each
     campaign website.
-
     Parameters
     ----------
     election_data: Union[str, Path, pd.DataFrame]
@@ -276,19 +273,16 @@ def combine_election_data_with_axe_results(
         The path to the directory that contains sub-directories for each campaign
         website's axe results. I.e. data/site-a and data/site-b, provide the directory
         "data" as both "site-a" and "site-b" are direct children.
-
     Returns
     -------
     full_data: pd.DataFrame
         The original election data, the summed violation counts for both pre and post
         contact, and the scraped text features using the post-contact aXe URLs
         for each campaign website combined into a single dataframe.
-
     Notes
     -----
     For both the *_axe_scraping_results parameters, provide the parent directory of all
     individual campaign axe scraping result directories.
-
     I.e. if the data is stored like so:
     |- pre-data/
         |- site-a/
@@ -296,13 +290,10 @@ def combine_election_data_with_axe_results(
     |- post-data/
         |- site-a/
         |- site-b/
-
     Provide the parameters as `"pre-data/"` and `"post-data/"` respectively.
-
     Additionally, if the provided campaign website url is missing from either the pre
     or post axe results directories, the site is skipped / dropped from the expanded
     dataset.
-
     Finally, any `https://` or `http://` is dropped from the campaign url.
     I.e. in the spreadsheet the value is `https://website.org` but the associated
     directory should be: `pre-data/website.org`
@@ -378,13 +369,11 @@ def load_access_eval_2021_dataset(
     """
     Load the default access eval 2021 dataset or a provided custom dataset
     and add all computed fields.
-
     Parameters
     ----------
     path: Optional[Union[str, Path]]
         An optional path for custom data to load.
         Default: None (load official 2021 access eval dataset)
-
     Returns
     -------
     data: pd.DataFrame
@@ -432,18 +421,15 @@ def flatten_access_eval_2021_dataset(
     which stores a categorical value for "Pre" or "Post" which allows us
     to simplify the columns into just "avg_errors_per_page" for example instead
     of having both "avg_errors_per_page_pre" and "avg_errors_per_page_post".
-
     Parameters
     ----------
     data: pd.DataFrame
         Preloaded access eval data.
         Default: None (load access eval 2021 data)
-
     Returns
     -------
     flattened: pd.DataFrame
         The flattened dataset.
-
     Notes
     -----
     This only provides a subset of the full dataset back.
@@ -493,7 +479,6 @@ def get_crucial_stats(
 ) -> Dict[str, Any]:
     """
     Generate statistics we found useful in the 2021 paper.
-
     This includes:
     * mayoral vs council campaigns by content features.
     * percent of total errors per each error severity level

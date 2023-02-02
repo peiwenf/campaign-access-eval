@@ -1,0 +1,11 @@
+id,impact,impact_score,reason,number_of_elements_in_violation,help_url
+duplicate-id,minor,1,id attribute value must be unique,18,https://dequeuniversity.com/rules/axe/3.1/duplicate-id?application=axeAPI
+duplicate-id-active,serious,3,IDs of active elements must be unique,7,https://dequeuniversity.com/rules/axe/3.1/duplicate-id-active?application=axeAPI
+duplicate-id-aria,critical,4,IDs used in ARIA and labels must be unique,5,https://dequeuniversity.com/rules/axe/3.1/duplicate-id-aria?application=axeAPI
+image-alt,critical,4,Images must have alternate text,2,https://dequeuniversity.com/rules/axe/3.1/image-alt?application=axeAPI
+aria-valid-attr-value,critical,4,ARIA attributes must conform to valid values,1,https://dequeuniversity.com/rules/axe/3.1/aria-valid-attr-value?application=axeAPI
+aria-valid-attr,critical,4,ARIA attributes must conform to valid names,1,https://dequeuniversity.com/rules/axe/3.1/aria-valid-attr?application=axeAPI
+link-name,serious,3,Links must have discernible text,1,https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
+heading-order,moderate,2,Heading levels should only increase by one,1,https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
+region,moderate,2,All page content must be contained by landmarks,1,https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI
+aria-allowed-role,minor,1,ARIA role must be appropriate for the element,1,https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI

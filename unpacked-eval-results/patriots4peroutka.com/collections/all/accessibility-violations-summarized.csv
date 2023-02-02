@@ -1,0 +1,5 @@
+id,impact,impact_score,reason,number_of_elements_in_violation,help_url
+aria-allowed-role,minor,1,ARIA role must be appropriate for the element,12,https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI
+aria-valid-attr-value,critical,4,ARIA attributes must conform to valid values,2,https://dequeuniversity.com/rules/axe/3.1/aria-valid-attr-value?application=axeAPI
+autocomplete-valid,serious,3,autocomplete attribute must be used correctly,1,https://dequeuniversity.com/rules/axe/3.1/autocomplete-valid?application=axeAPI
+page-has-heading-one,moderate,2,Page must contain a level-one heading,1,https://dequeuniversity.com/rules/axe/3.1/page-has-heading-one?application=axeAPI

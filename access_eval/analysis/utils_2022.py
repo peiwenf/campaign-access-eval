@@ -5,7 +5,7 @@ import shutil
 from pathlib import Path
 from typing import Union
 
-import constants_2022
+from . import constants_2022
 
 ###############################################################################
 

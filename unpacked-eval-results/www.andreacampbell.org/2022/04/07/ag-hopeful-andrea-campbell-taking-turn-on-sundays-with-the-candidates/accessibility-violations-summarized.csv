@@ -1,0 +1,15 @@
+id,impact,impact_score,reason,number_of_elements_in_violation,help_url
+label,critical,4,Form elements must have labels,11,https://dequeuniversity.com/rules/axe/3.1/label?application=axeAPI
+frame-title,serious,3,Frames must have title attribute,7,https://dequeuniversity.com/rules/axe/3.1/frame-title?application=axeAPI
+aria-allowed-role,minor,1,ARIA role must be appropriate for the element,7,https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI
+link-name,serious,3,Links must have discernible text,6,https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
+frame-title-unique,serious,3,Frames must have a unique title attribute,5,https://dequeuniversity.com/rules/axe/3.1/frame-title-unique?application=axeAPI
+color-contrast,serious,3,Elements must have sufficient color contrast,4,https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
+duplicate-id,minor,1,id attribute value must be unique,4,https://dequeuniversity.com/rules/axe/3.1/duplicate-id?application=axeAPI
+image-alt,critical,4,Images must have alternate text,2,https://dequeuniversity.com/rules/axe/3.1/image-alt?application=axeAPI
+aria-valid-attr-value,critical,4,ARIA attributes must conform to valid values,1,https://dequeuniversity.com/rules/axe/3.1/aria-valid-attr-value?application=axeAPI
+checkboxgroup,critical,4,Checkbox inputs with the same name attribute value must be part of a group,1,https://dequeuniversity.com/rules/axe/3.1/checkboxgroup?application=axeAPI
+html-has-lang,serious,3,<html> element must have a lang attribute,1,https://dequeuniversity.com/rules/axe/3.1/html-has-lang?application=axeAPI
+heading-order,moderate,2,Heading levels should only increase by one,1,https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
+landmark-one-main,moderate,2,Page must have one main landmark,1,https://dequeuniversity.com/rules/axe/3.1/landmark-one-main?application=axeAPI
+region,moderate,2,All page content must be contained by landmarks,1,https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI

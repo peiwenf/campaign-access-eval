@@ -18,9 +18,9 @@ from selenium.webdriver import FirefoxOptions
 from textstat import flesch_reading_ease
 from tqdm import tqdm
 
-from access_eval.constants import AGGREGATE_AXE_RESULTS_FILENAME, SINGLE_PAGE_AXE_RESULTS_FILENAME
-from access_eval.utils import clean_url
-from constants_2022 import (
+from ..constants import AGGREGATE_AXE_RESULTS_FILENAME, SINGLE_PAGE_AXE_RESULTS_FILENAME
+from ..utils import clean_url
+from .constants_2022 import (
     ACCESS_EVAL_2022_DATASET,
     ComputedField,
     ComputedFields,
@@ -146,7 +146,6 @@ def _recurse_axe_results(
 
 def process_axe_evaluations_and_extras(
     axe_results_dir: Union[str, Path],
-    generate_extras: bool = False,
 ) -> CompiledMetrics:
     """
     Process all aXe evaluations and generate extra features
@@ -176,10 +175,11 @@ def process_axe_evaluations_and_extras(
 
     # Prep for recursive processing
     word_metrics: Optional[Dict]
-    if generate_extras:
-        word_metrics = {}
-    else:
-        word_metrics = None
+    word_metrics = {}
+    # if generate_extras:
+    #     word_metrics = {}
+    # else:
+    #     word_metrics = None
 
     # Process
     parsed_metrics = _recurse_axe_results(
@@ -341,7 +341,6 @@ def combine_election_data_with_axe_results(
             # Run metric generation
             access_eval_metrics = process_axe_evaluations_and_extras(
                 access_eval,
-                generate_extras=True,
             )
             # post_access_eval_metrics = process_axe_evaluations_and_extras(
             #     post_access_eval,

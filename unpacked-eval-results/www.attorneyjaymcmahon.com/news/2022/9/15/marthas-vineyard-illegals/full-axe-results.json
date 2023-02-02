@@ -1,0 +1,3733 @@
+{
+    "inapplicable": [
+        {
+            "description": "Ensures every accesskey attribute value is unique",
+            "help": "accesskey attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/accesskeys?application=axeAPI",
+            "id": "accesskeys",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "best-practice",
+                "cat.keyboard"
+            ]
+        },
+        {
+            "description": "Ensures <area> elements of image maps have alternate text",
+            "help": "Active <area> elements must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/area-alt?application=axeAPI",
+            "id": "area-alt",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a"
+            ]
+        },
+        {
+            "description": "Ensures unsupported DPUB roles are only used on elements with implicit fallback roles",
+            "help": "Unsupported DPUB ARIA roles should be used on elements with implicit fallback roles",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/aria-dpub-role-fallback?application=axeAPI",
+            "id": "aria-dpub-role-fallback",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag131"
+            ]
+        },
+        {
+            "description": "Ensure the autocomplete attribute is correct and suitable for the form field",
+            "help": "autocomplete attribute must be used correctly",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/autocomplete-valid?application=axeAPI",
+            "id": "autocomplete-valid",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.forms",
+                "wcag21aa",
+                "wcag135"
+            ]
+        },
+        {
+            "description": "Ensures <blink> elements are not used",
+            "help": "<blink> elements are deprecated and must not be used",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/blink?application=axeAPI",
+            "id": "blink",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.time-and-media",
+                "wcag2a",
+                "wcag222",
+                "section508",
+                "section508.22.j"
+            ]
+        },
+        {
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/button-name?application=axeAPI",
+            "id": "button-name",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a"
+            ]
+        },
+        {
+            "description": "Ensures related <input type=\"checkbox\"> elements have a group and that the group designation is consistent",
+            "help": "Checkbox inputs with the same name attribute value must be part of a group",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/checkboxgroup?application=axeAPI",
+            "id": "checkboxgroup",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures <dl> elements are structured correctly",
+            "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/definition-list?application=axeAPI",
+            "id": "definition-list",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ]
+        },
+        {
+            "description": "Ensures <dt> and <dd> elements are contained by a <dl>",
+            "help": "<dt> and <dd> elements must be contained by a <dl>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/dlitem?application=axeAPI",
+            "id": "dlitem",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ]
+        },
+        {
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/duplicate-id-active?application=axeAPI",
+            "id": "duplicate-id-active",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ]
+        },
+        {
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/duplicate-id-aria?application=axeAPI",
+            "id": "duplicate-id-aria",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ]
+        },
+        {
+            "description": "Ensures <iframe> and <frame> elements contain the axe-core script",
+            "help": "Frames must be tested with axe-core",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/frame-tested?application=axeAPI",
+            "id": "frame-tested",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.structure",
+                "review-item"
+            ]
+        },
+        {
+            "description": "Ensures <iframe> and <frame> elements contain a unique title attribute",
+            "help": "Frames must have a unique title attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/frame-title-unique?application=axeAPI",
+            "id": "frame-title-unique",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures <iframe> and <frame> elements contain a non-empty title attribute",
+            "help": "Frames must have title attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/frame-title?application=axeAPI",
+            "id": "frame-title",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag241",
+                "wcag412",
+                "section508",
+                "section508.22.i"
+            ]
+        },
+        {
+            "description": "Ensure that HTML elements with both valid lang and xml:lang attributes agree on the base language of the page",
+            "help": "HTML elements with lang and xml:lang must have the same base language",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/html-xml-lang-mismatch?application=axeAPI",
+            "id": "html-xml-lang-mismatch",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311"
+            ]
+        },
+        {
+            "description": "Ensures <input type=\"image\"> elements have alternate text",
+            "help": "Image buttons must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/input-image-alt?application=axeAPI",
+            "id": "input-image-alt",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a"
+            ]
+        },
+        {
+            "description": "Ensures that every form element is not solely labeled using the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/label-title-only?application=axeAPI",
+            "id": "label-title-only",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/label?application=axeAPI",
+            "id": "label",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332",
+                "wcag131",
+                "section508",
+                "section508.22.n"
+            ]
+        },
+        {
+            "description": "Ensures presentational <table> elements do not use <th>, <caption> elements or the summary attribute",
+            "help": "Layout tables must not use data table elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/layout-table?application=axeAPI",
+            "id": "layout-table",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.semantics",
+                "wcag2a",
+                "wcag131"
+            ]
+        },
+        {
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/list?application=axeAPI",
+            "id": "list",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ]
+        },
+        {
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/listitem?application=axeAPI",
+            "id": "listitem",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ]
+        },
+        {
+            "description": "Ensures <marquee> elements are not used",
+            "help": "<marquee> elements are deprecated and must not be used",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/marquee?application=axeAPI",
+            "id": "marquee",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag222"
+            ]
+        },
+        {
+            "description": "Ensures <meta http-equiv=\"refresh\"> is not used",
+            "help": "Timed refresh must not exist",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/meta-refresh?application=axeAPI",
+            "id": "meta-refresh",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.time",
+                "wcag2a",
+                "wcag2aaa",
+                "wcag221",
+                "wcag224",
+                "wcag325"
+            ]
+        },
+        {
+            "description": "Ensures <object> elements have alternate text",
+            "help": "<object> elements must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/object-alt?application=axeAPI",
+            "id": "object-alt",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a"
+            ]
+        },
+        {
+            "description": "Ensures related <input type=\"radio\"> elements have a group and that the group designation is consistent",
+            "help": "Radio inputs with the same name attribute value must be part of a group",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/radiogroup?application=axeAPI",
+            "id": "radiogroup",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures the scope attribute is used correctly on tables",
+            "help": "scope attribute should be used correctly",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/scope-attr-valid?application=axeAPI",
+            "id": "scope-attr-valid",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.tables",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures that server-side image maps are not used",
+            "help": "Server-side image maps must not be used",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/server-side-image-map?application=axeAPI",
+            "id": "server-side-image-map",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag211",
+                "section508",
+                "section508.22.f"
+            ]
+        },
+        {
+            "description": "Ensure all skip links have a focusable target",
+            "help": "The skip-link target should exist and be focusable",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/skip-link?application=axeAPI",
+            "id": "skip-link",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures tabindex attribute values are not greater than 0",
+            "help": "Elements should not have tabindex greater than zero",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/tabindex?application=axeAPI",
+            "id": "tabindex",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensure that tables do not have the same summary and caption",
+            "help": "The <caption> element should not contain the same text as the summary attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/table-duplicate-name?application=axeAPI",
+            "id": "table-duplicate-name",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.tables",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensure that each cell in a table using the headers refers to another cell in that table",
+            "help": "All cells in a table element that use the headers attribute must only refer to other cells of that same table",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/td-headers-attr?application=axeAPI",
+            "id": "td-headers-attr",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.tables",
+                "wcag2a",
+                "wcag131",
+                "section508",
+                "section508.22.g"
+            ]
+        },
+        {
+            "description": "Ensure that each table header in a data table refers to data cells",
+            "help": "All th elements and elements with role=columnheader/rowheader must have data cells they describe",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/th-has-data-cells?application=axeAPI",
+            "id": "th-has-data-cells",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.tables",
+                "wcag2a",
+                "wcag131",
+                "section508",
+                "section508.22.g"
+            ]
+        },
+        {
+            "description": "Ensures lang attributes have valid values",
+            "help": "lang attribute must have a valid value",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/valid-lang?application=axeAPI",
+            "id": "valid-lang",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.language",
+                "wcag2aa",
+                "wcag312"
+            ]
+        },
+        {
+            "description": "Ensures <video> elements have captions",
+            "help": "<video> elements must have captions",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/video-caption?application=axeAPI",
+            "id": "video-caption",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag122",
+                "section508",
+                "section508.22.a"
+            ]
+        },
+        {
+            "description": "Ensures <video> elements have audio descriptions",
+            "help": "<video> elements must have an audio description track",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/video-description?application=axeAPI",
+            "id": "video-description",
+            "impact": null,
+            "nodes": [],
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2aa",
+                "wcag125",
+                "section508",
+                "section508.22.b"
+            ]
+        }
+    ],
+    "incomplete": [],
+    "passes": [
+        {
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/aria-allowed-attr?application=axeAPI",
+            "id": "aria-allowed-attr",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-allowed-attr",
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://www.facebook.com/attorneyjaymcmahon\" target=\"_blank\" class=\"sqs-svg-icon--wrapper facebook-unauth\" aria-label=\"Facebook\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".facebook-unauth"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-allowed-attr",
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://twitter.com/attorneymcmahon\" target=\"_blank\" class=\"sqs-svg-icon--wrapper twitter-unauth\" aria-label=\"Twitter\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".twitter-unauth"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ]
+        },
+        {
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/aria-hidden-body?application=axeAPI",
+            "id": "aria-hidden-body",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-hidden-body",
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<body id=\"item-6323272a79c2892067afdbbf\" class=\"enable-nav-button nav-button-style-outline nav-button-corner-style-pill banner-button-style-solid banner-button-corner-style-pill banner-slideshow-controls-arrows meta-priority-date hide-entry-author hide-list-entry-footer hide-blog-sidebar center-navigation--info event-show-past-events event-thumbnails event-thumbnail-size-32-standard event-date-label event-list-show-cats event-list-date event-list-time event-list-address event-icalgcal-links event-excerpts gallery-design-grid aspect-ratio-auto lightbox-style-light gallery-navigation-bullets gallery-info-overlay-show-on-hover gallery-aspect-ratio-32-standard gallery-arrow-style-no-background gallery-transitions-fade gallery-show-arrows gallery-auto-crop product-list-titles-under product-list-alignment-center product-item-size-11-square product-image-auto-crop product-gallery-size-11-square show-product-price show-product-item-nav product-social-sharing tweak-v1-related-products-image-aspect-ratio-11-square tweak-v1-related-products-details-alignment-center newsletter-style-light hide-opentable-icons opentable-style-dark small-button-style-solid small-button-shape-square medium-button-style-solid medium-button-shape-square large-button-style-solid large-button-shape-square image-block-poster-text-alignment-center image-block-card-dynamic-font-sizing image-block-card-content-position-center image-block-card-text-alignment-left image-block-overlap-dynamic-font-sizing image-block-overlap-content-position-center image-block-overlap-text-alignment-left image-block-collage-dynamic-font-sizing image-block-collage-content-position-top image-block-collage-text-alignment-left image-block-stack-dynamic-font-sizing image-block-stack-text-alignment-left button-style-solid button-corner-style-square tweak-product-quick-view-button-style-floating tweak-product-quick-view-button-position-bottom tweak-product-quick-view-lightbox-excerpt-display-truncate tweak-product-quick-view-lightbox-show-arrows tweak-product-quick-view-lightbox-show-close-button tweak-product-quick-view-lightbox-controls-weight-light native-currency-code-usd collection-5ea67d10adc9b406ed8a6ae4 view-item collection-type-blog collection-layout-default mobile-style-available force-mobile-nav disable-hover\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "body"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ]
+        },
+        {
+            "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+            "help": "Required ARIA attributes must be provided",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/aria-required-attr?application=axeAPI",
+            "id": "aria-required-attr",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-required-attr",
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<header id=\"header\" class=\"show-on-scroll\" data-offset-el=\".index-section\" data-offset-behavior=\"bottom\" role=\"banner\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#header"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-required-attr",
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<main id=\"page\" role=\"main\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#page"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-required-attr",
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<footer id=\"footer\" role=\"contentinfo\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#footer"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ]
+        },
+        {
+            "description": "Ensures elements with an ARIA role that require child roles contain them",
+            "help": "Certain ARIA roles must contain particular children",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/aria-required-children?application=axeAPI",
+            "id": "aria-required-children",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-required-children",
+                            "impact": "critical",
+                            "message": "Required ARIA children are present",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<header id=\"header\" class=\"show-on-scroll\" data-offset-el=\".index-section\" data-offset-behavior=\"bottom\" role=\"banner\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#header"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-required-children",
+                            "impact": "critical",
+                            "message": "Required ARIA children are present",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<main id=\"page\" role=\"main\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#page"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-required-children",
+                            "impact": "critical",
+                            "message": "Required ARIA children are present",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<footer id=\"footer\" role=\"contentinfo\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#footer"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag131"
+            ]
+        },
+        {
+            "description": "Ensures elements with an ARIA role that require parent roles are contained by them",
+            "help": "Certain ARIA roles must be contained by particular parents",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/aria-required-parent?application=axeAPI",
+            "id": "aria-required-parent",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-required-parent",
+                            "impact": "critical",
+                            "message": "Required ARIA parent role present",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<header id=\"header\" class=\"show-on-scroll\" data-offset-el=\".index-section\" data-offset-behavior=\"bottom\" role=\"banner\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#header"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-required-parent",
+                            "impact": "critical",
+                            "message": "Required ARIA parent role present",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<main id=\"page\" role=\"main\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#page"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-required-parent",
+                            "impact": "critical",
+                            "message": "Required ARIA parent role present",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<footer id=\"footer\" role=\"contentinfo\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#footer"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag131"
+            ]
+        },
+        {
+            "description": "Ensures all elements with a role attribute use a valid value",
+            "help": "ARIA roles used must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/aria-roles?application=axeAPI",
+            "id": "aria-roles",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<header id=\"header\" class=\"show-on-scroll\" data-offset-el=\".index-section\" data-offset-behavior=\"bottom\" role=\"banner\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "invalidrole",
+                            "impact": "critical",
+                            "message": "ARIA role is valid",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "abstractrole",
+                            "impact": "serious",
+                            "message": "Abstract roles are not used",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "unsupportedrole",
+                            "impact": "critical",
+                            "message": "ARIA role is supported",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "#header"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<main id=\"page\" role=\"main\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "invalidrole",
+                            "impact": "critical",
+                            "message": "ARIA role is valid",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "abstractrole",
+                            "impact": "serious",
+                            "message": "Abstract roles are not used",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "unsupportedrole",
+                            "impact": "critical",
+                            "message": "ARIA role is supported",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "#page"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<footer id=\"footer\" role=\"contentinfo\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "invalidrole",
+                            "impact": "critical",
+                            "message": "ARIA role is valid",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "abstractrole",
+                            "impact": "serious",
+                            "message": "Abstract roles are not used",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "unsupportedrole",
+                            "impact": "critical",
+                            "message": "ARIA role is supported",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "#footer"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ]
+        },
+        {
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/aria-valid-attr-value?application=axeAPI",
+            "id": "aria-valid-attr-value",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [
+                        {
+                            "data": null,
+                            "id": "aria-valid-attr-value",
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "aria-errormessage",
+                            "impact": "critical",
+                            "message": "Uses a supported aria-errormessage technique",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "any": [],
+                    "html": "<a href=\"https://www.facebook.com/attorneyjaymcmahon\" target=\"_blank\" class=\"sqs-svg-icon--wrapper facebook-unauth\" aria-label=\"Facebook\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".facebook-unauth"
+                    ]
+                },
+                {
+                    "all": [
+                        {
+                            "data": null,
+                            "id": "aria-valid-attr-value",
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "aria-errormessage",
+                            "impact": "critical",
+                            "message": "Uses a supported aria-errormessage technique",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "any": [],
+                    "html": "<a href=\"https://twitter.com/attorneymcmahon\" target=\"_blank\" class=\"sqs-svg-icon--wrapper twitter-unauth\" aria-label=\"Twitter\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".twitter-unauth"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ]
+        },
+        {
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/aria-valid-attr?application=axeAPI",
+            "id": "aria-valid-attr",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-valid-attr",
+                            "impact": "critical",
+                            "message": "ARIA attribute name are valid",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://www.facebook.com/attorneyjaymcmahon\" target=\"_blank\" class=\"sqs-svg-icon--wrapper facebook-unauth\" aria-label=\"Facebook\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".facebook-unauth"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "aria-valid-attr",
+                            "impact": "critical",
+                            "message": "ARIA attribute name are valid",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://twitter.com/attorneymcmahon\" target=\"_blank\" class=\"sqs-svg-icon--wrapper twitter-unauth\" aria-label=\"Twitter\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".twitter-unauth"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ]
+        },
+        {
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/bypass?application=axeAPI",
+            "id": "bypass",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "internal-link-present",
+                            "impact": "serious",
+                            "message": "Valid skip link found",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "header-present",
+                            "impact": "serious",
+                            "message": "Page has a header",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "landmark",
+                            "impact": "serious",
+                            "message": "Page has a landmark region",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<html xmlns:og=\"http://opengraphprotocol.org/schema/\" xmlns:fb=\"http://www.facebook.com/2008/fbml\" class=\"yui3-js-enabled js flexbox canvas canvastext webgl no-touch hashchange history draganddrop rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms no-csstransforms3d csstransitions video audio svg inlinesvg svgclippaths wf-adobegaramondpro-n4-active wf-proximanova-n6-active wf-adobegaramondpro-n7-active wf-proximanova-n4-active wf-proximanova-n3-active wf-proximanova-n5-active wf-proximanova-n7-active wf-proximanova-i6-active wf-proximanova-i7-active wf-adobegaramondpro-n6-active wf-adobegaramondpro-i4-active wf-adobegaramondpro-i7-active wf-active\" style=\"\" lang=\"en-US\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "html"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ]
+        },
+        {
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI",
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 12.65,
+                                "expectedContrastRatio": "3:1",
+                                "fgColor": "#06306f",
+                                "fontSize": "24.0pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 12.65",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"/news/2022/9/15/marthas-vineyard-illegals\" class=\"u-url\" rel=\"bookmark\">Martha\u2019s Vineyard Illegals</a>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".u-url"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 16.12,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#212121",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 16.12",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p class=\"\" style=\"white-space:pre-wrap;\"><strong>September 15, 2022</strong> <strong>- Cape Cod, MA</strong> \u2013 Attorney Jay McMahon, candidate for Massachusetts Attorney General, issued a statement today:</p>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#block-eaf149d18242d96533c9 > .sqs-block-content > p:nth-child(1)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 16.12,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#212121",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "bold",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 16.12",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<strong>September 15, 2022</strong>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "strong:nth-child(1)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 16.12,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#212121",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "bold",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 16.12",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<strong>- Cape Cod, MA</strong>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "strong:nth-child(2)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 16.12,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#212121",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 16.12",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p class=\"\" style=\"white-space:pre-wrap;\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(2)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 16.12,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#212121",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 16.12",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p class=\"\" style=\"white-space:pre-wrap;\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(3)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 16.12,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#212121",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 16.12",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p class=\"\" style=\"white-space:pre-wrap;\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(4)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 16.12,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#212121",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 16.12",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<p class=\"\" style=\"white-space:pre-wrap;\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "p:nth-child(5)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 16.12,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#212121",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 16.12",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<span class=\"prev-label\">Newer Post</span>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".prev-label"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 5.44,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#d1152e",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 5.44",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<span>Campbell will grant illegal aliens the right to vote!</span>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "a[rel=\"prev\"] > span"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 16.12,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#212121",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 16.12",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<span class=\"next-label\">Older Post</span>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".next-label"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 5.44,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#d1152e",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 5.44",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<span>We\u2019ll see</span>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "a[href$=\"well-see\"] > span"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 5.44,
+                                "expectedContrastRatio": "3:1",
+                                "fgColor": "#d1152e",
+                                "fontSize": "15.0pt",
+                                "fontWeight": "bold",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 5.44",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://secure.winred.com/mcmahon-committee-80b8279e/donate\" class=\"sqs-block-button-element--large sqs-button-element--secondary sqs-block-button-element\" data-initialized=\"true\">\n    Donate\n  </a>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".sqs-block-button-element--large"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#06306f",
+                                "contrastRatio": 12.65,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#ffffff",
+                                "fontSize": "9.8pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 12.65",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<span>Volunteer</span>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "a[href$=\"volunteer\"] > span"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#06306f",
+                                "contrastRatio": 12.65,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#ffffff",
+                                "fontSize": "9.8pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 12.65",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<span>Contact</span>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "a[href$=\"contact\"] > span"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#06306f",
+                                "contrastRatio": 12.65,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#ffffff",
+                                "fontSize": "9.8pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 12.65",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<span>Store</span>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".external:nth-child(3) > a > span"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#06306f",
+                                "contrastRatio": 12.65,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#ffffff",
+                                "fontSize": "9.8pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 12.65",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<span>Donate</span>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".external:nth-child(4) > a > span"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ]
+        },
+        {
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/document-title?application=axeAPI",
+            "id": "document-title",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "doc-has-title",
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<html xmlns:og=\"http://opengraphprotocol.org/schema/\" xmlns:fb=\"http://www.facebook.com/2008/fbml\" class=\"yui3-js-enabled js flexbox canvas canvastext webgl no-touch hashchange history draganddrop rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms no-csstransforms3d csstransitions video audio svg inlinesvg svgclippaths wf-adobegaramondpro-n4-active wf-proximanova-n6-active wf-adobegaramondpro-n7-active wf-proximanova-n4-active wf-proximanova-n3-active wf-proximanova-n5-active wf-proximanova-n7-active wf-proximanova-i6-active wf-proximanova-i7-active wf-adobegaramondpro-n6-active wf-adobegaramondpro-i4-active wf-adobegaramondpro-i7-active wf-active\" style=\"\" lang=\"en-US\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "html"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242"
+            ]
+        },
+        {
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/duplicate-id?application=axeAPI",
+            "id": "duplicate-id",
+            "impact": "minor",
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "yui3-css-stamp",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div id=\"yui3-css-stamp\" style=\"position: absolute !important; visibility: hidden !important\"></div>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#yui3-css-stamp"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "yui_3_17_2_1_1674697135000_122",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<link charset=\"utf-8\" rel=\"stylesheet\" id=\"yui_3_17_2_1_1674697135000_122\" href=\"//assets.squarespace.com/universal/styles-compressed/simple-liking-ef94529873378652e6e86-min.en-US.css\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#yui_3_17_2_1_1674697135000_122"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "yui_3_17_2_1_1674697135000_121",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<script charset=\"utf-8\" id=\"yui_3_17_2_1_1674697135000_121\" src=\"//assets.squarespace.com/universal/scripts-compressed/simple-liking-edc0e09f99c7b0e2b2b17-min.en-US.js\"></script>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#yui_3_17_2_1_1674697135000_121"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "sidecarNav",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div id=\"sidecarNav\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#sidecarNav"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "mobileNavWrapper",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div id=\"mobileNavWrapper\" class=\"nav-wrapper\" data-content-field=\"navigation-mobileNav\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#mobileNavWrapper"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "mobileNavigation",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<nav id=\"mobileNavigation\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#mobileNavigation"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "siteWrapper",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div id=\"siteWrapper\" class=\"clearfix\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#siteWrapper"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "header",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<header id=\"header\" class=\"show-on-scroll\" data-offset-el=\".index-section\" data-offset-behavior=\"bottom\" role=\"banner\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#header"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "logoWrapper",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div id=\"logoWrapper\" class=\"wrapper\" data-content-field=\"site-title\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#logoWrapper"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "logoImage",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h1 id=\"logoImage\"><a href=\"/\"><img src=\"//images.squarespace-cdn.com/content/v1/59025aaf15d5dbab307f72b4/f408486c-057b-423a-941a-15d5574e6be1/McMahon+Logo+%282%29.png?format=1500w\" alt=\"Jay McMahon for Attorney General\"></a></h1>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#logoImage"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "headerNav",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div id=\"headerNav\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#headerNav"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "mainNavWrapper",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div id=\"mainNavWrapper\" class=\"nav-wrapper\" data-content-field=\"navigation-mainNav\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#mainNavWrapper"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "mainNavigation",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<nav id=\"mainNavigation\" data-content-field=\"navigation-mainNav\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#mainNavigation"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "page",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<main id=\"page\" role=\"main\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#page"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "content",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div id=\"content\" class=\"main-content\" data-content-field=\"main-content\" data-collection-id=\"5ea67d10adc9b406ed8a6ae4\" data-edit-main-image=\"\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#content"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "article-6323272a79c2892067afdbbf",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<article class=\"entry h-entry hentry author-james-mcmahon post-type-text clear\" id=\"article-6323272a79c2892067afdbbf\" data-item-id=\"6323272a79c2892067afdbbf\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#article-6323272a79c2892067afdbbf"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "block-eaf149d18242d96533c9",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div class=\"sqs-block html-block sqs-block-html\" data-block-type=\"2\" id=\"block-eaf149d18242d96533c9\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#block-eaf149d18242d96533c9"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "comments-6323272a79c2892067afdbbf",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div id=\"comments-6323272a79c2892067afdbbf\" class=\"p-comment\">\n    \n  </div>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#comments-6323272a79c2892067afdbbf"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "rightSidebar",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<aside id=\"rightSidebar\" role=\"complementary\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#rightSidebar"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "blogBlocks-5ea67d10adc9b406ed8a6ae4",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div class=\"sqs-layout sqs-grid-12 columns-12 open-block-field empty\" data-layout-label=\"Blog Sidebar Content\" data-type=\"block-field\" id=\"blogBlocks-5ea67d10adc9b406ed8a6ae4\"><div class=\"row sqs-row\"><div class=\"col sqs-col-12 span-12\"></div></div></div>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#blogBlocks-5ea67d10adc9b406ed8a6ae4"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "preFooter",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div id=\"preFooter\" class=\"\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#preFooter"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "preFooterBlocks",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div class=\"sqs-layout sqs-grid-12 columns-12\" data-layout-label=\"Pre-Footer Content\" data-type=\"block-field\" data-updated-on=\"1647889308059\" id=\"preFooterBlocks\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#preFooterBlocks"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "block-yui_3_17_2_1_1406660821033_8373",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div class=\"sqs-block socialaccountlinks-v2-block sqs-block-socialaccountlinks-v2\" data-block-type=\"54\" id=\"block-yui_3_17_2_1_1406660821033_8373\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#block-yui_3_17_2_1_1406660821033_8373"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "block-yui_3_17_2_1_1574710072248_61913",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div class=\"sqs-block button-block sqs-block-button\" data-block-type=\"53\" id=\"block-yui_3_17_2_1_1574710072248_61913\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#block-yui_3_17_2_1_1574710072248_61913"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "yui_3_17_2_1_1674697135000_105",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div class=\"sqs-block-content\" id=\"yui_3_17_2_1_1674697135000_105\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#yui_3_17_2_1_1674697135000_105"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "yui_3_17_2_1_1674697135000_104",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div class=\"sqs-block-button-container sqs-block-button-container--center\" data-animation-role=\"button\" data-alignment=\"center\" data-button-size=\"large\" data-button-type=\"secondary\" id=\"yui_3_17_2_1_1674697135000_104\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#yui_3_17_2_1_1674697135000_104"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "footer",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<footer id=\"footer\" role=\"contentinfo\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#footer"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "secondaryNavWrapper",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div id=\"secondaryNavWrapper\" class=\"nav-wrapper\" data-content-field=\"navigation-secondaryNav\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#secondaryNavWrapper"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "secondaryNavigation",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<nav id=\"secondaryNavigation\" data-content-field=\"navigation-secondaryNav\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#secondaryNavigation"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "footerBlocks",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div class=\"sqs-layout sqs-grid-12 columns-12\" data-layout-label=\"Footer Content\" data-type=\"block-field\" data-updated-on=\"1647808963988\" id=\"footerBlocks\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#footerBlocks"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "block-713fe491a2c303b33937",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<div class=\"sqs-block html-block sqs-block-html\" data-block-type=\"2\" id=\"block-713fe491a2c303b33937\"><div class=\"sqs-block-content\">\n\n<p style=\"text-align:center;white-space:pre-wrap;\" class=\"\">Paid for and authorized by the McMahon Committee.<br>\u00a9 Copyright 2022</p>\n\n\n</div></div>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#block-713fe491a2c303b33937"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "facebook-unauth-icon",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<symbol id=\"facebook-unauth-icon\" viewBox=\"0 0 64 64\"><path d=\"M34.1,47V33.3h4.6l0.7-5.3h-5.3v-3.4c0-1.5,0.4-2.6,2.6-2.6l2.8,0v-4.8c-0.5-0.1-2.2-0.2-4.1-0.2 c-4.1,0-6.9,2.5-6.9,7V28H24v5.3h4.6V47H34.1z\"></path></symbol>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#facebook-unauth-icon"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "facebook-unauth-mask",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<symbol id=\"facebook-unauth-mask\" viewBox=\"0 0 64 64\"><path d=\"M0,0v64h64V0H0z M39.6,22l-2.8,0c-2.2,0-2.6,1.1-2.6,2.6V28h5.3l-0.7,5.3h-4.6V47h-5.5V33.3H24V28h4.6V24 c0-4.6,2.8-7,6.9-7c2,0,3.6,0.1,4.1,0.2V22z\"></path></symbol>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#facebook-unauth-mask"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "twitter-unauth-icon",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<symbol id=\"twitter-unauth-icon\" viewBox=\"0 0 64 64\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#twitter-unauth-icon"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "twitter-unauth-mask",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<symbol id=\"twitter-unauth-mask\" viewBox=\"0 0 64 64\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#twitter-unauth-mask"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ]
+        },
+        {
+            "description": "Ensures headings have discernible text",
+            "help": "Headings must not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/empty-heading?application=axeAPI",
+            "id": "empty-heading",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h1 id=\"logoImage\"><a href=\"/\"><img src=\"//images.squarespace-cdn.com/content/v1/59025aaf15d5dbab307f72b4/f408486c-057b-423a-941a-15d5574e6be1/McMahon+Logo+%282%29.png?format=1500w\" alt=\"Jay McMahon for Attorney General\"></a></h1>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#logoImage"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h1 data-content-field=\"title\" class=\"entry-title p-name\">\n      \n        <a href=\"/news/2022/9/15/marthas-vineyard-illegals\" class=\"u-url\" rel=\"bookmark\">Martha\u2019s Vineyard Illegals</a>\n      \n      </h1>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".entry-title"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI",
+            "id": "heading-order",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": 1,
+                            "id": "heading-order",
+                            "impact": "moderate",
+                            "message": "Heading order valid",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h1 id=\"logoImage\"><a href=\"/\"><img src=\"//images.squarespace-cdn.com/content/v1/59025aaf15d5dbab307f72b4/f408486c-057b-423a-941a-15d5574e6be1/McMahon+Logo+%282%29.png?format=1500w\" alt=\"Jay McMahon for Attorney General\"></a></h1>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#logoImage"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": 1,
+                            "id": "heading-order",
+                            "impact": "moderate",
+                            "message": "Heading order valid",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<h1 data-content-field=\"title\" class=\"entry-title p-name\">\n      \n        <a href=\"/news/2022/9/15/marthas-vineyard-illegals\" class=\"u-url\" rel=\"bookmark\">Martha\u2019s Vineyard Illegals</a>\n      \n      </h1>",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        ".entry-title"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/html-has-lang?application=axeAPI",
+            "id": "html-has-lang",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-lang",
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<html xmlns:og=\"http://opengraphprotocol.org/schema/\" xmlns:fb=\"http://www.facebook.com/2008/fbml\" class=\"yui3-js-enabled js flexbox canvas canvastext webgl no-touch hashchange history draganddrop rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms no-csstransforms3d csstransitions video audio svg inlinesvg svgclippaths wf-adobegaramondpro-n4-active wf-proximanova-n6-active wf-adobegaramondpro-n7-active wf-proximanova-n4-active wf-proximanova-n3-active wf-proximanova-n5-active wf-proximanova-n7-active wf-proximanova-i6-active wf-proximanova-i7-active wf-adobegaramondpro-n6-active wf-adobegaramondpro-i4-active wf-adobegaramondpro-i7-active wf-active\" style=\"\" lang=\"en-US\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "html"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311"
+            ]
+        },
+        {
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/html-lang-valid?application=axeAPI",
+            "id": "html-lang-valid",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<html xmlns:og=\"http://opengraphprotocol.org/schema/\" xmlns:fb=\"http://www.facebook.com/2008/fbml\" class=\"yui3-js-enabled js flexbox canvas canvastext webgl no-touch hashchange history draganddrop rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms no-csstransforms3d csstransitions video audio svg inlinesvg svgclippaths wf-adobegaramondpro-n4-active wf-proximanova-n6-active wf-adobegaramondpro-n7-active wf-proximanova-n4-active wf-proximanova-n3-active wf-proximanova-n5-active wf-proximanova-n7-active wf-proximanova-i6-active wf-proximanova-i7-active wf-adobegaramondpro-n6-active wf-adobegaramondpro-i4-active wf-adobegaramondpro-i7-active wf-active\" style=\"\" lang=\"en-US\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "valid-lang",
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "html"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311"
+            ]
+        },
+        {
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/image-alt?application=axeAPI",
+            "id": "image-alt",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-alt",
+                            "impact": "critical",
+                            "message": "Element has an alt attribute",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<img src=\"//images.squarespace-cdn.com/content/v1/59025aaf15d5dbab307f72b4/f408486c-057b-423a-941a-15d5574e6be1/McMahon+Logo+%282%29.png?format=1500w\" alt=\"Jay McMahon for Attorney General\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "img"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a"
+            ]
+        },
+        {
+            "description": "Ensure button and link text is not repeated as image alternative",
+            "help": "Text of buttons and links should not be repeated in the image alternative",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/image-redundant-alt?application=axeAPI",
+            "id": "image-redundant-alt",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"#\" class=\"body-overlay\"></a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".body-overlay"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"/\"><img src=\"//images.squarespace-cdn.com/content/v1/59025aaf15d5dbab307f72b4/f408486c-057b-423a-941a-15d5574e6be1/McMahon+Logo+%282%29.png?format=1500w\" alt=\"Jay McMahon for Attorney General\"></a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "#logoImage > a[href=\"/\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"/news/2022/9/15/marthas-vineyard-illegals\" class=\"entry-dateline-link\">September 15, 2022</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".meta-above-title > .entry-dateline > .dt-published.published.entry-date > .entry-dateline-link"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"/news/2022/9/15/marthas-vineyard-illegals\" class=\"u-url\" rel=\"bookmark\">Martha\u2019s Vineyard Illegals</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".u-url"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<p class=\"\" style=\"white-space:pre-wrap;\"><strong>September 15, 2022</strong> <strong>- Cape Cod, MA</strong> \u2013 Attorney Jay McMahon, candidate for Massachusetts Attorney General, issued a statement today:</p>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "#block-eaf149d18242d96533c9 > .sqs-block-content > p:nth-child(1)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<p class=\"\" style=\"white-space:pre-wrap;\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "p:nth-child(2)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<p class=\"\" style=\"white-space:pre-wrap;\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "p:nth-child(3)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<p class=\"\" style=\"white-space:pre-wrap;\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "p:nth-child(4)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<p class=\"\" style=\"white-space:pre-wrap;\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "p:nth-child(5)"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"/news/2022/9/20/campbell-will-grant-illegal-aliens-the-right-to-vote\" rel=\"prev\"><span>Campbell will grant illegal aliens the right to vote!</span></a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "a[rel=\"prev\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"/news/2022/9/15/well-see\" rel=\"next\"><span>We\u2019ll see</span></a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "a[href$=\"well-see\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"https://www.facebook.com/attorneyjaymcmahon\" target=\"_blank\" class=\"sqs-svg-icon--wrapper facebook-unauth\" aria-label=\"Facebook\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".facebook-unauth"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"https://twitter.com/attorneymcmahon\" target=\"_blank\" class=\"sqs-svg-icon--wrapper twitter-unauth\" aria-label=\"Twitter\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".twitter-unauth"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"https://secure.winred.com/mcmahon-committee-80b8279e/donate\" class=\"sqs-block-button-element--large sqs-button-element--secondary sqs-block-button-element\" data-initialized=\"true\">\n    Donate\n  </a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".sqs-block-button-element--large"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"/volunteer\">\n            <span>Volunteer</span>\n          </a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".external:nth-child(1) > a[href$=\"volunteer\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"/contact\">\n            <span>Contact</span>\n          </a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".external:nth-child(2) > a[href$=\"contact\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"https://secure.winred.com/mcmahon-committee-80b8279e/storefront/\">\n            <span>Store</span>\n          </a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".external:nth-child(3) > a"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<a href=\"https://secure.winred.com/mcmahon-committee-80b8279e/donate\">\n            <span>Donate</span>\n          </a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".external:nth-child(4) > a"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [],
+                    "html": "<p style=\"text-align:center;white-space:pre-wrap;\" class=\"\">Paid for and authorized by the McMahon Committee.<br>\u00a9 Copyright 2022</p>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "duplicate-img-label",
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "#block-713fe491a2c303b33937 > .sqs-block-content > p"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures the banner landmark is at top level",
+            "help": "Banner landmark must not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/landmark-banner-is-top-level?application=axeAPI",
+            "id": "landmark-banner-is-top-level",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "role": "banner"
+                            },
+                            "id": "landmark-is-top-level",
+                            "impact": "moderate",
+                            "message": "The banner landmark is at the top level.",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<header id=\"header\" class=\"show-on-scroll\" data-offset-el=\".index-section\" data-offset-behavior=\"bottom\" role=\"banner\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#header"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures the contentinfo landmark is at top level",
+            "help": "Contentinfo landmark must not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/landmark-contentinfo-is-top-level?application=axeAPI",
+            "id": "landmark-contentinfo-is-top-level",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "role": "contentinfo"
+                            },
+                            "id": "landmark-is-top-level",
+                            "impact": "moderate",
+                            "message": "The contentinfo landmark is at the top level.",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<footer id=\"footer\" role=\"contentinfo\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#footer"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures the main landmark is at top level",
+            "help": "Main landmark must not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/landmark-main-is-top-level?application=axeAPI",
+            "id": "landmark-main-is-top-level",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "role": "main"
+                            },
+                            "id": "landmark-is-top-level",
+                            "impact": "moderate",
+                            "message": "The main landmark is at the top level.",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<main id=\"page\" role=\"main\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "#page"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures the page has at most one banner landmark",
+            "help": "Page must not have more than one banner landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/landmark-no-duplicate-banner?application=axeAPI",
+            "id": "landmark-no-duplicate-banner",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "page-no-duplicate-banner",
+                            "impact": "moderate",
+                            "message": "Document has no more than one banner landmark",
+                            "relatedNodes": [
+                                {
+                                    "html": "<header id=\"header\" class=\"show-on-scroll\" data-offset-el=\".index-section\" data-offset-behavior=\"bottom\" role=\"banner\">",
+                                    "target": [
+                                        "#header"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "html": "<html xmlns:og=\"http://opengraphprotocol.org/schema/\" xmlns:fb=\"http://www.facebook.com/2008/fbml\" class=\"yui3-js-enabled js flexbox canvas canvastext webgl no-touch hashchange history draganddrop rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms no-csstransforms3d csstransitions video audio svg inlinesvg svgclippaths wf-adobegaramondpro-n4-active wf-proximanova-n6-active wf-adobegaramondpro-n7-active wf-proximanova-n4-active wf-proximanova-n3-active wf-proximanova-n5-active wf-proximanova-n7-active wf-proximanova-i6-active wf-proximanova-i7-active wf-adobegaramondpro-n6-active wf-adobegaramondpro-i4-active wf-adobegaramondpro-i7-active wf-active\" style=\"\" lang=\"en-US\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "html"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures the page has at most one contentinfo landmark",
+            "help": "Page must not have more than one contentinfo landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/landmark-no-duplicate-contentinfo?application=axeAPI",
+            "id": "landmark-no-duplicate-contentinfo",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "page-no-duplicate-contentinfo",
+                            "impact": "moderate",
+                            "message": "Page does not have more than one contentinfo landmark",
+                            "relatedNodes": [
+                                {
+                                    "html": "<footer id=\"footer\" role=\"contentinfo\">",
+                                    "target": [
+                                        "#footer"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "html": "<html xmlns:og=\"http://opengraphprotocol.org/schema/\" xmlns:fb=\"http://www.facebook.com/2008/fbml\" class=\"yui3-js-enabled js flexbox canvas canvastext webgl no-touch hashchange history draganddrop rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms no-csstransforms3d csstransitions video audio svg inlinesvg svgclippaths wf-adobegaramondpro-n4-active wf-proximanova-n6-active wf-adobegaramondpro-n7-active wf-proximanova-n4-active wf-proximanova-n3-active wf-proximanova-n5-active wf-proximanova-n7-active wf-proximanova-i6-active wf-proximanova-i7-active wf-adobegaramondpro-n6-active wf-adobegaramondpro-i4-active wf-adobegaramondpro-i7-active wf-active\" style=\"\" lang=\"en-US\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "html"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures the page has only one main landmark and each iframe in the page has at most one main landmark",
+            "help": "Page must have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/landmark-one-main?application=axeAPI",
+            "id": "landmark-one-main",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [
+                        {
+                            "data": null,
+                            "id": "page-has-main",
+                            "impact": "moderate",
+                            "message": "Page has at least one main landmark",
+                            "relatedNodes": [
+                                {
+                                    "html": "<main id=\"page\" role=\"main\">",
+                                    "target": [
+                                        "#page"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "data": null,
+                            "id": "page-no-duplicate-main",
+                            "impact": "moderate",
+                            "message": "Page does not have more than one main landmark",
+                            "relatedNodes": [
+                                {
+                                    "html": "<main id=\"page\" role=\"main\">",
+                                    "target": [
+                                        "#page"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "any": [],
+                    "html": "<html xmlns:og=\"http://opengraphprotocol.org/schema/\" xmlns:fb=\"http://www.facebook.com/2008/fbml\" class=\"yui3-js-enabled js flexbox canvas canvastext webgl no-touch hashchange history draganddrop rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms no-csstransforms3d csstransitions video audio svg inlinesvg svgclippaths wf-adobegaramondpro-n4-active wf-proximanova-n6-active wf-adobegaramondpro-n7-active wf-proximanova-n4-active wf-proximanova-n3-active wf-proximanova-n5-active wf-proximanova-n7-active wf-proximanova-i6-active wf-proximanova-i7-active wf-adobegaramondpro-n6-active wf-adobegaramondpro-i4-active wf-adobegaramondpro-i7-active wf-active\" style=\"\" lang=\"en-US\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "html"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI",
+            "id": "link-name",
+            "impact": "serious",
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"/\"><img src=\"//images.squarespace-cdn.com/content/v1/59025aaf15d5dbab307f72b4/f408486c-057b-423a-941a-15d5574e6be1/McMahon+Logo+%282%29.png?format=1500w\" alt=\"Jay McMahon for Attorney General\"></a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "#logoImage > a[href=\"/\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"/news/2022/9/15/marthas-vineyard-illegals\" class=\"entry-dateline-link\">September 15, 2022</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".meta-above-title > .entry-dateline > .dt-published.published.entry-date > .entry-dateline-link"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"/news/2022/9/15/marthas-vineyard-illegals\" class=\"u-url\" rel=\"bookmark\">Martha\u2019s Vineyard Illegals</a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".u-url"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"/news/2022/9/20/campbell-will-grant-illegal-aliens-the-right-to-vote\" rel=\"prev\"><span>Campbell will grant illegal aliens the right to vote!</span></a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "a[rel=\"prev\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"/news/2022/9/15/well-see\" rel=\"next\"><span>We\u2019ll see</span></a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        "a[href$=\"well-see\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "aria-label",
+                            "impact": "serious",
+                            "message": "aria-label attribute exists and is not empty",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://www.facebook.com/attorneyjaymcmahon\" target=\"_blank\" class=\"sqs-svg-icon--wrapper facebook-unauth\" aria-label=\"Facebook\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".facebook-unauth"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "aria-label",
+                            "impact": "serious",
+                            "message": "aria-label attribute exists and is not empty",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://twitter.com/attorneymcmahon\" target=\"_blank\" class=\"sqs-svg-icon--wrapper twitter-unauth\" aria-label=\"Twitter\">",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".twitter-unauth"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://secure.winred.com/mcmahon-committee-80b8279e/donate\" class=\"sqs-block-button-element--large sqs-button-element--secondary sqs-block-button-element\" data-initialized=\"true\">\n    Donate\n  </a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".sqs-block-button-element--large"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"/volunteer\">\n            <span>Volunteer</span>\n          </a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".external:nth-child(1) > a[href$=\"volunteer\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"/contact\">\n            <span>Contact</span>\n          </a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".external:nth-child(2) > a[href$=\"contact\"]"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://secure.winred.com/mcmahon-committee-80b8279e/storefront/\">\n            <span>Store</span>\n          </a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".external:nth-child(3) > a"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<a href=\"https://secure.winred.com/mcmahon-committee-80b8279e/donate\">\n            <span>Donate</span>\n          </a>",
+                    "impact": null,
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".external:nth-child(4) > a"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a"
+            ]
+        },
+        {
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/meta-viewport-large?application=axeAPI",
+            "id": "meta-viewport-large",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "meta-viewport-large",
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling must not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/meta-viewport?application=axeAPI",
+            "id": "meta-viewport",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "meta-viewport",
+                            "impact": "critical",
+                            "message": "<meta> tag does not disable zooming on mobile devices",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "wcag2aa",
+                "wcag144"
+            ]
+        },
+        {
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page must contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/page-has-heading-one?application=axeAPI",
+            "id": "page-has-heading-one",
+            "impact": null,
+            "nodes": [
+                {
+                    "all": [
+                        {
+                            "data": null,
+                            "id": "page-has-heading-one",
+                            "impact": "moderate",
+                            "message": "Page has at least one level-one heading",
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 id=\"logoImage\"><a href=\"/\"><img src=\"//images.squarespace-cdn.com/content/v1/59025aaf15d5dbab307f72b4/f408486c-057b-423a-941a-15d5574e6be1/McMahon+Logo+%282%29.png?format=1500w\" alt=\"Jay McMahon for Attorney General\"></a></h1>",
+                                    "target": [
+                                        "#logoImage"
+                                    ]
+                                },
+                                {
+                                    "html": "<h1 data-content-field=\"title\" class=\"entry-title p-name\">\n      \n        <a href=\"/news/2022/9/15/marthas-vineyard-illegals\" class=\"u-url\" rel=\"bookmark\">Martha\u2019s Vineyard Illegals</a>\n      \n      </h1>",
+                                    "target": [
+                                        ".entry-title"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "any": [],
+                    "html": "<html xmlns:og=\"http://opengraphprotocol.org/schema/\" xmlns:fb=\"http://www.facebook.com/2008/fbml\" class=\"yui3-js-enabled js flexbox canvas canvastext webgl no-touch hashchange history draganddrop rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms no-csstransforms3d csstransitions video audio svg inlinesvg svgclippaths wf-adobegaramondpro-n4-active wf-proximanova-n6-active wf-adobegaramondpro-n7-active wf-proximanova-n4-active wf-proximanova-n3-active wf-proximanova-n5-active wf-proximanova-n7-active wf-proximanova-i6-active wf-proximanova-i7-active wf-adobegaramondpro-n6-active wf-adobegaramondpro-i4-active wf-adobegaramondpro-i7-active wf-active\" style=\"\" lang=\"en-US\">",
+                    "impact": null,
+                    "none": [],
+                    "target": [
+                        "html"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ]
+        }
+    ],
+    "timestamp": "2023-01-26T01:38:56.184Z",
+    "url": "https://www.attorneyjaymcmahon.com/news/2022/9/15/marthas-vineyard-illegals",
+    "violations": [
+        {
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role must be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI",
+            "id": "aria-allowed-role",
+            "impact": "minor",
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": [
+                                "banner"
+                            ],
+                            "id": "aria-allowed-role",
+                            "impact": "minor",
+                            "message": "role banner  is not allowed for given element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "failureSummary": "Fix any of the following:\n  role banner  is not allowed for given element",
+                    "html": "<header id=\"header\" class=\"show-on-scroll\" data-offset-el=\".index-section\" data-offset-behavior=\"bottom\" role=\"banner\">",
+                    "impact": "minor",
+                    "none": [],
+                    "target": [
+                        "#header"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": [
+                                "main"
+                            ],
+                            "id": "aria-allowed-role",
+                            "impact": "minor",
+                            "message": "role main  is not allowed for given element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "failureSummary": "Fix any of the following:\n  role main  is not allowed for given element",
+                    "html": "<main id=\"page\" role=\"main\">",
+                    "impact": "minor",
+                    "none": [],
+                    "target": [
+                        "#page"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": [
+                                "complementary"
+                            ],
+                            "id": "aria-allowed-role",
+                            "impact": "minor",
+                            "message": "role complementary  is not allowed for given element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "failureSummary": "Fix any of the following:\n  role complementary  is not allowed for given element",
+                    "html": "<aside id=\"rightSidebar\" role=\"complementary\">",
+                    "impact": "minor",
+                    "none": [],
+                    "target": [
+                        "#rightSidebar"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": [
+                                "contentinfo"
+                            ],
+                            "id": "aria-allowed-role",
+                            "impact": "minor",
+                            "message": "role contentinfo  is not allowed for given element",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "failureSummary": "Fix any of the following:\n  role contentinfo  is not allowed for given element",
+                    "html": "<footer id=\"footer\" role=\"contentinfo\">",
+                    "impact": "minor",
+                    "none": [],
+                    "target": [
+                        "#footer"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ]
+        },
+        {
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI",
+            "id": "color-contrast",
+            "impact": "serious",
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 2.51,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#a3a3a3",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.51 (foreground color: #a3a3a3, background color: #ffffff, font size: 13.5pt, font weight: normal). Expected contrast ratio of 4.5:1",
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"siteWrapper\" class=\"clearfix\">",
+                                    "target": [
+                                        "#siteWrapper"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.51 (foreground color: #a3a3a3, background color: #ffffff, font size: 13.5pt, font weight: normal). Expected contrast ratio of 4.5:1",
+                    "html": "<a href=\"/news/2022/9/15/marthas-vineyard-illegals\" class=\"entry-dateline-link\">September 15, 2022</a>",
+                    "impact": "serious",
+                    "none": [],
+                    "target": [
+                        ".meta-above-title > .entry-dateline > .dt-published.published.entry-date > .entry-dateline-link"
+                    ]
+                },
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": {
+                                "bgColor": "#06306f",
+                                "contrastRatio": 3.26,
+                                "expectedContrastRatio": "4.5:1",
+                                "fgColor": "#6a83a9",
+                                "fontSize": "13.5pt",
+                                "fontWeight": "normal",
+                                "missingData": null
+                            },
+                            "id": "color-contrast",
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.26 (foreground color: #6a83a9, background color: #06306f, font size: 13.5pt, font weight: normal). Expected contrast ratio of 4.5:1",
+                            "relatedNodes": [
+                                {
+                                    "html": "<footer id=\"footer\" role=\"contentinfo\">",
+                                    "target": [
+                                        "#footer"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.26 (foreground color: #6a83a9, background color: #06306f, font size: 13.5pt, font weight: normal). Expected contrast ratio of 4.5:1",
+                    "html": "<p style=\"text-align:center;white-space:pre-wrap;\" class=\"\">Paid for and authorized by the McMahon Committee.<br>\u00a9 Copyright 2022</p>",
+                    "impact": "serious",
+                    "none": [],
+                    "target": [
+                        "#block-713fe491a2c303b33937 > .sqs-block-content > p"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ]
+        },
+        {
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/duplicate-id?application=axeAPI",
+            "id": "duplicate-id",
+            "impact": "minor",
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": "item-6323272a79c2892067afdbbf",
+                            "id": "duplicate-id",
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute",
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"sqs-layout sqs-grid-12 columns-12\" data-layout-label=\"Post Body\" data-type=\"item\" data-updated-on=\"1663248185292\" id=\"item-6323272a79c2892067afdbbf\">",
+                                    "target": [
+                                        "div[data-layout-label=\"Post\\ Body\"]"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute",
+                    "html": "<body id=\"item-6323272a79c2892067afdbbf\" class=\"enable-nav-button nav-button-style-outline nav-button-corner-style-pill banner-button-style-solid banner-button-corner-style-pill banner-slideshow-controls-arrows meta-priority-date hide-entry-author hide-list-entry-footer hide-blog-sidebar center-navigation--info event-show-past-events event-thumbnails event-thumbnail-size-32-standard event-date-label event-list-show-cats event-list-date event-list-time event-list-address event-icalgcal-links event-excerpts gallery-design-grid aspect-ratio-auto lightbox-style-light gallery-navigation-bullets gallery-info-overlay-show-on-hover gallery-aspect-ratio-32-standard gallery-arrow-style-no-background gallery-transitions-fade gallery-show-arrows gallery-auto-crop product-list-titles-under product-list-alignment-center product-item-size-11-square product-image-auto-crop product-gallery-size-11-square show-product-price show-product-item-nav product-social-sharing tweak-v1-related-products-image-aspect-ratio-11-square tweak-v1-related-products-details-alignment-center newsletter-style-light hide-opentable-icons opentable-style-dark small-button-style-solid small-button-shape-square medium-button-style-solid medium-button-shape-square large-button-style-solid large-button-shape-square image-block-poster-text-alignment-center image-block-card-dynamic-font-sizing image-block-card-content-position-center image-block-card-text-alignment-left image-block-overlap-dynamic-font-sizing image-block-overlap-content-position-center image-block-overlap-text-alignment-left image-block-collage-dynamic-font-sizing image-block-collage-content-position-top image-block-collage-text-alignment-left image-block-stack-dynamic-font-sizing image-block-stack-text-alignment-left button-style-solid button-corner-style-square tweak-product-quick-view-button-style-floating tweak-product-quick-view-button-position-bottom tweak-product-quick-view-lightbox-excerpt-display-truncate tweak-product-quick-view-lightbox-show-arrows tweak-product-quick-view-lightbox-show-close-button tweak-product-quick-view-lightbox-controls-weight-light native-currency-code-usd collection-5ea67d10adc9b406ed8a6ae4 view-item collection-type-blog collection-layout-default mobile-style-available force-mobile-nav disable-hover\">",
+                    "impact": "minor",
+                    "none": [],
+                    "target": [
+                        "body"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ]
+        },
+        {
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI",
+            "id": "link-name",
+            "impact": "serious",
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "has-visible-text",
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "aria-label",
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "aria-labelledby",
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "role-presentation",
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"presentation\"",
+                            "relatedNodes": []
+                        },
+                        {
+                            "data": null,
+                            "id": "role-none",
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\"",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element's default semantics were not overridden with role=\"presentation\"\n  Element's default semantics were not overridden with role=\"none\"",
+                    "html": "<a href=\"#\" class=\"body-overlay\"></a>",
+                    "impact": "serious",
+                    "none": [
+                        {
+                            "data": null,
+                            "id": "focusable-no-name",
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text",
+                            "relatedNodes": []
+                        }
+                    ],
+                    "target": [
+                        ".body-overlay"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a"
+            ]
+        },
+        {
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content must be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI",
+            "id": "region",
+            "impact": "moderate",
+            "nodes": [
+                {
+                    "all": [],
+                    "any": [
+                        {
+                            "data": null,
+                            "id": "region",
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks",
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"https://secure.winred.com/mcmahon-committee-80b8279e/donate\" class=\"sqs-block-button-element--large sqs-button-element--secondary sqs-block-button-element\" data-initialized=\"true\">\n    Donate\n  </a>",
+                                    "target": [
+                                        ".sqs-block-button-element--large"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks",
+                    "html": "<html xmlns:og=\"http://opengraphprotocol.org/schema/\" xmlns:fb=\"http://www.facebook.com/2008/fbml\" class=\"yui3-js-enabled js flexbox canvas canvastext webgl no-touch hashchange history draganddrop rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms no-csstransforms3d csstransitions video audio svg inlinesvg svgclippaths wf-adobegaramondpro-n4-active wf-proximanova-n6-active wf-adobegaramondpro-n7-active wf-proximanova-n4-active wf-proximanova-n3-active wf-proximanova-n5-active wf-proximanova-n7-active wf-proximanova-i6-active wf-proximanova-i7-active wf-adobegaramondpro-n6-active wf-adobegaramondpro-i4-active wf-adobegaramondpro-i7-active wf-active\" style=\"\" lang=\"en-US\">",
+                    "impact": "moderate",
+                    "none": [],
+                    "target": [
+                        "html"
+                    ]
+                }
+            ],
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ]
+        }
+    ]
+}

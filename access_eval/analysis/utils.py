@@ -17,7 +17,6 @@ def unpack_data(
 ) -> Path:
     """
     Unzips the zipfile to the destination location.
-
     Parameters
     ----------
     zipfile: Union[str, Path]

@@ -35,7 +35,6 @@ class ComputedField(NamedTuple):
 class DatasetFields:
     """
     This class stores all of the headers for the analysis dataset.
-
     Each header will have a description and some examples.
     Use this class as a data dictionary.
     """
@@ -44,7 +43,6 @@ class DatasetFields:
     """
     str: The municipality or general location where the election
     took place.
-
     Examples
     --------
     - "Seattle, WA"
@@ -54,7 +52,6 @@ class DatasetFields:
     campaign_website_url = "campaign_website_url"
     """
     str: The public URL for the campaign website.
-
     Examples
     --------
     - "https://www.google.com"
@@ -64,7 +61,6 @@ class DatasetFields:
     electoral_position = "electoral_position"
     """
     str: The position the candidate was running for.
-
     Examples
     --------
     - "Mayor"
@@ -74,7 +70,6 @@ class DatasetFields:
     candidate_position = "candidate_position"
     """
     str: Categorical value for if the candidate is the incumbent, a challenger, or open.
-
     Examples
     --------
     - "Incumbent"
@@ -85,13 +80,11 @@ class DatasetFields:
     candidate_history = "candidate_history"
     """
     str: Categorical value for the electoral history of the candidate.
-
     Examples
     --------
     - "In-Office"
     - "Previously-Elected"
     - "Never-Held-Office"
-
     Notes
     -----
     Pulled from external data source.
@@ -100,12 +93,10 @@ class DatasetFields:
     election_result = "election_result"
     """
     str: Categorical value for is the candidate won (or progressed) or not.
-
     Examples
     --------
     - "Won"
     - "Lost"
-
     Notes
     -----
     Pulled from external data source.
@@ -114,7 +105,6 @@ class DatasetFields:
     election_type = "election_type"
     """
     str: Categorical value for the type of election.
-
     Examples
     --------
     - "Primary"
@@ -125,12 +115,10 @@ class DatasetFields:
     eligible_voting_population = "eligible_voting_population"
     """
     int: The total number of people eligible to vote in the election.
-
     Examples
     --------
     - 123456
     - 24680
-
     Notes
     -----
     Pulled from external data source.
@@ -139,12 +127,10 @@ class DatasetFields:
     number_of_votes_for_candidate = "number_of_votes_for_candidate"
     """
     int: The number of votes the candidate ultimately received.
-
     Examples
     --------
     - 12345
     - 2468
-
     Notes
     -----
     Pulled from external data source.
@@ -153,12 +139,10 @@ class DatasetFields:
     number_of_votes_for_race = "number_of_votes_for_race"
     """
     int: The total number of votes returned in the election.
-
     Examples
     --------
     - 123456
     - 24680
-
     Notes
     -----
     Pulled from external data source.
@@ -167,7 +151,6 @@ class DatasetFields:
     vote_share = "vote_share"
     """
     float: The number of votes the candidate received over the number of votes possible.
-
     Examples
     --------
     - 0.21
@@ -177,12 +160,10 @@ class DatasetFields:
     race_funding = "race_funding"
     """
     float: The amount of money all candidates in the race received during the campaign.
-
     Examples
     --------
     - 10000000.00
     - 24500000.00
-
     Notes
     -----
     Pulled from external data source.
@@ -191,16 +172,13 @@ class DatasetFields:
     candidate_funding = "candidate_funding"
     """
     float: The amount of money the candidate received in donations during the campaign.
-
     Examples
     --------
     - 100000.00
     - 350000.00
-
     Notes
     -----
     Calculated as sum of all other candidates funding in same race.
-
     Pulled from external data. (Not all candidates had websites scraped scraped)
     """
 
@@ -208,7 +186,6 @@ class DatasetFields:
     """
     float: The amount of money the candidate received in donations over the amount of
     money all candidates received during the campaign.
-
     Examples
     --------
     - 0.21
@@ -218,12 +195,10 @@ class DatasetFields:
     contacted = "contacted"
     """
     str: Was the campaign contacted with the aXe evaluation summarization.
-
     Examples
     --------
     - "Contacted"
     - "Not-Contacted"
-
     Notes
     -----
     If the campaign was not contacted, the values for pre and post features are set to
@@ -234,7 +209,6 @@ class DatasetFields:
     """
     int: The total number of words found in the whole campaign website.
     Calculated on the latest version of the website.
-
     Examples
     --------
     - 9999
@@ -245,7 +219,6 @@ class DatasetFields:
     """
     int: The total number of unique words found in the whole campaign website.
     Calculated on the latest version of the website.
-
     Examples
     --------
     - 999
@@ -256,10 +229,8 @@ class DatasetFields:
     """
     float: The lexical complexity of the entire website.
     Calculated on the latest version of the website.
-
     See: https://github.com/shivam5992/textstat#the-flesch-reading-ease-formula
     for more information.
-
     Examples
     --------
     - 123.45
@@ -269,7 +240,6 @@ class DatasetFields:
     number_of_pages_pre = "number_of_pages_pre"
     """
     int: The total number of pages found in the whole campaign website before contact.
-
     Examples
     --------
     - 12
@@ -279,7 +249,6 @@ class DatasetFields:
     number_of_total_errors_pre = "number_of_total_errors_pre"
     """
     int: The total number of errors for the entire website before contact.
-
     Examples
     --------
     - 234
@@ -290,7 +259,6 @@ class DatasetFields:
     """
     int: The number of errors categorized as "critical" by aXe for the
     entire website before contact.
-
     Examples
     --------
     - 123
@@ -301,7 +269,6 @@ class DatasetFields:
     """
     int: The number of errors categorized as "serious" by aXe for the
     entire website before contact.
-
     Examples
     --------
     - 123
@@ -312,7 +279,6 @@ class DatasetFields:
     """
     int: The number of errors categorized as "moderate" by aXe for the
     entire website before contact.
-
     Examples
     --------
     - 123
@@ -323,7 +289,6 @@ class DatasetFields:
     """
     int: The number of errors categorized as "minor" by aXe for the
     entire website before contact.
-
     Examples
     --------
     - 123
@@ -333,7 +298,6 @@ class DatasetFields:
     number_of_pages_post = "number_of_pages_post"
     """
     int: The total number of pages found in the whole campaign website after contact.
-
     Examples
     --------
     - 12
@@ -343,7 +307,6 @@ class DatasetFields:
     number_of_total_errors_post = "number_of_total_errors_post"
     """
     int: The total number of errors for the entire website after contact.
-
     Examples
     --------
     - 234
@@ -354,7 +317,6 @@ class DatasetFields:
     """
     int: The number of errors categorized as "critical" by aXe for the
     entire website after contact.
-
     Examples
     --------
     - 123
@@ -365,7 +327,6 @@ class DatasetFields:
     """
     int: The number of errors categorized as "serious" by aXe for the
     entire website after contact.
-
     Examples
     --------
     - 123
@@ -376,7 +337,6 @@ class DatasetFields:
     """
     int: The number of errors categorized as "moderate" by aXe for the
     entire website after contact.
-
     Examples
     --------
     - 123
@@ -387,7 +347,6 @@ class DatasetFields:
     """
     int: The number of errors categorized as "minor" by aXe for the
     entire website after contact.
-
     Examples
     --------
     - 123
@@ -398,12 +357,10 @@ class DatasetFields:
     """
     str: The categorical variable added when the data has been flattened
     from "pre" and "post" having independent columns to now sharing columns.
-
     Examples
     --------
     - "Pre"
     - "Post"
-
     Notes
     -----
     This is only added with the flattened data.
@@ -413,12 +370,10 @@ class DatasetFields:
     """
     int: There are many columns that begin with 'error-type_'.
     Such columns are just the aggregate value of that error type X for that campaign.
-
     Examples
     --------
     - "error-type_label_pre": 12
     - "error-type_frame-title_post": 4
-
     Notes
     -----
     These columns have a computed field as well which is the `avg_error-type_x` for both

@@ -1,0 +1,6 @@
+id,impact,impact_score,reason,number_of_elements_in_violation,help_url
+label,critical,4,Form elements must have labels,4,https://dequeuniversity.com/rules/axe/3.1/label?application=axeAPI
+input-image-alt,critical,4,Image buttons must have alternate text,1,https://dequeuniversity.com/rules/axe/3.1/input-image-alt?application=axeAPI
+landmark-one-main,moderate,2,Page must have one main landmark,1,https://dequeuniversity.com/rules/axe/3.1/landmark-one-main?application=axeAPI
+page-has-heading-one,moderate,2,Page must contain a level-one heading,1,https://dequeuniversity.com/rules/axe/3.1/page-has-heading-one?application=axeAPI
+region,moderate,2,All page content must be contained by landmarks,1,https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI

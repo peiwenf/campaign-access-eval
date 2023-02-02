@@ -1,0 +1,11 @@
+id,impact,impact_score,reason,number_of_pages_affected,number_of_elements_in_violation,help_url
+color-contrast,serious,3,Elements must have sufficient color contrast,38,182,https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
+aria-allowed-role,minor,1,ARIA role must be appropriate for the element,38,148,https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI
+frame-title,serious,3,Frames must have title attribute,11,42,https://dequeuniversity.com/rules/axe/3.1/frame-title?application=axeAPI
+link-name,serious,3,Links must have discernible text,38,38,https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
+region,moderate,2,All page content must be contained by landmarks,38,38,https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI
+duplicate-id,minor,1,id attribute value must be unique,28,28,https://dequeuniversity.com/rules/axe/3.1/duplicate-id?application=axeAPI
+checkboxgroup,critical,4,Checkbox inputs with the same name attribute value must be part of a group,1,2,https://dequeuniversity.com/rules/axe/3.1/checkboxgroup?application=axeAPI
+heading-order,moderate,2,Heading levels should only increase by one,2,2,https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
+empty-heading,minor,1,Headings must not be empty,2,2,https://dequeuniversity.com/rules/axe/3.1/empty-heading?application=axeAPI
+label,critical,4,Form elements must have labels,1,1,https://dequeuniversity.com/rules/axe/3.1/label?application=axeAPI

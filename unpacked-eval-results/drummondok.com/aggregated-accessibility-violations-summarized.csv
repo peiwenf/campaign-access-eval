@@ -1,0 +1,11 @@
+id,impact,impact_score,reason,number_of_pages_affected,number_of_elements_in_violation,help_url
+image-alt,critical,4,Images must have alternate text,1,50,https://dequeuniversity.com/rules/axe/3.1/image-alt?application=axeAPI
+color-contrast,serious,3,Elements must have sufficient color contrast,3,29,https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
+label,critical,4,Form elements must have labels,3,17,https://dequeuniversity.com/rules/axe/3.1/label?application=axeAPI
+duplicate-id,minor,1,id attribute value must be unique,3,16,https://dequeuniversity.com/rules/axe/3.1/duplicate-id?application=axeAPI
+link-name,serious,3,Links must have discernible text,2,5,https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
+landmark-one-main,moderate,2,Page must have one main landmark,5,5,https://dequeuniversity.com/rules/axe/3.1/landmark-one-main?application=axeAPI
+region,moderate,2,All page content must be contained by landmarks,5,5,https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI
+meta-viewport,critical,4,Zooming and scaling must not be disabled,3,3,https://dequeuniversity.com/rules/axe/3.1/meta-viewport?application=axeAPI
+heading-order,moderate,2,Heading levels should only increase by one,1,2,https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
+empty-heading,minor,1,Headings must not be empty,1,2,https://dequeuniversity.com/rules/axe/3.1/empty-heading?application=axeAPI

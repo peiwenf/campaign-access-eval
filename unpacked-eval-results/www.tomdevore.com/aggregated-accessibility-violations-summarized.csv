@@ -1,0 +1,18 @@
+id,impact,impact_score,reason,number_of_pages_affected,number_of_elements_in_violation,help_url
+color-contrast,serious,3,Elements must have sufficient color contrast,89,1122,https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
+label,critical,4,Form elements must have labels,89,297,https://dequeuniversity.com/rules/axe/3.1/label?application=axeAPI
+link-name,serious,3,Links must have discernible text,89,271,https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
+heading-order,moderate,2,Heading levels should only increase by one,89,202,https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
+skip-link,moderate,2,The skip-link target should exist and be focusable,89,178,https://dequeuniversity.com/rules/axe/3.1/skip-link?application=axeAPI
+region,moderate,2,All page content must be contained by landmarks,89,89,https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI
+landmark-one-main,moderate,2,Page must have one main landmark,80,80,https://dequeuniversity.com/rules/axe/3.1/landmark-one-main?application=axeAPI
+page-has-heading-one,moderate,2,Page must contain a level-one heading,46,46,https://dequeuniversity.com/rules/axe/3.1/page-has-heading-one?application=axeAPI
+duplicate-id,minor,1,id attribute value must be unique,1,17,https://dequeuniversity.com/rules/axe/3.1/duplicate-id?application=axeAPI
+definition-list,serious,3,"<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script> or <template> elements",13,13,https://dequeuniversity.com/rules/axe/3.1/definition-list?application=axeAPI
+duplicate-id-aria,critical,4,IDs used in ARIA and labels must be unique,1,4,https://dequeuniversity.com/rules/axe/3.1/duplicate-id-aria?application=axeAPI
+document-title,serious,3,Documents must have <title> element to aid in navigation,4,4,https://dequeuniversity.com/rules/axe/3.1/document-title?application=axeAPI
+html-has-lang,serious,3,<html> element must have a lang attribute,4,4,https://dequeuniversity.com/rules/axe/3.1/html-has-lang?application=axeAPI
+aria-allowed-role,minor,1,ARIA role must be appropriate for the element,3,3,https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI
+frame-title-unique,serious,3,Frames must have a unique title attribute,1,2,https://dequeuniversity.com/rules/axe/3.1/frame-title-unique?application=axeAPI
+duplicate-id-active,serious,3,IDs of active elements must be unique,1,1,https://dequeuniversity.com/rules/axe/3.1/duplicate-id-active?application=axeAPI
+frame-title,serious,3,Frames must have title attribute,1,1,https://dequeuniversity.com/rules/axe/3.1/frame-title?application=axeAPI
