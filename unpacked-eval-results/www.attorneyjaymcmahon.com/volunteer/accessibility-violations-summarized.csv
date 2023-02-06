@@ -1,7 +1,0 @@
-id,impact,impact_score,reason,number_of_elements_in_violation,help_url
-aria-allowed-role,minor,1,ARIA role must be appropriate for the element,3,https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI
-checkboxgroup,critical,4,Checkbox inputs with the same name attribute value must be part of a group,2,https://dequeuniversity.com/rules/axe/3.1/checkboxgroup?application=axeAPI
-label,critical,4,Form elements must have labels,1,https://dequeuniversity.com/rules/axe/3.1/label?application=axeAPI
-color-contrast,serious,3,Elements must have sufficient color contrast,1,https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
-link-name,serious,3,Links must have discernible text,1,https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
-region,moderate,2,All page content must be contained by landmarks,1,https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI

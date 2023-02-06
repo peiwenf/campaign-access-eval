@@ -4,18 +4,18 @@ import os
 import subprocess
 
 #import scraped data
-df = pd.read_csv(str(os. getcwd())+"/../data/MayoralElections.csv")
+df = pd.read_csv(str(os. getcwd())+"/../data_2022/House.csv")
 df = df.where(pd.notnull(df), None)
 df = df.dropna(how='all')
 
 #Globals
-COMMAND_TEMPLATE = (
-    "gh workflow run "
-    "--repo {repo} "
-    "generate-report.yml "
-    "-f url={link} "
-)
-REPO = "peiwenf/campaign-access-eval" # forked repo
+# COMMAND_TEMPLATE = (
+#     "gh workflow run "
+#     "--repo {repo} "
+#     "generate-report.yml "
+#     "-f url={link} "
+# )
+# REPO = "peiwenf/campaign-access-eval" # forked repo
 
 #remove the position webs
 list = [".gov",".us"]
@@ -41,15 +41,17 @@ for i, row in df.iterrows():
             currentS = row.Dist
             row.Result = "Win"
 
+df.to_csv(str(os. getcwd())+"/../data_2022/House_cleaned.csv", index=False, header=True)
+
 #run the github actions for a dataframe
-for i, row in df.iterrows():
-    if row.CampWeb is not None:
-        command = COMMAND_TEMPLATE.format(
-        repo=REPO,
-        link=row.CampWeb,
-        )
-        proc_resp = subprocess.run(
-            command.split(" "),
-            check=True,
-        )
-        print(f"row {i} is done!")
+# for i, row in df.iterrows():
+#     if row.CampWeb is not None:
+#         command = COMMAND_TEMPLATE.format(
+#         repo=REPO,
+#         link=row.CampWeb,
+#         )
+#         proc_resp = subprocess.run(
+#             command.split(" "),
+#             check=True,
+#         )
+#         print(f"row {i} is done!")

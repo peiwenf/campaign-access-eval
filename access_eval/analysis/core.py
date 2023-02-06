@@ -677,7 +677,6 @@ def get_crucial_stats(
     stats["n unique words | candidate position"] = sci_stats.f_oneway(
         *candidate_position_split_n_unique_words
     )
-
     def sig_str(p: float) -> str:
         if p >= 0.05:
             return "n.s."

@@ -1,8 +1,0 @@
-id,impact,impact_score,reason,number_of_elements_in_violation,help_url
-color-contrast,serious,3,Elements must have sufficient color contrast,34,https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
-list,serious,3,"<ul> and <ol> must only directly contain <li>, <script> or <template> elements",1,https://dequeuniversity.com/rules/axe/3.1/list?application=axeAPI
-landmark-one-main,moderate,2,Page must have one main landmark,1,https://dequeuniversity.com/rules/axe/3.1/landmark-one-main?application=axeAPI
-page-has-heading-one,moderate,2,Page must contain a level-one heading,1,https://dequeuniversity.com/rules/axe/3.1/page-has-heading-one?application=axeAPI
-region,moderate,2,All page content must be contained by landmarks,1,https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI
-aria-allowed-role,minor,1,ARIA role must be appropriate for the element,1,https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI
-duplicate-id,minor,1,id attribute value must be unique,1,https://dequeuniversity.com/rules/axe/3.1/duplicate-id?application=axeAPI

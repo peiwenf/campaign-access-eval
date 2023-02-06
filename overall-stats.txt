@@ -1,0 +1,8 @@
+\begin{tabular}{lrr}
+\toprule
+{} &  number\_of\_pages &  avg\_errors\_per\_page \\
+\midrule
+mean &        19.392857 &            21.516019 \\
+std  &        30.926842 &            20.160774 \\
+\bottomrule
+\end{tabular}

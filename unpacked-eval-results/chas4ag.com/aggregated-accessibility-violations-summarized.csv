@@ -1,9 +1,0 @@
-id,impact,impact_score,reason,number_of_pages_affected,number_of_elements_in_violation,help_url
-color-contrast,serious,3,Elements must have sufficient color contrast,1,2,https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
-meta-viewport,critical,4,Zooming and scaling must not be disabled,1,1,https://dequeuniversity.com/rules/axe/3.1/meta-viewport?application=axeAPI
-link-name,serious,3,Links must have discernible text,1,1,https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
-heading-order,moderate,2,Heading levels should only increase by one,1,1,https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
-landmark-one-main,moderate,2,Page must have one main landmark,1,1,https://dequeuniversity.com/rules/axe/3.1/landmark-one-main?application=axeAPI
-page-has-heading-one,moderate,2,Page must contain a level-one heading,1,1,https://dequeuniversity.com/rules/axe/3.1/page-has-heading-one?application=axeAPI
-region,moderate,2,All page content must be contained by landmarks,1,1,https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI
-aria-allowed-role,minor,1,ARIA role must be appropriate for the element,1,1,https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI

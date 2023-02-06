@@ -1,6 +1,0 @@
-id,impact,impact_score,reason,number_of_elements_in_violation,help_url
-aria-allowed-role,minor,1,ARIA role must be appropriate for the element,13,https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI
-color-contrast,serious,3,Elements must have sufficient color contrast,2,https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
-aria-valid-attr-value,critical,4,ARIA attributes must conform to valid values,1,https://dequeuniversity.com/rules/axe/3.1/aria-valid-attr-value?application=axeAPI
-autocomplete-valid,serious,3,autocomplete attribute must be used correctly,1,https://dequeuniversity.com/rules/axe/3.1/autocomplete-valid?application=axeAPI
-duplicate-id-active,serious,3,IDs of active elements must be unique,1,https://dequeuniversity.com/rules/axe/3.1/duplicate-id-active?application=axeAPI

@@ -8,7 +8,7 @@ import sys
 import traceback
 from shutil import rmtree
 
-from access_eval.analysis import plotting
+from access_eval.analysis import plotting_2022
 from access_eval.analysis.core_2022 import (
     # flatten_access_eval_2021_dataset,
     get_crucial_stats,
@@ -61,17 +61,17 @@ def main() -> None:
         # flat_data = flatten_access_eval_2021_dataset(data)
 
         # Clear prior plots
-        if plotting.PLOTTING_DIR.exists():
-            rmtree(plotting.PLOTTING_DIR)
+        if plotting_2022.PLOTTING_DIR.exists():
+            rmtree(plotting_2022.PLOTTING_DIR)
 
         # Generate plots
         log.info("Generating plots used in paper...")
-        plotting.plot_summary_stats(data)
-        plotting.plot_location_based_summary_stats(data)
-        plotting.plot_election_result_based_summary_stats(data)
-        plotting.plot_electoral_position_based_summary_stats(data)
-        plotting.plot_candidate_position_based_summary_stats(data)
-        plotting.plot_pre_post_errors(data)
+        plotting_2022.plot_summary_stats(data)
+        plotting_2022.plot_location_based_summary_stats(data)
+        plotting_2022.plot_election_result_based_summary_stats(data)
+        plotting_2022.plot_electoral_position_based_summary_stats(data)
+        # plotting_2022.plot_candidate_position_based_summary_stats(data)
+        # plotting_2022.plot_pre_post_errors(data)
 
         # Generate stats and print
         stats = get_crucial_stats(data)
@@ -82,11 +82,11 @@ def main() -> None:
         # Generate full plots
         if args.all_plots:
             log.info("Generating extra plots...")
-            plotting.plot_computed_fields_over_vote_share(data)
-            plotting.plot_pre_post_fields_compare(data)
-            plotting.plot_categorical_against_errors_boxplots(data)
-            plotting.plot_locations_against_errors_boxplots(data)
-            plotting.plot_error_types_boxplots(data)
+            plotting_2022.plot_computed_fields_over_vote_share(data)
+            # plotting_2022.plot_pre_post_fields_compare(data)
+            plotting_2022.plot_categorical_against_errors_boxplots(data)
+            plotting_2022.plot_locations_against_errors_boxplots(data)
+            plotting_2022.plot_error_types_boxplots(data)
 
     except Exception as e:
         log.error("=============================================")

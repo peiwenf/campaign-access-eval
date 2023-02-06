@@ -18,6 +18,7 @@ ACCESS_EVAL_2022_EVALS_ZIP = (
 ACCESS_EVAL_2022_EVALS_UNPACKED = Path("unpacked-eval-results")
 
 ACCESS_EVAL_2022_DATASET = ACCESS_EVAL_2022_STUDY_DATA / "2022-study-data.csv"
+ACCESS_EVAL_2022_DATASET_NA = ACCESS_EVAL_2022_STUDY_DATA / "2022-study-data-na.csv"
 
 ###############################################################################
 
@@ -527,33 +528,33 @@ class ComputedFields:
         / data[DatasetFields.number_of_pages],
     )
 
-    # # Vote share
-    # vote_share_per_error = ComputedField(
-    #     name="vote_share_per_error",
-    #     func=lambda data: data[DatasetFields.vote_share]
-    #     / data[DatasetFields.number_of_total_errors_post],
-    # )
+    # Vote share
+    vote_share_per_error = ComputedField(
+        name="vote_share_per_error",
+        func=lambda data: data[DatasetFields.vote_share]
+        / data[DatasetFields.number_of_total_errors],
+    )
 
-    # vote_share_per_critical_error = ComputedField(
-    #     name="vote_share_per_critical_error",
-    #     func=lambda data: data[DatasetFields.vote_share]
-    #     / data[DatasetFields.number_of_critical_errors_post],
-    # )
+    vote_share_per_critical_error = ComputedField(
+        name="vote_share_per_critical_error",
+        func=lambda data: data[DatasetFields.vote_share]
+        / data[DatasetFields.number_of_critical_errors],
+    )
 
-    # vote_share_per_serious_error = ComputedField(
-    #     name="vote_share_per_serious_error",
-    #     func=lambda data: data[DatasetFields.vote_share]
-    #     / data[DatasetFields.number_of_serious_errors_post],
-    # )
+    vote_share_per_serious_error = ComputedField(
+        name="vote_share_per_serious_error",
+        func=lambda data: data[DatasetFields.vote_share]
+        / data[DatasetFields.number_of_serious_errors],
+    )
 
-    # vote_share_per_moderate_error = ComputedField(
-    #     name="vote_share_per_moderate_error",
-    #     func=lambda data: data[DatasetFields.vote_share]
-    #     / data[DatasetFields.number_of_moderate_errors_post],
-    # )
+    vote_share_per_moderate_error = ComputedField(
+        name="vote_share_per_moderate_error",
+        func=lambda data: data[DatasetFields.vote_share]
+        / data[DatasetFields.number_of_moderate_errors],
+    )
 
-    # vote_share_per_minor_error = ComputedField(
-    #     name="vote_share_per_minor_error",
-    #     func=lambda data: data[DatasetFields.vote_share]
-    #     / data[DatasetFields.number_of_minor_errors_post],
-    # )
+    vote_share_per_minor_error = ComputedField(
+        name="vote_share_per_minor_error",
+        func=lambda data: data[DatasetFields.vote_share]
+        / data[DatasetFields.number_of_minor_errors],
+    )

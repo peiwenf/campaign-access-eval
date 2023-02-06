@@ -268,7 +268,6 @@ def plot_error_types_boxplots(
 
     # Use all pre-computed avg error type features
     common_error_cols = [col for col in data.columns if "avg_error-type_" in col]
-
     # Create plot
     err_type_plots = alt.vconcat()
     for err_type in common_error_cols:
@@ -462,9 +461,9 @@ def plot_location_based_summary_stats(
     # pre and post (trial / contact)
     # data = data[data[DatasetFields.trial] == "B - Post"]
 
-    # Drop any locations with less than two campaigns
+    # Drop any locations with less than two campaigns (originally <= 2)
     location_counts = data[DatasetFields.location].value_counts()
-    viable_locations = location_counts[location_counts <= 2].index
+    viable_locations = location_counts[location_counts < 2].index
     data = data[~data[DatasetFields.location].isin(viable_locations)]
 
     # Plot basic stats
@@ -524,29 +523,29 @@ def plot_electoral_position_based_summary_stats(
     )
 
 
-def plot_candidate_position_based_summary_stats(
-    data: Optional[pd.DataFrame] = None,
-) -> None:
-    """
-    Input data should be the "flattened" dataset.
-    """
-    # Load default data
-    if data is None:
-        data = load_access_eval_2022_dataset()
+# def plot_candidate_position_based_summary_stats(
+#     data: Optional[pd.DataFrame] = None,
+# ) -> None:
+#     """
+#     Input data should be the "flattened" dataset.
+#     """
+#     # Load default data
+#     if data is None:
+#         data = load_access_eval_2022_dataset()
 
-    # Only work against the post data for summary stats as there was no difference
-    # pre and post (trial / contact)
-    # data = data[data[DatasetFields.trial] == "B - Post"]
+#     # Only work against the post data for summary stats as there was no difference
+#     # pre and post (trial / contact)
+#     # data = data[data[DatasetFields.trial] == "B - Post"]
 
-    # Plot basic stats
-    plot_summary_stats(
-        data,
-        subset_name="candidate-position-split-",
-        keep_cols=[DatasetFields.candidate_position],
-        plot_kwargs={
-            "column": alt.Column(DatasetFields.candidate_position, spacing=40)
-        },
-    )
+#     # Plot basic stats
+#     plot_summary_stats(
+#         data,
+#         subset_name="candidate-position-split-",
+#         keep_cols=[DatasetFields.candidate_position],
+#         plot_kwargs={
+#             "column": alt.Column(DatasetFields.candidate_position, spacing=40)
+#         },
+#     )
 
 
 # def plot_pre_post_errors(

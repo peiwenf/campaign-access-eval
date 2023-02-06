@@ -1,9 +1,0 @@
-id,impact,impact_score,reason,number_of_pages_affected,number_of_elements_in_violation,help_url
-aria-allowed-role,minor,1,ARIA role must be appropriate for the element,59,777,https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI
-color-contrast,serious,3,Elements must have sufficient color contrast,41,87,https://dequeuniversity.com/rules/axe/3.1/color-contrast?application=axeAPI
-aria-valid-attr-value,critical,4,ARIA attributes must conform to valid values,59,60,https://dequeuniversity.com/rules/axe/3.1/aria-valid-attr-value?application=axeAPI
-autocomplete-valid,serious,3,autocomplete attribute must be used correctly,59,59,https://dequeuniversity.com/rules/axe/3.1/autocomplete-valid?application=axeAPI
-duplicate-id-active,serious,3,IDs of active elements must be unique,43,43,https://dequeuniversity.com/rules/axe/3.1/duplicate-id-active?application=axeAPI
-frame-title,serious,3,Frames must have title attribute,34,34,https://dequeuniversity.com/rules/axe/3.1/frame-title?application=axeAPI
-heading-order,moderate,2,Heading levels should only increase by one,8,8,https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
-page-has-heading-one,moderate,2,Page must contain a level-one heading,3,3,https://dequeuniversity.com/rules/axe/3.1/page-has-heading-one?application=axeAPI

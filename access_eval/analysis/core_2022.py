@@ -170,11 +170,11 @@ def process_axe_evaluations_and_extras(
     # Handle path and dir checking
     axe_results_dir = Path(axe_results_dir).resolve(strict=True)
     if not axe_results_dir.is_dir():
-        # raise NotADirectoryError(axe_results_dir)
-        return None
+        raise NotADirectoryError(axe_results_dir)
 
     # Prep for recursive processing
     word_metrics: Optional[Dict]
+    # word_metrics = None
     word_metrics = {}
     # if generate_extras:
     #     word_metrics = {}
@@ -368,9 +368,10 @@ def combine_election_data_with_axe_results(
                 }
             )
         else:
+            row.campaign_website_url = None
             expanded_data.append(
                 {
-                    # Original row details
+                    # Original row details with unworking links removed
                     **row,
                 }
             )
@@ -411,6 +412,11 @@ def load_access_eval_2022_dataset(
     for attr in ComputedFields.__dict__.values():
         if isinstance(attr, ComputedField):
             data[attr.name] = attr.func(data)
+    
+    # Replace the NaN with 0 
+    for col in data.columns:
+        if "error-type_" in col:
+            data[col] = data[col].fillna(0)
 
     # Collect error type cols with a value above 0 at the 25th percentile
     common_error_cols = []
@@ -418,18 +424,20 @@ def load_access_eval_2022_dataset(
         if "error-type_" in col and data[col].quantile(0.75) > 0:
             common_error_cols.append(col)
 
-    # # Create norm cols
-    # for common_error_col in common_error_cols:
-    #     error_type = common_error_col.replace("_pre", "").replace("_post", "")
-    #     if "_pre" in common_error_col:
-    #         avg_error_type_col_name = f"avg_{error_type}_per_page_pre"
-    #         norm_col = DatasetFields.number_of_pages_pre
-    #     else:
-    #         avg_error_type_col_name = f"avg_{error_type}_per_page_post"
-    #         norm_col = DatasetFields.number_of_pages_post
+    # Create norm cols
+    for common_error_col in common_error_cols:
+        error_type = common_error_col
+        avg_error_type_col_name = f"avg_{error_type}_per_page"
+        norm_col = DatasetFields.number_of_pages
+        # if "_pre" in common_error_col:
+        #     avg_error_type_col_name = f"avg_{error_type}_per_page_pre"
+        #     norm_col = DatasetFields.number_of_pages_pre
+        # else:
+        #     avg_error_type_col_name = f"avg_{error_type}_per_page_post"
+        #     norm_col = DatasetFields.number_of_pages_post
 
-    #     # Norm
-    #     data[avg_error_type_col_name] = data[common_error_col] / data[norm_col]
+        # Norm
+        data[avg_error_type_col_name] = data[common_error_col] / data[norm_col]
 
     return data
 
@@ -564,32 +572,32 @@ def get_crucial_stats(
     # Important:
     # At this point we subset the data to just "post" or trial "b"
     #####
-    data = data.loc[data[DatasetFields.trial] == "B - Post"]
-    print("Number of sites in trial b:", len(data))
+    # data = data.loc[data[DatasetFields.trial] == "B - Post"]
+    print("Number of sites for this run:", len(data))
+    # print(
+    #     "Number of sites contacted:",
+    #     len(data.loc[data[DatasetFields.contacted] == "Contacted"]),
+    # )
     print(
-        "Number of sites contacted:",
-        len(data.loc[data[DatasetFields.contacted] == "Contacted"]),
+        "Number of attorney general campaigns:",
+        len(data.loc[data[DatasetFields.electoral_position] == "Attorney General"]),
     )
-    print(
-        "Number of mayoral campaigns:",
-        len(data.loc[data[DatasetFields.electoral_position] == "Mayor"]),
-    )
-    print(
-        "Number of council campaigns:",
-        len(data.loc[data[DatasetFields.electoral_position] == "Council"]),
-    )
-    print(
-        "Number of open campaigns:",
-        len(data.loc[data[DatasetFields.candidate_position] == "Open"]),
-    )
-    print(
-        "Number of incumbent campaigns:",
-        len(data.loc[data[DatasetFields.candidate_position] == "Incumbent"]),
-    )
-    print(
-        "Number of challenger campaigns:",
-        len(data.loc[data[DatasetFields.candidate_position] == "Challenger"]),
-    )
+    # print(
+    #     "Number of council campaigns:",
+    #     len(data.loc[data[DatasetFields.electoral_position] == "Council"]),
+    # )
+    # print(
+    #     "Number of open campaigns:",
+    #     len(data.loc[data[DatasetFields.candidate_position] == "Open"]),
+    # )
+    # print(
+    #     "Number of incumbent campaigns:",
+    #     len(data.loc[data[DatasetFields.candidate_position] == "Incumbent"]),
+    # )
+    # print(
+    #     "Number of challenger campaigns:",
+    #     len(data.loc[data[DatasetFields.candidate_position] == "Challenger"]),
+    # )
 
     # Generate election outcome by location and position
     with open("demographics.txt", "w") as open_f:
@@ -598,7 +606,7 @@ def get_crucial_stats(
                 [
                     DatasetFields.location,
                     DatasetFields.electoral_position,
-                    DatasetFields.candidate_position,
+                    # DatasetFields.candidate_position,
                 ]
             )
             .size()
@@ -614,33 +622,46 @@ def get_crucial_stats(
     # Get trends in mayoral vs council races
     # Have to use Welch t-test here because we don't know / can't be certain
     # of variance between samples
-    mayoral_races = data[data[DatasetFields.electoral_position] == "Mayor"]
-    council_races = data[data[DatasetFields.electoral_position] == "Council"]
+    # change back when doing othe race:
+    attorney_general_races = data[data[DatasetFields.electoral_position] == "Attorney General"]
+    # mayoral_races = data[data[DatasetFields.electoral_position] == "Mayor"]
+    # council_races = data[data[DatasetFields.electoral_position] == "Council"]
 
     # Shorten number of pages col title
     number_of_pages = DatasetFields.number_of_pages
 
     # Compute stats and save
-    stats: Dict[str, sci_stats.stats.Ttest_indResult] = {
-        "mayoral vs council | number of pages": sci_stats.ttest_ind(
-        mayoral_races[number_of_pages],
-        council_races[number_of_pages],
-        equal_var=False,)
-    }
+    # stats: Dict[str, sci_stats.stats.Ttest_indResult] = {
+    #     "mayoral vs council | number of pages": sci_stats.ttest_ind(
+    #     mayoral_races[number_of_pages],
+    #     council_races[number_of_pages],
+    #     equal_var=False,)
+    # }
     # stats["mayoral vs council | number of pages"] = sci_stats.ttest_ind(
     #     mayoral_races[number_of_pages],
     #     council_races[number_of_pages],
     #     equal_var=False,
     # )
-    stats["mayoral | number of pages | mean and std"] = {
-        "mean": mayoral_races[number_of_pages].mean(),
-        "std": mayoral_races[number_of_pages].std(),
-    }
-    stats["council | number of pages | mean and std"] = {
-        "mean": council_races[number_of_pages].mean(),
-        "std": council_races[number_of_pages].std(),
+    stats: Dict[str, sci_stats.stats.Ttest_indResult] = {
+        "attorney general | number of pages | mean and std":
+        {"mean": attorney_general_races[number_of_pages].mean(),
+        "std": attorney_general_races[number_of_pages].std(),}
     }
 
+    # stats["mayoral | number of pages | mean and std"] = {
+    #     "mean": mayoral_races[number_of_pages].mean(),
+    #     "std": mayoral_races[number_of_pages].std(),
+    # }
+    # stats["council | number of pages | mean and std"] = {
+    #     "mean": council_races[number_of_pages].mean(),
+    #     "std": council_races[number_of_pages].std(),
+    # }
+    # data_pages = data[number_of_pages]
+    # data_words = data[DatasetFields.number_of_words]
+    # data_uwords = data[DatasetFields.number_of_unique_words]
+    # no_na_pages = data_pages[~np.isnan(data_pages)]
+    # no_na_words = data_words[~np.isnan(data_words)]
+    # no_na_uwords = data_uwords[~np.isnan(data_uwords)]
     # number of pages and number of words correlation
     stats["number of pages | number of words | corr"] = sci_stats.pearsonr(
         data[number_of_pages],
@@ -652,34 +673,34 @@ def get_crucial_stats(
     )
 
     # number of words mayor vs council
-    stats["mayoral vs council | number of words"] = sci_stats.ttest_ind(
-        mayoral_races[DatasetFields.number_of_words],
-        council_races[DatasetFields.number_of_words],
-        equal_var=False,
-    )
-    stats["mayoral | number of words | mean and std"] = {
-        "mean": mayoral_races[DatasetFields.number_of_words].mean(),
-        "std": mayoral_races[DatasetFields.number_of_words].std(),
+    # stats["mayoral vs council | number of words"] = sci_stats.ttest_ind(
+    #     mayoral_races[DatasetFields.number_of_words],
+    #     council_races[DatasetFields.number_of_words],
+    #     equal_var=False,
+    # )
+    stats["attorney general | number of words | mean and std"] = {
+        "mean": attorney_general_races[DatasetFields.number_of_words].mean(),
+        "std": attorney_general_races[DatasetFields.number_of_words].std(),
     }
-    stats["council | number of words | mean and std"] = {
-        "mean": council_races[DatasetFields.number_of_words].mean(),
-        "std": council_races[DatasetFields.number_of_words].std(),
-    }
+    # stats["council | number of words | mean and std"] = {
+    #     "mean": council_races[DatasetFields.number_of_words].mean(),
+    #     "std": council_races[DatasetFields.number_of_words].std(),
+    # }
 
     # number of unique words mayor vs council
-    stats["mayoral vs council | number of unique words"] = sci_stats.ttest_ind(
-        mayoral_races[DatasetFields.number_of_unique_words],
-        council_races[DatasetFields.number_of_unique_words],
-        equal_var=False,
-    )
-    stats["mayoral | number of unique words | mean and std"] = {
-        "mean": mayoral_races[DatasetFields.number_of_unique_words].mean(),
-        "std": mayoral_races[DatasetFields.number_of_unique_words].std(),
+    # stats["mayoral vs council | number of unique words"] = sci_stats.ttest_ind(
+    #     mayoral_races[DatasetFields.number_of_unique_words],
+    #     council_races[DatasetFields.number_of_unique_words],
+    #     equal_var=False,
+    # )
+    stats["attorney general | number of unique words | mean and std"] = {
+        "mean": attorney_general_races[DatasetFields.number_of_unique_words].mean(),
+        "std": attorney_general_races[DatasetFields.number_of_unique_words].std(),
     }
-    stats["council | number of unique words | mean and std"] = {
-        "mean": council_races[DatasetFields.number_of_unique_words].mean(),
-        "std": council_races[DatasetFields.number_of_unique_words].std(),
-    }
+    # stats["council | number of unique words | mean and std"] = {
+    #     "mean": council_races[DatasetFields.number_of_unique_words].mean(),
+    #     "std": council_races[DatasetFields.number_of_unique_words].std(),
+    # }
 
     # number of pages, number of words, number of unique words by candidate position
     # candidate_position_grouped = data.groupby(DatasetFields.candidate_position)
@@ -736,11 +757,10 @@ def get_crucial_stats(
         # this_measure_stats[
         #     DatasetFields.candidate_position
         # ] = f"F(2, 57) = {round(anova.statistic, 2)}, {sig_str(anova.pvalue)}"
-
-        # Handle t-tests
+        # Handle t-tests add electoral_position after contact the dataframes
         for group_col in [
             DatasetFields.election_result,
-            DatasetFields.electoral_position,
+            # DatasetFields.electoral_position,
         ]:
             subset_group = data.groupby(group_col)
             subset_split = [

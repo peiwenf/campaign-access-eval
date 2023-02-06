@@ -64,9 +64,17 @@ def main() -> None:
             eval_data,
             # post_eval_data,
         )
-
+        # remove the locations where none of the candidates have a camp page
+        temp = expanded_data.groupby('location', as_index=False).first()
+        noneLoc = temp[temp['campaign_website_url'].isnull()].location.tolist()
+        expanded_data = expanded_data[~expanded_data['location'].isin(noneLoc)]
         # Store to data dir
+        # version with na
+        expanded_data.to_csv(constants_2022.ACCESS_EVAL_2022_DATASET_NA, index=False)
+        # version without na 
+        expanded_data = expanded_data.dropna(subset=['campaign_website_url'])
         expanded_data.to_csv(constants_2022.ACCESS_EVAL_2022_DATASET, index=False)
+        # create another dataframe where there is no na values
         # test local
         #expanded_data.to_csv('data_test.csv', index=False)
 

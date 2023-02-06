@@ -1,7 +1,0 @@
-id,impact,impact_score,reason,number_of_elements_in_violation,help_url
-link-name,serious,3,Links must have discernible text,8,https://dequeuniversity.com/rules/axe/3.1/link-name?application=axeAPI
-aria-allowed-role,minor,1,ARIA role must be appropriate for the element,2,https://dequeuniversity.com/rules/axe/3.1/aria-allowed-role?application=axeAPI
-heading-order,moderate,2,Heading levels should only increase by one,1,https://dequeuniversity.com/rules/axe/3.1/heading-order?application=axeAPI
-landmark-one-main,moderate,2,Page must have one main landmark,1,https://dequeuniversity.com/rules/axe/3.1/landmark-one-main?application=axeAPI
-region,moderate,2,All page content must be contained by landmarks,1,https://dequeuniversity.com/rules/axe/3.1/region?application=axeAPI
-skip-link,moderate,2,The skip-link target should exist and be focusable,1,https://dequeuniversity.com/rules/axe/3.1/skip-link?application=axeAPI
