@@ -4,6 +4,6 @@
 """Top-level package for access-eval."""
 
 __author__ = "BITS-Research"
-__email__ = "nmweber@uw.edu, jmxbrown@uw.edu"
+__email__ = "nmweber@uw.edu, evamxb@uw.edu"
 
 from .version import __version__  # noqa: F401

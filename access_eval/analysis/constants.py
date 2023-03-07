@@ -58,7 +58,7 @@ class DatasetFields:
     Examples
     --------
     - "https://www.google.com"
-    - "https://jacksonmaxfield.github.io"
+    - "https://evamaxfield.github.io"
     """
 
     electoral_position = "electoral_position"
@@ -427,7 +427,6 @@ class DatasetFields:
 
 
 class ComputedFields:
-
     # Differences
     diff_pages = ComputedField(
         name="diff_pages",

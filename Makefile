@@ -59,9 +59,9 @@ docs: ## Generate Sphinx HTML documentation, including API docs, and serve to br
 	make gen-docs
 	$(BROWSER) docs/_build/html/index.html
 
-test-generate-report: ## Generate an accessibility report for jacksonmaxfield.github.io as a test
-	rm -Rf jacksonmaxfield.github.io/
-	$(MAKE) generate-report url="https://jacksonmaxfield.github.io/"
+test-generate-report: ## Generate an accessibility report for evamaxfield.github.io as a test
+	rm -Rf evamaxfield.github.io/
+	$(MAKE) generate-report url="https://evamaxfield.github.io/"
 
 generate-report: ## Generate an accessibility evaluation report for provided url
 	scrapy crawl AccessEvalSpider -a url=$(url) -L INFO

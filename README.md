@@ -51,7 +51,7 @@ make generate-report url={URL}
 i.e.
 
 ```bash
-make generate-report url="https://jacksonmaxfield.github.io/"
+make generate-report url="https://evamaxfield.github.io/"
 ```
 
 ### Maintainer GitHub Action

@@ -40,8 +40,8 @@ jobs:
       if: ${{ github.event_name == 'push' }}
       uses: actions/upload-artifact@v2
       with:
-        name: jacksonmaxfield.github.io--archive
-        path: jacksonmaxfield.github.io
+        name: evamaxfield.github.io--archive
+        path: evamaxfield.github.io
         # default 90 seems unnecessary for these test results
         retention-days: 1
 

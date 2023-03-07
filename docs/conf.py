@@ -69,9 +69,9 @@ source_suffix = {
 master_doc = "index"
 
 # General information about the project.
-project = u"access-eval"
-copyright = u"2021, BITS-Research"
-author = u"Nic Weber, Jackson Maxfield Brown"
+project = "access-eval"
+copyright = "2021, BITS-Research"
+author = "Nic Weber, Eva Maxfield Brown"
 
 # The version info for the project you"re documenting, acts as replacement
 # for |version| and |release|, also used in various other places throughout
@@ -153,8 +153,8 @@ latex_documents = [
     (
         master_doc,
         "access_eval.tex",
-        u"access-eval Documentation",
-        u"BITS-Research",
+        "access-eval Documentation",
+        "BITS-Research",
         "manual",
     ),
 ]
@@ -164,7 +164,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [(master_doc, "access_eval", u"access-eval Documentation", [author], 1)]
+man_pages = [(master_doc, "access_eval", "access-eval Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output ----------------------------------------
@@ -176,7 +176,7 @@ texinfo_documents = [
     (
         master_doc,
         "access_eval",
-        u"campaign-access-eval Documentation",
+        "campaign-access-eval Documentation",
         author,
         "access_eval",
         "One line description of project.",
