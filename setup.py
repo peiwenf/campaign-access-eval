@@ -51,6 +51,7 @@ requirements = [
     "scrapy==2.5.1",
     "scrapy-selenium==0.0.7",
     "selenium==3.141.0",
+    "textblob==0.15.3",
     "textstat==0.7.2",
     "tldextract==3.1.2",
     "tqdm>=4.62,<5",
@@ -69,7 +70,7 @@ extra_requirements = {
 
 setup(
     author="BITS-Research",
-    author_email="nmweber@uw.edu, jmxbrown@uw.edu",
+    author_email="nmweber@uw.edu, evamxb@uw.edu",
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
         "Intended Audience :: Developers",
@@ -91,6 +92,8 @@ setup(
                 "access_eval.bin.generate_access_eval_2021_dataset:main",
                 "analyze-access-eval-2021-dataset="
                 "access_eval.bin.analyze_access_eval_2021_dataset:main",
+                "get-sentiment-for-landing-page-content="
+                "access_eval.bin.get_sentiment_for_landing_content:main",
             ),
         ],
     },
