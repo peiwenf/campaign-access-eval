@@ -87,6 +87,7 @@ def _process_url(row: pd.Series, url_column: str) -> float:
         row["subjectivity"] = blob.subjectivity
 
     except Exception:
+        log.error(f"Errored while processing: '{url}'")
         row["polarity"] = np.nan
         row["subjectivity"] = np.nan
 
@@ -108,7 +109,7 @@ def _process_dataset(dataset: str, url_column: str = "campaign_website_url") -> 
 
     # Store to new dataset
     original_path = Path(dataset).resolve()
-    new_path = original_path.with_name(f"{original_path.stem}-with-sentiment")
+    new_path = original_path.with_name(f"{original_path.stem}-with-sentiment.csv")
     df.to_csv(new_path, index=False)
 
 
