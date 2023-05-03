@@ -27,6 +27,10 @@ if TYPE_CHECKING:
 class AccessEvalSpider(CrawlSpider):
     name = "AccessEvalSpider"
 
+    custom_settings = {
+        'DEPTH_LIMIT': 3,
+        }
+
     def __init__(self, url: str, **kwargs: "Any"):
         # Parse domain
         parsed_url = tldextract.extract(url)
